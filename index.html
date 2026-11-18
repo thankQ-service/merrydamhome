@@ -1405,8 +1405,20 @@
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     if (data) {
-                        window.popupConfig = { ...window.popupConfig, ...data };
-                        if (window.applyPopupConfigToDOM) window.applyPopupConfigToDOM();
+                        let localSaved = null;
+                        try {
+                            const raw = localStorage.getItem('merrydam_popup_config_v1');
+                            if (raw) localSaved = JSON.parse(raw);
+                        } catch (e) {}
+
+                        // 로컬에서 방금 수정한 최신 설정이 있다면 유지하고, 아니면 클라우드 데이터 반영
+                        if (!localSaved || (data.updatedAt && (!localSaved.updatedAt || data.updatedAt >= localSaved.updatedAt))) {
+                            window.popupConfig = { ...window.popupConfig, ...data };
+                            try {
+                                localStorage.setItem('merrydam_popup_config_v1', JSON.stringify(window.popupConfig));
+                            } catch (e) {}
+                            if (window.applyPopupConfigToDOM) window.applyPopupConfigToDOM();
+                        }
                     }
                 }
             }, (error) => {
@@ -1418,7 +1430,7 @@
         window.syncPopupConfigToCloud = async function(cfg) {
             try {
                 const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'siteConfig', 'mainPopup');
-                await setDoc(docRef, cfg);
+                await setDoc(docRef, cfg, { merge: true });
             } catch (e) {
                 console.warn("Cloud popup config save skipped:", e);
             }
@@ -1775,15 +1787,34 @@
            0-2-B. 홈페이지 메인 공지 팝업 등록/관리 및 '오늘 하루 보지 않기' 로직
         ========================================== */
         const POPUP_HIDE_STORAGE_KEY = 'merrydam_popup_hide_until';
-        window.popupConfig = {
+        const POPUP_CONFIG_STORAGE_KEY = 'merrydam_popup_config_v1';
+
+        const defaultPopupConfig = {
             enabled: true,
             badge: "SPECIAL NOTICE",
             title: "메리담 웨딩 축의대\n얼리버드 & 후기·짝꿍 최대 할인!",
             content: "문의 후 24시간 내 계약 시 1만원 즉시 할인!\n계약/본식 후기 및 짝꿍 이벤트 중복 적용으로\n대표부부가 직접 케어하는 프리미엄 축의대를 만나보세요.",
             imgUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
             btnText: "실시간 잔여 일정 · 혜택 상담받기",
-            btnLink: "#consult"
+            btnLink: "#consult",
+            updatedAt: 0
         };
+
+        // 저장된 로컬 팝업 설정이 있으면 최우선 로드
+        function loadSavedPopupConfig() {
+            try {
+                const saved = localStorage.getItem(POPUP_CONFIG_STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (parsed && typeof parsed === 'object') {
+                        return { ...defaultPopupConfig, ...parsed };
+                    }
+                }
+            } catch (e) {}
+            return { ...defaultPopupConfig };
+        }
+
+        window.popupConfig = loadSavedPopupConfig();
 
         function applyPopupConfigToDOM() {
             const cfg = window.popupConfig;
@@ -1818,6 +1849,7 @@
         window.applyPopupConfigToDOM = applyPopupConfigToDOM;
 
         function checkAndShowSitePopup() {
+            window.popupConfig = loadSavedPopupConfig();
             applyPopupConfigToDOM();
             if (!window.popupConfig.enabled) return;
 
@@ -1859,20 +1891,37 @@
             document.getElementById('popup-admin-modal').classList.add('hidden');
         }
 
+        // 이미지 업로드 시 파이어베이스(1MB 제한) 및 로컬스토리지 저장이 실패하지 않도록 자동 리사이즈 압축
         function handlePopupImageUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
             const reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('pop-cfg-img').value = e.target.result;
-                showToast("📸 팝업 이미지가 불러와졌습니다! [팝업 설정 저장하기]를 누르면 반영됩니다.");
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const maxW = 800;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > maxW) {
+                        h = Math.round((h * maxW) / w);
+                        w = maxW;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+                    document.getElementById('pop-cfg-img').value = compressedDataUrl;
+                    showToast("📸 팝업 이미지가 최적화되어 적용되었습니다! [팝업 설정 저장하기]를 눌러주세요.");
+                };
+                img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
 
-        function savePopupConfig(e) {
-            e.preventDefault();
-            const updated = {
+        function readPopupFormValues() {
+            return {
                 enabled: document.getElementById('pop-cfg-enabled').checked,
                 badge: document.getElementById('pop-cfg-badge').value.trim() || 'SPECIAL NOTICE',
                 imgUrl: document.getElementById('pop-cfg-img').value.trim(),
@@ -1882,8 +1931,19 @@
                 btnLink: document.getElementById('pop-cfg-btn-link').value.trim() || '#consult',
                 updatedAt: Date.now()
             };
+        }
+
+        function savePopupConfig(e) {
+            e.preventDefault();
+            const updated = readPopupFormValues();
 
             window.popupConfig = updated;
+            try {
+                localStorage.setItem(POPUP_CONFIG_STORAGE_KEY, JSON.stringify(updated));
+            } catch (err) {
+                console.warn("Local popup save warning:", err);
+            }
+
             applyPopupConfigToDOM();
             if (window.syncPopupConfigToCloud) window.syncPopupConfigToCloud(updated);
 
@@ -1901,10 +1961,16 @@
         }
 
         function previewSitePopupNow() {
-            try { localStorage.removeItem(POPUP_HIDE_STORAGE_KEY); } catch (err) {}
+            const currentDraft = readPopupFormValues();
+            window.popupConfig = currentDraft;
+            try {
+                localStorage.setItem(POPUP_CONFIG_STORAGE_KEY, JSON.stringify(currentDraft));
+                localStorage.removeItem(POPUP_HIDE_STORAGE_KEY);
+            } catch (err) {}
             closePopupAdminModal();
             applyPopupConfigToDOM();
             document.getElementById('site-notice-popup').classList.remove('hidden');
+            showToast("👀 입력하신 내용으로 팝업이 반영되었습니다.");
         }
 
         /* ==========================================
