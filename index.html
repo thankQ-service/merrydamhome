@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메리담(MARRYDAM) - 프리미엄 웨딩 축의대 대행 서비스</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Pretendard & Gmarket Sans Fonts (배민/쿠팡/무신사 스타일의 깔끔하고 임팩트 있는 폰트) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        @font-face {
+            font-family: 'GmarketSans';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'GmarketSans';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        :root {
+            --bg-cream: #FDFBF9;
+            --bg-beige: #F6EFEA;
+            --rose-accent: #D98A8C;
+            --rose-dark: #B86B6D;
+            --gold-accent: #C5A059;
+            --text-dark: #2C2523;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'GmarketSans', 'Pretendard', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        /* 커스텀 스크롤바 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6EFEA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D98A8C;
+            border-radius: 4px;
+        }
+
+        /* 히어로 슬라이더 페이드 효과 */
+        .hero-slide {
+            transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+        .hero-slide.inactive {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        /* 무한 롤링 배너 애니메이션 */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* 플로팅 애니메이션 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* 글래스모피즘 */
+        .glass-nav {
+            background: rgba(253, 251, 249, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF9',
+                        beige: '#F6EFEA',
+                        blush: '#FCEEEF',
+                        rose: {
+                            DEFAULT: '#D98A8C',
+                            light: '#F4D5D6',
+                            dark: '#B86B6D',
+                        },
+                        champagne: '#C5A059',
+                        charcoal: '#2C2523',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-rose selection:text-white">
+
+    <!-- 상단 이벤트 띠배너 -->
+    <div class="bg-gradient-to-r from-[#DF9A9C] via-[#C5A059] to-[#DF9A9C] text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium relative z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="bg-white/25 px-2 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase">SPECIAL EVENT</span>
+            <span>문의 후 24시간 내 계약 시 <b>얼리버드 1만원 즉시 할인</b> + 후기/짝꿍 <b>무제한 중복 할인!</b></span>
+            <a href="#events" class="underline font-bold ml-1 hover:text-cream">혜택 자세히 보기 →</a>
+        </div>
+    </div>
+
+    <!-- 네비게이션 헤더 -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-rose-light/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+            <!-- 로고 -->
+            <a href="#" class="flex items-center gap-2.5 group shrink-0">
+                <img src="https://i.postimg.cc/2SgJGswF/melidam-weding-logo-dijain.png" alt="메리담 로고" class="h-11 sm:h-12 w-auto object-contain rounded-xl group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/120x48/F6EFEA/B86B6D?text=MARRYDAM'">
+                <div class="whitespace-nowrap">
+                    <span class="font-display text-xl sm:text-2xl font-bold tracking-tight text-charcoal block leading-none">메리담</span>
+                    <span class="text-[10px] tracking-[0.22em] text-rose-dark font-semibold uppercase block mt-0.5">MARRYDAM WEDDING</span>
+                </div>
+            </a>
+
+            <!-- 데스크톱 메뉴 (줄바꿈 방지 whitespace-nowrap 적용 & 74 뱃지 제거) -->
+            <!-- 데스크톱 메뉴 -->
+            <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[15px] font-semibold text-charcoal/90 whitespace-nowrap">
+                <a href="#about" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">메리담소개</a>
+                <a href="#digital-ledger" class="hover:text-rose-dark transition-colors py-2 flex items-center gap-1 whitespace-nowrap">
+                    디지털장부 <span class="bg-blush text-rose-dark text-[10px] px-1.5 py-0.5 rounded-md font-bold">LIVE</span>
+                </a>
+                <a href="#process" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">서비스절차</a>
+                <a href="#pricing" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">요금 및 이벤트</a>
+                <a href="#reviews" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">고객후기</a>
+                <a href="#consult" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">상담신청</a>
+                <a href="#qna-board" class="hover:text-rose-dark transition-colors py-2 whitespace-nowrap">문의게시판</a>
+            </nav>
+
+            <!-- 우측 CTA 버튼 -->
+            <div class="hidden lg:flex items-center gap-2.5 shrink-0 whitespace-nowrap">
+                <a href="https://pf.kakao.com/_FKvFX" target="_blank" rel="noopener noreferrer" class="bg-[#FEE500] hover:bg-[#F5DC00] text-[#3C1E1E] text-xs font-bold px-4 py-3 rounded-full shadow-sm transition-all hover:-translate-y-0.5 flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>카톡상담</span>
+                </a>
+                <a href="#consult" class="bg-charcoal hover:bg-rose-dark text-white text-sm font-bold px-5 py-3 rounded-full shadow-lg shadow-charcoal/10 transition-all hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap">
+                    <span>실시간 견적 · 상담신청</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- 모바일 햄버거 버튼 -->
+            <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl bg-beige flex items-center justify-center text-charcoal focus:outline-none">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- 모바일 드롭다운 메뉴 -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream border-b border-rose-light/50 px-6 py-5 space-y-3 shadow-xl">
+            <a href="#about" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">메리담소개</a>
+            <a href="#digital-ledger" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">실시간 디지털 장부</a>
+            <a href="#process" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">서비스절차</a>
+            <a href="#pricing" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">정찰제 요금 & 이벤트</a>
+            <a href="#reviews" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">실제 고객후기</a>
+            <a href="#qna-board" class="mobile-link block py-2.5 text-base font-bold text-charcoal border-b border-beige">문의게시판</a>
+            <a href="#consult" class="mobile-link block w-full text-center bg-rose text-white font-bold py-3.5 rounded-xl mt-4 shadow-md">상담 신청하기</a>
+        </div>
+    </header>
+
+    <!-- 관리자 모드 활성화 상단 플로팅 컨트롤바 (기본 숨김) -->
+    <div id="admin-control-bar" class="hidden sticky top-20 z-40 bg-charcoal text-white py-3 px-4 border-b border-rose shadow-xl">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm">
+                <span class="bg-rose text-white text-[11px] font-bold px-2.5 py-1 rounded-full animate-pulse">ADMIN MODE ON</span>
+                <span><b>관리자 권한 활성화됨:</b> 바로가기 버튼으로 원하는 섹션으로 이동해 수정/삭제하세요!</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+                <a href="#reviews" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white/15 hover:bg-white/25 text-white transition-all">
+                    후기 관리로 이동
+                </a>
+                <a href="#qna-board" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white/15 hover:bg-white/25 text-white transition-all">
+                    문의게시판 관리로 이동
+                </a>
+                <button onclick="toggleCustomMode()" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose hover:bg-rose-dark text-white transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span id="custom-btn-text">서비스 카드 편집 켜기</span>
+                </button>
+                <button onclick="exitAdminMode()" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-red-600 hover:bg-red-700 text-white transition-all">
+                    관리자 종료
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 히어로 섹션 (웨딩홀 사진 자동 슬라이드) -->
+    <section class="relative min-h-[640px] lg:min-h-[760px] flex items-center overflow-hidden bg-beige">
+        <!-- 배경 슬라이드 이미지 컨테이너 -->
+        <div id="hero-slider" class="absolute inset-0 z-0">
+            <!-- 슬라이드 1 -->
+            <div class="hero-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=85');"></div>
+            <!-- 슬라이드 2 -->
+            <div class="hero-slide inactive absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=85');"></div>
+            <!-- 슬라이드 3 -->
+            <div class="hero-slide inactive absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1920&q=85');"></div>
+            <!-- 슬라이드 4 -->
+            <div class="hero-slide inactive absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1920&q=85');"></div>
+            <!-- 밝고 화사한 베이지/핑크 그라데이션 오버레이 -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/95 via-[#FDFBF9]/85 to-[#FDFBF9]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#FDFBF9] via-transparent to-transparent"></div>
+        </div>
+
+        <!-- 히어로 콘텐츠 -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur border border-rose-light px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-rose animate-ping"></span>
+                        <span class="text-xs sm:text-sm font-bold text-rose-dark">소중한 가족도 온전히 축복만 누리는 결혼식</span>
+                    </div>
+
+                    <h1 class="font-display text-3xl sm:text-5xl lg:text-[54px] font-bold text-charcoal leading-[1.22]">
+                        축의대는 <span class="text-rose-dark underline decoration-rose-light decoration-8 underline-offset-4">메리담</span>에 맡기고,<br>
+                        두 분과 가족은<br>
+                        <span class="bg-gradient-to-r from-rose-dark to-champagne bg-clip-text text-transparent">행복한 순간만 담으세요.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal/80 leading-relaxed max-w-2xl font-medium">
+                        사촌이나 지인에게 부탁하기 미안했던 축의금 접수대.<br class="hidden sm:inline">
+                        이제 <b>실시간 디지털 장부</b>와 <b>전 과정 라이브 스트리밍·녹화</b>를 제공하는<br class="hidden sm:inline">
+                        프리미엄 웨딩 축의대 전문 기업 <b>메리담(MARRYDAM)</b>이 완벽하게 책임집니다.
+                    </p>
+
+                    <!-- 5대 핵심 약속 뱃지 -->
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="bg-white/90 border border-rose-light/80 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-charcoal shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen-button text-rose"></i> 실시간 디지털 장부
+                        </span>
+                        <span class="bg-white/90 border border-rose-light/80 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-charcoal shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-file-signature text-rose"></i> 안심 전자계약
+                        </span>
+                        <span class="bg-white/90 border border-rose-light/80 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-charcoal shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-tower-broadcast text-rose"></i> 실시간 스트리밍
+                        </span>
+                        <span class="bg-white/90 border border-rose-light/80 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-charcoal shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-video text-rose"></i> 촬영 원본영상 제공
+                        </span>
+                        <span class="bg-rose text-white px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-check"></i> 100% 정찰제 · 추가금 없음
+                        </span>
+                    </div>
+
+                    <!-- 히어로 버튼 그룹 -->
+                    <div class="flex flex-col sm:flex-row gap-3.5 pt-4">
+                        <a href="#consult" class="bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl shadow-rose/25 transition-all text-center flex items-center justify-center gap-2.5">
+                            <span>예식 가능 일정 · 무료 견적 확인</span>
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#digital-ledger" class="bg-white/95 hover:bg-blush text-charcoal border border-rose-light font-bold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-md transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play text-rose text-sm"></i>
+                            <span>디지털 장부 미리보기</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 우측 히어로 요약 프리미엄 카드 -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-white relative">
+                        <div class="absolute -top-4 right-6 bg-gradient-to-r from-champagne to-rose-dark text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                            투명한 정찰제 운영
+                        </div>
+
+                        <div class="flex items-center justify-between border-b border-beige pb-4 mb-5">
+                            <div>
+                                <p class="text-xs font-bold text-rose-dark uppercase tracking-wider">MARRYDAM PREMIUM DESK</p>
+                                <h3 class="font-display text-xl font-bold text-charcoal mt-1">한눈에 보는 메리담 패키지</h3>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-blush flex items-center justify-center text-rose-dark text-xl">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3.5">
+                            <div class="p-4 rounded-2xl bg-cream border border-rose-light/60 flex items-center justify-between hover:border-rose transition-all">
+                                <div>
+                                    <span class="inline-block bg-blush text-rose-dark text-[11px] font-bold px-2.5 py-0.5 rounded-md mb-1">BASIC · 한측 운영</span>
+                                    <h4 class="font-bold text-charcoal text-base">대표부부 직접 진행 2인 1조</h4>
+                                    <p class="text-xs text-charcoal/70">신랑측 또는 신부측 단독 집중 케어</p>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="text-xs text-charcoal/60 block">추가금 0원</span>
+                                    <span class="font-display text-2xl font-bold text-rose-dark">30만원</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-blush/70 to-beige/70 border-2 border-rose flex items-center justify-between relative">
+                                <div>
+                                    <span class="inline-block bg-rose text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md mb-1">BEST · 양측 동시 운영</span>
+                                    <h4 class="font-bold text-charcoal text-base">대표부부 포함 4인 2조</h4>
+                                    <p class="text-xs text-charcoal/60">양가 축의대 완벽 분리 · 동시 운영</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-charcoal/45 line-through font-semibold block">60만원</span>
+                                    <span class="font-display text-2xl font-bold text-rose-dark">55만원</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 슬라이드 컨트롤러 & 웨딩홀 캡션 -->
+                        <div class="mt-6 pt-4 border-t border-beige flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-semibold text-charcoal/70" id="hero-slide-caption">✨ 호텔 및 프리미엄 웨딩홀 현장 세팅</span>
+                            </div>
+                            <div class="flex gap-1.5" id="hero-dots">
+                                <button onclick="setHeroSlide(0)" class="w-6 h-2 rounded-full bg-rose transition-all"></button>
+                                <button onclick="setHeroSlide(1)" class="w-2 h-2 rounded-full bg-rose-light transition-all"></button>
+                                <button onclick="setHeroSlide(2)" class="w-2 h-2 rounded-full bg-rose-light transition-all"></button>
+                                <button onclick="setHeroSlide(3)" class="w-2 h-2 rounded-full bg-rose-light transition-all"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 실시간 예약/상담 현황 티커 (잘나가는 사이트들의 신뢰도 요소 반영) -->
+    <div class="bg-white border-y border-rose-light/50 py-3.5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 flex items-center gap-4">
+            <div class="shrink-0 flex items-center gap-2 bg-blush px-3.5 py-1.5 rounded-full text-xs font-bold text-rose-dark">
+                <span class="w-2 h-2 rounded-full bg-rose-dark animate-pulse"></span>
+                <span>실시간 예약현황</span>
+            <!-- 실시간 예약현황 티커 -->
+            <div class="overflow-hidden relative w-full">
+                <div id="live-status-marquee" class="animate-marquee gap-8 text-xs sm:text-sm text-charcoal/80 font-medium">
+                    <span class="flex items-center gap-2"><b class="text-charcoal">김*연 신부님</b> (서울 더채플앳청담) 4인 2조 <span class="text-rose-dark font-bold">[예약확정]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">박*준 신랑님</b> (송파 루이비스컨벤션) 2인 1조 <span class="text-emerald-600 font-bold">[전자계약 완료]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">이*서 신부님</b> (강남 아펠가모) 4인 2조 <span class="text-rose-dark font-bold">[얼리버드 할인적용]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">최*우 신랑님</b> (수원 메리빌리아) 4인 2조 <span class="text-amber-600 font-bold">[상담진행중]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">정*아 신부님</b> (여의도 더파티움) 2인 1조 <span class="text-rose-dark font-bold">[예약확정]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <!-- 무한 루프용 복제 -->
+                    <span class="flex items-center gap-2"><b class="text-charcoal">김*연 신부님</b> (서울 더채플앳청담) 4인 2조 <span class="text-rose-dark font-bold">[예약확정]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">박*준 신랑님</b> (송파 루이비스컨벤션) 2인 1조 <span class="text-emerald-600 font-bold">[전자계약 완료]</span></span>
+                    <span class="text-rose-light">|</span>
+                    <span class="flex items-center gap-2"><b class="text-charcoal">이*서 신부님</b> (강남 아펠가모) 4인 2조 <span class="text-rose-dark font-bold">[얼리버드 할인적용]</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 섹션 1: 왜 축의대 대행이 필요한가요? (공감 포인트) -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-blush px-3.5 py-1.5 rounded-full">WHY MARRYDAM?</span>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4 leading-tight">
+                    소중한 가족에게 <span class="text-rose-dark">'축의대 업무'</span> 대신<br>
+                    <span class="text-champagne">'결혼식의 감동'</span>을 선물하세요
+                </h2>
+                <p class="text-charcoal/70 mt-3 text-sm sm:text-base">
+                    결혼식에서 가장 많은 현금이 오가는 자리, 친척이나 지인에게 맡기면 정작 예식을 한 순간도 보지 못합니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/50 shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-blush text-rose-dark flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-user-clock"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal mb-2">가족도 하객으로 축하받도록</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        사촌이나 친구에게 축의대를 부탁하면 입장부터 행진까지 단 한 장면도 보지 못합니다. 소중한 분들이 자리를 지킬 수 있게 해주세요.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/50 shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-blush text-rose-dark flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal mb-2">현금 분실 · 정산 오차 ZERO</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        혼잡한 로비에서 봉투 번호 누락이나 식권 수량 착오가 자주 발생합니다. 메리담은 2인 교차 검증과 실시간 촬영으로 단 1원의 오차도 허용하지 않습니다.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/50 shadow-sm hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-blush text-rose-dark flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal mb-2">결혼식의 첫인상, 품격 있는 응대</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        하객이 웨딩홀에 도착해 가장 먼저 마주하는 얼굴이 축의대입니다. 단정한 호텔리어급 복장과 미소로 양가 부모님의 어깨를 으쓱하게 해드립니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 2: 메리담 소개 & 5대 프리미엄 핵심 서비스 (관리자 모드에서만 커스텀 노출) -->
+    <section id="about" class="py-20 bg-beige/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-white px-3.5 py-1.5 rounded-full shadow-sm">OUR PREMIUM SERVICES</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4 leading-tight">
+                        타 업체와 비교를 거부하는<br>
+                        <span class="text-rose-dark">메리담만의 5대 올인원 시스템</span>
+                    </h2>
+                </div>
+                <p class="text-sm text-charcoal/80 max-w-md">
+                    아르바이트생 파견이 아닌 <b>메리담 대표부부</b>가 직접 현장을 진두지휘하며 처음부터 끝까지 책임집니다.
+                </p>
+            </div>
+
+            <!-- 커스텀 안내 알림창 (관리자 편집 모드 시에만 표시) -->
+            <div id="custom-mode-banner" class="hidden mb-8 bg-gradient-to-r from-rose-dark to-champagne text-white p-4 rounded-2xl shadow-md flex items-center justify-between">
+                <div class="flex items-center gap-3 text-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                    <span><b>[관리자 전용] 서비스 카드 커스텀 모드가 활성화되었습니다!</b> 사진을 업로드하거나 제목·설명을 직접 클릭해 수정해보세요.</span>
+                </div>
+                <button onclick="resetCustomCards()" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg font-bold shrink-0">기본값 초기화</button>
+            </div>
+
+            <!-- 5대 서비스 그리드 -->
+            <div id="service-cards-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- JavaScript로 렌더링되어 이미지 업로드 및 텍스트 편집 지원 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 3: 핸드폰 화면 실시간 디지털 장부 슬라이드 쇼케이스 -->
+    <section id="digital-ledger" class="py-24 bg-gradient-to-b from-cream via-blush/40 to-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- 좌측 설명 및 탭 컨트롤 -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-blush px-3.5 py-1.5 rounded-full">REAL-TIME DIGITAL LEDGER</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal leading-tight">
+                        예식 중에도 내 스마트폰으로<br>
+                        <span class="text-rose-dark">실시간 확인하는 디지털 장부</span>
+                    </h2>
+                    <p class="text-charcoal/75 text-sm sm:text-base leading-relaxed">
+                        예식이 끝날 때까지 얼마가 들어왔는지, 누가 다녀갔는지 궁금해하실 필요가 없습니다. 메리담 전용 모바일 웹 링크를 통해 혼주님과 신랑·신부님의 스마트폰에서 실시간으로 현황을 확인하실 수 있습니다.
+                    </p>
+
+                    <!-- 스마트폰 화면 전환 탭 -->
+                    <div class="space-y-3 pt-2" id="phone-tabs">
+                        <button onclick="setPhoneSlide(0)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border-2 border-rose bg-white shadow-md transition-all flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-rose text-white font-bold flex items-center justify-center text-sm">01</span>
+                                <div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">실시간 축의금 · 하객 접수 대시보드</h4>
+                                    <p class="text-xs text-charcoal/60">방문 하객 성함과 금액, 식권 배부 수량이 1초 만에 업데이트됩니다.</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-rose"></i>
+                        </button>
+
+                        <button onclick="setPhoneSlide(1)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm">02</span>
+                                <div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">축의대 현장 LIVE 실시간 스트리밍</h4>
+                                    <p class="text-xs text-charcoal/60">신부대기실이나 본식 홀에서도 축의대 상황을 라이브 영상으로 볼 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
+                        </button>
+
+                        <button onclick="setPhoneSlide(2)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm">03</span>
+                                <div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">관계별 통계 리포트 & 원클릭 엑셀 다운로드</h4>
+                                    <p class="text-xs text-charcoal/60">예식 직후 깔끔하게 정리된 엑셀(XLSX) 및 PDF 장부를 즉시 전송해 드립니다.</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
+                        </button>
+
+                        <button onclick="setPhoneSlide(3)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm">04</span>
+                                <div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">모바일 안심 전자계약 & 인수인계 서명</h4>
+                                    <p class="text-xs text-charcoal/60">계약부터 당일 현금 밀봉 인수인계까지 법적 효력이 있는 전자서명으로 투명하게!</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 우측 스마트폰 목업 (내부 화면 자동/수동 슬라이드) -->
+                <div class="lg:col-span-6 flex justify-center relative">
+                    <!-- 배경 데코 서클 -->
+                    <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-rose-light/60 to-champagne/20 blur-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+
+                    <!-- 아이폰 프레임 -->
+                    <div class="w-[310px] sm:w-[340px] bg-charcoal rounded-[48px] p-3.5 shadow-2xl border-4 border-[#4A3F3C] relative animate-float">
+                        <!-- 다이나믹 아일랜드 노치 -->
+                        <div class="w-28 h-6 bg-charcoal rounded-full mx-auto absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center justify-end px-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        </div>
+
+                        <!-- 폰 스크린 영역 -->
+                        <div class="bg-cream rounded-[36px] h-[600px] overflow-hidden relative flex flex-col justify-between border border-rose-light/30">
+                            <!-- 상단 상태바 -->
+                            <div class="pt-3 pb-2 px-6 flex justify-between items-center text-[11px] font-bold text-charcoal bg-white">
+                                <span>13:20</span>
+                                <div class="flex items-center gap-1.5">
+                                    <i class="fa-solid fa-signal"></i>
+                                    <i class="fa-solid fa-wifi"></i>
+                                    <i class="fa-solid fa-battery-full"></i>
+                                </div>
+                            </div>
+
+                            <!-- 앱 헤더 -->
+                            <div class="px-5 py-3 bg-white border-b border-beige flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-rose text-white flex items-center justify-center text-xs"><i class="fa-solid fa-crown"></i></span>
+                                    <span class="font-display font-bold text-sm text-charcoal">메리담 ON</span>
+                                </div>
+                                <span class="text-[10px] bg-blush text-rose-dark font-bold px-2 py-0.5 rounded-full">실시간 연동중</span>
+                            </div>
+
+                            <!-- 슬라이드 컨테이너 -->
+                            <div class="flex-1 relative overflow-hidden">
+                                <!-- 화면 1: 실시간 디지털 장부 (요청하신 실제 이미지 적용) -->
+                                <div class="phone-screen absolute inset-0 p-3 flex flex-col justify-between transition-all duration-500 opacity-100 translate-x-0" data-index="0">
+                                    <div class="relative flex-1 rounded-2xl overflow-hidden bg-white border border-rose-light/60 shadow-inner flex items-center justify-center p-1">
+                                        <img src="https://i.postimg.cc/cLPjhpmz/silsiganjangbu.png" alt="실시간 축의금 하객 접수 대시보드" class="w-full h-full object-contain">
+                                        <span class="absolute top-2.5 right-2.5 bg-rose text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                                            실시간 장부 화면
+                                        </span>
+                                    </div>
+                                    <div class="mt-2.5 bg-white p-3 rounded-xl border border-rose-light/60 text-[11px] text-charcoal/90 flex items-center justify-between">
+                                        <span class="truncate"><b class="text-rose-dark">01.</b> 실시간 축의금 · 하객 접수 대시보드</span>
+                                        <span class="text-[10px] text-emerald-600 font-bold shrink-0 ml-1">● LIVE 연동</span>
+                                    </div>
+                                </div>
+
+                                <!-- 화면 2: 실시간 스트리밍 -->
+                                <div class="phone-screen absolute inset-0 p-4 space-y-3 transition-all duration-500 opacity-0 translate-x-full" data-index="1">
+                                    <div class="relative rounded-2xl overflow-hidden h-48 bg-charcoal shadow-md">
+                                        <img src="https://i.postimg.cc/Zqw13wR7/Kakao-Talk-20261116-153055669.png" alt="Live Stream" class="w-full h-full object-cover opacity-95">
+                                        <div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                                            LIVE · 신부측 접수대 CAM 1
+                                        </div>
+                                        <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded">
+                                            FHD 1080p 녹화중
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-3.5 rounded-2xl border border-rose-light/60 space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs font-bold text-charcoal">🔒 비공개 암호화 스트리밍</span>
+                                            <span class="text-[10px] text-emerald-600 font-bold">정상 송출중</span>
+                                        </div>
+                                        <p class="text-[11px] text-charcoal/70 leading-relaxed">
+                                            신랑·신부님과 지정된 혼주님께만 발급된 보안 링크로 접수 및 정산 전 과정을 투명하게 중계합니다.
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-blush/60 p-3.5 rounded-2xl border border-rose-light text-xs space-y-1.5">
+                                        <div class="font-bold text-rose-dark flex items-center gap-1.5">
+                                            <i class="fa-solid fa-video"></i> 예식 종료 후 원본 영상 제공
+                                        </div>
+                                        <p class="text-[11px] text-charcoal/70">
+                                            예식 당일 촬영된 모든 축의대 영상 파일은 클라우드 링크 및 파일로 100% 무료 제공됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- 화면 3: 통계 & 엑셀 리포트 -->
+                                <div class="phone-screen absolute inset-0 p-4 space-y-3 transition-all duration-500 opacity-0 translate-x-full" data-index="2">
+                                    <div class="bg-white p-4 rounded-2xl border border-rose-light/60 shadow-sm">
+                                        <h5 class="text-xs font-bold text-charcoal mb-3">📊 권종별 · 관계별 정산 리포트</h5>
+                                        <div class="space-y-2.5 text-xs">
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span>신부 직장 및 지인 (62%)</span>
+                                                    <span class="font-bold">11,400,000원</span>
+                                                </div>
+                                                <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+                                                    <div class="w-[62%] h-full bg-rose"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span>혼주(어머니·아버지) 지인 (38%)</span>
+                                                    <span class="font-bold">7,050,000원</span>
+                                                </div>
+                                                <div class="w-full h-2 bg-beige rounded-full overflow-hidden">
+                                                    <div class="w-[38%] h-full bg-champagne"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4 rounded-2xl border border-beige space-y-2 text-xs">
+                                        <div class="font-bold text-charcoal">교차 검증 완료 내역</div>
+                                        <div class="flex justify-between text-charcoal/70">
+                                            <span>총 접수 봉투 수</span>
+                                            <b class="text-charcoal">148봉투 (일치)</b>
+                                        </div>
+                                        <div class="flex justify-between text-charcoal/70">
+                                            <span>전산 합계 vs 현금 계수</span>
+                                            <b class="text-emerald-600">오차 0원 (일치)</b>
+                                        </div>
+                                    </div>
+
+                                    <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl text-xs shadow flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-file-excel"></i> 엑셀(XLSX) & PDF 장부 즉시 다운로드
+                                    </button>
+                                </div>
+
+                                <!-- 화면 4: 전자계약 & 인수인계 (요청하신 실제 이미지 적용) -->
+                                <div class="phone-screen absolute inset-0 p-3 flex flex-col justify-between transition-all duration-500 opacity-0 translate-x-full" data-index="3">
+                                    <div class="relative flex-1 rounded-2xl overflow-hidden bg-white border border-rose-light/60 shadow-inner flex items-center justify-center p-1">
+                                        <img src="https://i.postimg.cc/dVgX6bBS/jeonjagyeyagseo.png" alt="모바일 안심 전자계약서" class="w-full h-full object-contain">
+                                        <span class="absolute top-2.5 right-2.5 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                                            전자계약서 원본
+                                        </span>
+                                    </div>
+                                    <div class="mt-2.5 bg-white p-3 rounded-xl border border-rose-light/60 text-[11px] text-charcoal/90 flex items-center justify-between">
+                                        <span class="truncate"><b class="text-rose-dark">04.</b> 모바일 안심 전자계약 & 인수인계 서명</span>
+                                        <span class="text-[10px] text-rose-dark font-bold shrink-0 ml-1">법적효력 보장</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 하단 슬라이드 컨트롤 바 -->
+                            <div class="p-3.5 bg-white border-t border-beige flex items-center justify-between">
+                                <button onclick="prevPhoneSlide()" class="w-8 h-8 rounded-full bg-beige text-charcoal flex items-center justify-center text-xs hover:bg-rose hover:text-white transition-colors">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <div class="flex gap-1.5" id="phone-dots">
+                                    <span class="w-5 h-1.5 rounded-full bg-rose transition-all"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-light transition-all"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-light transition-all"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-light transition-all"></span>
+                                </div>
+                                <button onclick="nextPhoneSlide()" class="w-8 h-8 rounded-full bg-beige text-charcoal flex items-center justify-center text-xs hover:bg-rose hover:text-white transition-colors">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 4: 서비스 절차 (6단계 프리미엄 프로세스) -->
+    <section id="process" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-blush px-3.5 py-1.5 rounded-full">SERVICE PROCESS</span>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4">
+                    예식 전부터 종료 후 인계까지,<br>
+                    <span class="text-rose-dark">빈틈없는 6단계 밀착 진행 절차</span>
+                </h2>
+                <p class="text-charcoal/70 mt-3 text-sm sm:text-base">
+                    단순 아르바이트생이 아닌, <b>메리담 대표부부</b>가 직접 현장에 참여하여 가장 따뜻하고 정확하게 진행합니다.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- STEP 1 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">01</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">일정 확인 및 안심 전자계약</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        예식 일자·웨딩홀 확인 후 모바일 전자계약서를 발송해 드립니다. 문의 후 24시간 내 계약 시 얼리버드 1만원 즉시 할인이 적용됩니다.
+                    </p>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">02</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">예식 2주 전 사전 체크</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        예식 2주 전, 정산 방식(미개봉 밀봉/금액 확인 밀봉), 식권 및 답례품 수량, 화환 촬영 여부, 최종 축의금 인수자 정보를 꼼꼼하게 사전 점검합니다.
+                    </p>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">03</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">예식 90분 전 도착 & 완벽 세팅</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        단정한 정장 차림으로 예식 90분 전 여유 있게 도착해 방명록, 봉투, 안내문, 실시간 스트리밍 카메라를 세팅하고 축하 화환 사진 촬영까지 진행합니다.
+                    </p>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">04</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">품격 있는 하객 응대 & 디지털 기록</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        2인 1조 분업 시스템으로 봉투 번호 넘버링, 식권 배부, 실시간 디지털 장부 입력을 동시 진행하여 대기 줄 없이 쾌적하게 맞이합니다.
+                    </p>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">05</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">교차 검산 및 안전 밀봉 인계</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        예식 종료 후 봉투 수량과 전산 기록을 2중 교차 확인한 뒤, 지정해주신 혼주님(인수자)께 잔여 식권과 함께 안전하게 밀봉 인계합니다.
+                    </p>
+                </div>
+
+                <!-- STEP 6 -->
+                <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-sm relative group hover:-translate-y-1 transition-all">
+                    <span class="font-display text-3xl font-bold text-rose-light group-hover:text-rose transition-colors">06</span>
+                    <h3 class="font-display text-lg font-bold text-charcoal mt-2 mb-2">엑셀 장부 & 촬영 영상 당일 전달</h3>
+                    <p class="text-sm text-charcoal/70 leading-relaxed">
+                        예식이 끝나자마자 깔끔하게 정리된 엑셀(XLSX)·PDF 파일과 축의대 촬영 원본 영상을 카카오톡 및 이메일로 즉시 전달해 드립니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 5: 투명한 정찰제 가격 안내 & 3대 스페셜 이벤트 -->
+    <section id="pricing" class="py-24 bg-gradient-to-b from-beige/70 to-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-white px-3.5 py-1.5 rounded-full shadow-sm">TRANSPARENT PRICING</span>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4">
+                    복잡한 인원 할증? 출장비?<br>
+                    <span class="text-rose-dark">메리담은 추가금 없는 100% 정찰제</span>입니다
+                </h2>
+                <p class="text-charcoal/70 mt-3 text-sm sm:text-base">
+                    실시간 디지털 장부, 전자계약, 실시간 스트리밍, 원본 영상 제공이 모두 기본 포함된 금액입니다.
+                </p>
+            </div>
+
+            <!-- 요금 카드 2종 -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
+                <!-- 2인 1조 카드 -->
+                <div class="bg-white rounded-3xl p-8 border border-rose-light shadow-lg flex flex-col justify-between hover:border-rose transition-all">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-blush text-rose-dark text-xs font-bold px-3 py-1 rounded-full">BASIC PACKAGE</span>
+                                <h3 class="font-display text-2xl font-bold text-charcoal mt-3">2인 1조 패키지</h3>
+                                <p class="text-xs text-charcoal/60 mt-1">신랑측 또는 신부측 한 곳 집중 운영</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-charcoal/50 block">부가세 포함 · 추가금 없음</span>
+                                <div class="font-display text-4xl font-bold text-charcoal mt-1">30<span class="text-xl">만원</span></div>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-charcoal/85">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-rose"></i>
+                                <span>베테랑 <b>대표부부 2인 직접 배정</b> (접수 1인 + 식권/응대 1인)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-rose"></i>
+                                <span><b>실시간 디지털 장부</b> 모바일 링크 무제한 공유</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-rose"></i>
+                                <span>전 과정 <b>실시간 스트리밍 & 촬영 영상 원본</b> 무료 제공</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-rose"></i>
+                                <span>안심 <b>모바일 전자계약서</b> 발행 및 당일 엑셀/PDF 파일 제공</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-rose"></i>
+                                <span>축의대 안내문 제작 및 축하 화환 사진 촬영 서비스</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#consult" onclick="selectPackageInForm('2인 1조 (30만원)')" class="mt-8 w-full py-4 px-6 rounded-full bg-charcoal hover:bg-rose-dark text-white font-bold text-sm sm:text-base text-center shadow-lg shadow-charcoal/10 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <span>2인 1조 패키지로 견적 · 상담하기</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 4인 2조 카드 (BEST) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-rose shadow-2xl relative flex flex-col justify-between">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-rose-dark to-champagne text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                        👑 가장 많은 신랑·신부님의 선택 (5만원 절약)
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-rose text-white text-xs font-bold px-3 py-1 rounded-full">PREMIUM DOUBLE</span>
+                                <h3 class="font-display text-2xl font-bold text-charcoal mt-3">4인 2조 패키지</h3>
+                                <p class="text-xs text-charcoal/60 mt-1">신랑측 2명 + 신부측 2명 양가 동시 운영</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-charcoal/45 line-through font-semibold block">60만원</span>
+                                <div class="font-display text-4xl font-bold text-rose-dark mt-0.5">55<span class="text-xl">만원</span></div>
+                            </div>
+                        </div>
+
+                        <hr class="border-beige my-6">
+
+                        <ul class="space-y-3.5 text-sm text-charcoal/80">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-rose-dark"></i>
+                                <span>베테랑 <b>대표부부 포함 총 4인 배정</b> (신랑팀 2인 + 신부팀 2인)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-rose-dark"></i>
+                                <span>양가 독립된 <b>실시간 디지털 장부 각각 제공</b></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-rose-dark"></i>
+                                <span>양측 접수대 <b>듀얼 카메라 실시간 스트리밍 & 녹화본 제공</b></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-rose-dark"></i>
+                                <span>안심 <b>전자계약</b> 및 양가 개별 엑셀/PDF 정산 파일 제공</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-rose-dark"></i>
+                                <span>양가 하객 동선 정리 + 화환 촬영 + 안내문 무료 제작</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#consult" onclick="selectPackageInForm('4인 2조 (55만원)')" class="mt-8 w-full py-4 px-6 rounded-full bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold text-sm sm:text-base text-center shadow-lg shadow-rose/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <span>4인 2조 패키지로 견적 · 상담하기</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 🎁 메리담 3대 할인 이벤트 섹션 -->
+            <div id="events" class="bg-white rounded-3xl p-8 sm:p-12 border border-rose-light shadow-xl">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="bg-blush text-rose-dark text-xs font-bold px-3.5 py-1.5 rounded-full">SPECIAL BENEFITS</span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-charcoal mt-3">
+                        놓치면 아쉬운 <span class="text-rose-dark">메리담 3대 할인 & 페이백 혜택</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-charcoal/60 mt-2">모든 이벤트는 중복 참여가 가능하여 체감가를 더욱 낮추실 수 있습니다!</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- 1. 후기 이벤트 -->
+                    <div class="bg-cream rounded-2xl p-6 border border-rose-light/70 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl">🎁</span>
+                                <span class="bg-rose text-white text-[11px] font-bold px-2.5 py-1 rounded-full">최대 2만원 혜택</span>
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-charcoal mb-3">후기 이벤트</h4>
+                            <ul class="space-y-2 text-sm text-charcoal/80">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>계약 후기 작성 시:</b> <b class="text-rose-dark">1만 원 즉시 할인</b></span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>본식 후기 작성 시:</b> <b class="text-rose-dark">1만 원 페이백</b></span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>참여 채널:</b> 블로그, 인스타그램, 웨딩 커뮤니티</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-beige text-xs text-rose-dark font-bold">
+                            ※ 계약 후기와 본식 후기 중복 참여 가능합니다.
+                        </div>
+                    </div>
+
+                    <!-- 2. 얼리버드 이벤트 -->
+                    <div class="bg-cream rounded-2xl p-6 border border-rose-light/70 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl">🎁</span>
+                                <span class="bg-champagne text-white text-[11px] font-bold px-2.5 py-1 rounded-full">빠른 예약 특전</span>
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-charcoal mb-3">얼리버드 이벤트</h4>
+                            <ul class="space-y-2 text-sm text-charcoal/80">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>문의일 기준 24시간 이내 계약 시</b><br><b class="text-rose-dark text-base">1만 원 즉시 할인</b></span>
+                                </li>
+                            </ul>
+                            <p class="text-xs text-charcoal/60 mt-3 leading-relaxed">
+                                인기 웨딩 시즌 및 골든타임(11시~14시)은 조기에 마감됩니다. 빠른 결정으로 일정 선점과 할인 혜택을 동시에 챙기세요!
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-beige text-xs text-charcoal/70 font-medium">
+                            ※ 타 이벤트와 100% 중복 적용 가능
+                        </div>
+                    </div>
+
+                    <!-- 3. 짝꿍 이벤트 -->
+                    <div class="bg-cream rounded-2xl p-6 border border-rose-light/70 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl">🎁</span>
+                                <span class="bg-charcoal text-white text-[11px] font-bold px-2.5 py-1 rounded-full">소개 횟수 무제한!</span>
+                            </div>
+                            <h4 class="font-display text-lg font-bold text-charcoal mb-3">짝꿍 이벤트</h4>
+                            <ul class="space-y-2.5 text-sm text-charcoal/80">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>소개하신 분:</b> <b class="text-rose-dark">1만 원 즉시 할인</b><br><span class="text-xs text-charcoal/60">— 소개 횟수 제한 없음 (무제한 할인!)</span></span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-rose font-bold">•</span>
+                                    <span><b>소개받으신 분:</b> <b class="text-rose-dark">1만 원 즉시 할인</b><br><span class="text-xs text-charcoal/60">— 1회 한정 적용</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-beige text-xs text-rose-dark font-bold">
+                            ※ 결혼 준비하는 지인·커뮤니티 짝꿍과 함께 할인받으세요!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 6: 실제 고객 후기 & 실시간 후기 작성 게시판 -->
+    <section id="reviews" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-blush px-3.5 py-1.5 rounded-full">REAL REVIEWS</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4">
+                        신랑·신부님과 혼주님이 극찬한<br>
+                        <span class="text-rose-dark">메리담 찐 이용 후기</span>
+                    </h2>
+                </div>
+                <button onclick="toggleReviewModal()" class="bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold px-6 py-3.5 rounded-full shadow-lg shadow-rose/25 transition-all hover:-translate-y-0.5 flex items-center gap-2 self-start md:self-auto whitespace-nowrap">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span>본식후기남기기</span>
+                </button>
+            </div>
+
+            <!-- 후기 작성 폼 (토글형) -->
+            <div id="review-form-box" class="hidden mb-10 bg-white p-6 sm:p-8 rounded-3xl border-2 border-rose shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-display text-lg font-bold text-charcoal">✍️ 메리담 이용 후기 남기기</h3>
+                    <button onclick="toggleReviewModal()" class="text-charcoal/50 hover:text-charcoal"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <form onsubmit="submitNewReview(event)" class="grid sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">성함 (예: 김*연 신부)</label>
+                        <input type="text" id="rev-name" required placeholder="홍*동 신부" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">예식 웨딩홀 & 이용 패키지</label>
+                        <input type="text" id="rev-hall" required placeholder="더채플앳청담 · 4인 2조" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">참여 채널 태그</label>
+                        <select id="rev-channel" class="w-full px-4 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                            <option value="본식후기 · 네이버 블로그">본식후기 · 네이버 블로그</option>
+                            <option value="본식후기 · 인스타그램">본식후기 · 인스타그램</option>
+                            <option value="계약후기 · 웨딩카페">계약후기 · 웨딩카페</option>
+                            <option value="혼주 직접 후기">혼주 직접 후기</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">생생한 후기 내용</label>
+                        <textarea id="rev-content" rows="3" required placeholder="메리담 축의대 서비스 이용 소감을 남겨주세요!" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose"></textarea>
+                    </div>
+                    <div class="sm:col-span-3 flex justify-end gap-2">
+                        <button type="button" onclick="toggleReviewModal()" class="px-5 py-2.5 rounded-xl bg-beige text-charcoal text-sm font-bold">취소</button>
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-rose-dark text-white text-sm font-bold shadow">후기 등록하기</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 후기 카드 리스트 -->
+            <div id="reviews-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 자바스크립트로 기본 후기 및 새 후기 렌더링 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 7: 자주 묻는 질문 (FAQ - 웨딩 축의대 필수 체크 요소) -->
+    <section class="py-16 bg-beige/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-white px-3.5 py-1.5 rounded-full">FAQ</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-charcoal mt-3">자주 묻는 질문</h2>
+            </div>
+
+            <div class="space-y-3">
+                <details class="group bg-white rounded-2xl border border-rose-light/60 p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-charcoal text-sm sm:text-base list-none">
+                        <span>Q. 정말 인원수 초과나 정산 방식에 따른 추가금이 전혀 없나요?</span>
+                        <i class="fa-solid fa-chevron-down text-rose transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-sm text-charcoal/70 mt-3 pt-3 border-t border-beige leading-relaxed">
+                        네, 메리담은 <b>100% 정찰제(2인 1조 30만원 / 4인 2조 55만원)</b>로 운영됩니다. 하객 인원이 예상보다 늘어나거나, 실시간 디지털 장부·라이브 스트리밍·원본 영상을 요청하셔도 별도의 추가 요금을 일절 요구하지 않습니다.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-2xl border border-rose-light/60 p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-charcoal text-sm sm:text-base list-none">
+                        <span>Q. 축의금 봉투는 개봉해서 금액을 확인하나요, 미개봉으로 전달하나요?</span>
+                        <i class="fa-solid fa-chevron-down text-rose transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-sm text-charcoal/70 mt-3 pt-3 border-t border-beige leading-relaxed">
+                        신랑·신부님과 혼주님이 원하시는 방식을 사전 미팅 때 선택하실 수 있습니다. <b>① 금액 확인 후 재밀봉(디지털 장부에 금액까지 실시간 기록)</b> 또는 <b>② 봉투 미개봉 즉시 밀봉(봉투 번호·성함·식권 수만 기록)</b> 중 선택 가능하며 두 방식 모두 카메라로 전 과정이 촬영됩니다.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-2xl border border-rose-light/60 p-5 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-charcoal text-sm sm:text-base list-none">
+                        <span>Q. 친척분들이 대행 업체인 걸 어색해하시지 않을까요?</span>
+                        <i class="fa-solid fa-chevron-down text-rose transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-sm text-charcoal/70 mt-3 pt-3 border-t border-beige leading-relaxed">
+                        메리담은 아르바이트생이 아닌 <b>대표부부</b>가 깔끔한 정장 차림과 정중한 화법으로 직접 응대하여, 하객분들은 신랑·신부님의 직장 동료나 믿음직한 가족으로 생각하십니다. 혼주님들께서도 실시간 모바일 장부를 보시고 가장 크게 만족하십니다.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 8: 실시간 할인 견적 계산기 & 상담 신청 -->
+    <section id="consult" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[36px] shadow-2xl border border-rose-light overflow-hidden grid lg:grid-cols-12">
+                
+                <!-- 좌측: 인터랙티브 실시간 견적 계산기 -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-[#F9ECEC] via-[#F6EFEA] to-[#EFE4DC] p-8 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-white text-rose-dark text-xs font-bold px-3 py-1 rounded-full shadow-sm">SMART CALCULATOR</span>
+                        <h3 class="font-display text-2xl font-bold text-charcoal mt-3">내 예상 혜택가 계산기</h3>
+                        <p class="text-xs text-charcoal/70 mt-1">원하시는 패키지와 참여하실 이벤트를 체크해보세요.</p>
+
+                        <!-- 패키지 선택 -->
+                        <div class="mt-6 space-y-2.5">
+                            <label class="text-xs font-bold text-charcoal">1. 패키지 선택</label>
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <button type="button" onclick="setCalcBase(300000, '2인 1조 (한측)')" id="calc-pkg-30" class="p-3.5 rounded-2xl border-2 border-rose bg-white text-left transition-all">
+                                    <span class="text-xs font-bold text-charcoal block">2인 1조 (한측)</span>
+                                    <span class="font-display text-lg font-bold text-rose-dark">300,000원</span>
+                                </button>
+                                <button type="button" onclick="setCalcBase(550000, '4인 2조 (양측)')" id="calc-pkg-55" class="p-3.5 rounded-2xl border border-rose-light bg-white/60 text-left transition-all">
+                                    <span class="text-xs font-bold text-charcoal block">4인 2조 (양측)</span>
+                                    <span class="font-display text-lg font-bold text-charcoal">550,000원</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 할인 옵션 체크 (얼리버드 / 계약후기 / 짝꿍 코드 3가지) -->
+                        <div class="mt-6 space-y-2.5">
+                            <label class="text-xs font-bold text-charcoal">2. 중복 할인 이벤트 적용 (체크)</label>
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-rose-light/80 cursor-pointer text-xs hover:border-rose transition-all">
+                                <span class="flex items-center gap-2.5 font-bold text-charcoal">
+                                    <input type="checkbox" checked onchange="updateCalculator()" id="chk-early" class="accent-rose-dark w-4 h-4">
+                                    🎁 얼리버드 24시간 내 계약
+                                </span>
+                                <b class="text-rose-dark">-10,000원</b>
+                            </label>
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-rose-light/80 cursor-pointer text-xs hover:border-rose transition-all">
+                                <span class="flex items-center gap-2.5 font-bold text-charcoal">
+                                    <input type="checkbox" checked onchange="updateCalculator()" id="chk-contract-rev" class="accent-rose-dark w-4 h-4">
+                                    🎁 계약후기 작성
+                                </span>
+                                <b class="text-rose-dark">-10,000원</b>
+                            </label>
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-white/95 border border-rose-light/80 cursor-pointer text-xs hover:border-rose transition-all">
+                                <span class="flex items-center gap-2.5 font-bold text-charcoal">
+                                    <input type="checkbox" checked onchange="updateCalculator()" id="chk-partner-code" class="accent-rose-dark w-4 h-4">
+                                    🎁 짝꿍 코드 할인
+                                </span>
+                                <b class="text-rose-dark">-10,000원</b>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 계산 결과 박스 -->
+                    <div class="mt-8 bg-charcoal text-white p-5 rounded-2xl">
+                        <div class="flex justify-between text-xs text-white/80 mb-1">
+                            <span>총 즉시 할인 혜택</span>
+                            <span id="calc-discount-total" class="text-rose-light font-bold">-30,000원</span>
+                        </div>
+                        <div class="flex justify-between items-baseline pt-2 border-t border-white/15">
+                            <span class="text-sm font-bold">최종 체감 혜택가</span>
+                            <span id="calc-final-price" class="font-display text-3xl font-bold text-[#F4D5D6]">270,000원</span>
+                        </div>
+                        <p class="text-[11px] text-white/70 mt-1.5">* 본식 후기 작성 시 1만원 추가 페이백 & 소개 시 무제한 추가 할인!</p>
+                    </div>
+                </div>
+
+                <!-- 우측: 상담 신청 폼 -->
+                <div class="lg:col-span-7 p-8 sm:p-12">
+                    <span class="text-xs font-bold tracking-widest uppercase text-rose-dark">RESERVATION & CONSULT</span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-charcoal mt-1 mb-2">빠른 일정 조회 및 상담 신청</h3>
+                    <p class="text-xs sm:text-sm text-charcoal/60 mb-6">
+                        예식 정보를 남겨주시면 <b>대표부부</b>가 직접 가능 여부와 전자계약 안내를 도와드리며, 하단 문의게시판에도 비밀글로 동시 등록됩니다.
+                    </p>
+
+                    <form id="consult-form" onsubmit="handleConsultSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">신랑 또는 신부님 성함 *</label>
+                                <input type="text" id="form-name" required placeholder="성함을 입력해주세요" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">연락처 *</label>
+                                <input type="tel" id="form-phone" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">예식 일자 및 시간 *</label>
+                                <input type="text" id="form-date" required placeholder="예: 2027-05-15 오후 1시" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">웨딩홀명 (지역) *</label>
+                                <input type="text" id="form-hall" required placeholder="예: 서울 더채플앳청담" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">희망 패키지 *</label>
+                                <select id="form-package" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose font-medium">
+                                    <option value="4인 2조 (55만원)">[BEST] 4인 2조 양측 (55만원)</option>
+                                    <option value="2인 1조 (30만원)">2인 1조 한측 (30만원)</option>
+                                    <option value="상담 후 결정">상담 후 결정</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal mb-1.5">짝꿍 코드 / 희망 이벤트</label>
+                                <input type="text" id="form-promo" placeholder="얼리버드 / 후기 / 짝꿍" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-rose-dark mb-1.5"><i class="fa-solid fa-lock"></i> 비밀글 비밀번호 *</label>
+                                <input type="password" id="form-password" required placeholder="본인 확인용 4자리" class="w-full px-4 py-3 rounded-xl bg-blush/40 border border-rose text-sm focus:outline-none focus:border-rose-dark">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-1.5">추가 문의사항 (선택)</label>
+                            <textarea id="form-memo" rows="2" placeholder="실시간 스트리밍 여부, 예상 하객 수 등 궁금하신 점을 자유롭게 적어주세요." class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light/80 text-sm focus:outline-none focus:border-rose"></textarea>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <button type="submit" class="flex-1 bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-rose/25 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>상담 신청 등록하기</span>
+                            </button>
+                            <a href="https://pf.kakao.com/_FKvFX" target="_blank" rel="noopener noreferrer" class="sm:w-56 bg-[#FEE500] hover:bg-[#F5DC00] text-[#3C1E1E] font-bold py-4 px-6 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                                <i class="fa-solid fa-comment"></i>
+                                <span>카카오톡 실시간 상담</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 9: 상담문의 게시판 (비밀번호 설정 · 본인만 열람 · 74개 답변완료 리스트) -->
+    <section id="qna-board" class="py-20 bg-beige/60 border-t border-rose-light/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-rose-dark bg-white px-3.5 py-1.5 rounded-full shadow-sm">Q&A CONSULTATION BOARD</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal mt-4">
+                        실시간 상담 · <span class="text-rose-dark">문의게시판</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-charcoal/90 font-medium mt-2">
+                        고객님의 소중한 개인정보 보호를 위해 모든 게시글은 <b>설정한 비밀번호</b>를 입력해야 열람 가능한 비밀글로 운영됩니다.
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3 self-start md:self-auto">
+                    <div class="bg-white px-4 py-2.5 rounded-2xl border border-rose-light text-xs font-bold text-charcoal shadow-sm">
+                        누적 문의 <span id="board-total-count" class="text-rose-dark text-sm ml-1">74</span>건
+                    </div>
+                    <button onclick="toggleBoardWriteBox()" class="bg-charcoal hover:bg-rose-dark text-white font-bold px-5 py-3 rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>문의글 직접 남기기</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 게시판 전용 글쓰기 폼 (토글형) -->
+            <div id="board-write-box" class="hidden mb-8 bg-white p-6 sm:p-8 rounded-3xl border-2 border-rose shadow-xl">
+                <div class="flex justify-between items-center mb-4 pb-3 border-b border-beige">
+                    <h3 class="font-display text-lg font-bold text-charcoal">🔒 비밀 문의글 작성하기</h3>
+                    <button onclick="toggleBoardWriteBox()" class="text-charcoal/50 hover:text-charcoal"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <form onsubmit="submitBoardPost(event)" class="grid sm:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">작성자 성함 *</label>
+                        <input type="text" id="brd-name" required placeholder="예: 김민지" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">웨딩홀 및 지역 *</label>
+                        <input type="text" id="brd-hall" required placeholder="예: 서울 더채플앳청담" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">희망 패키지 *</label>
+                        <select id="brd-pkg" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                            <option value="4인 2조 (55만원)">4인 2조 (55만원)</option>
+                            <option value="2인 1조 (30만원)">2인 1조 (30만원)</option>
+                            <option value="일정 및 견적문의">일정 및 견적문의</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-rose-dark mb-1">비밀번호 (본인 열람용) *</label>
+                        <input type="password" id="brd-pw" required placeholder="비밀번호 입력" class="w-full px-3.5 py-2.5 rounded-xl bg-blush/50 border border-rose text-sm focus:outline-none focus:border-rose-dark">
+                    </div>
+                    <div class="sm:col-span-4">
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">문의 제목 *</label>
+                        <input type="text" id="brd-title" required placeholder="예: 2027년 5월 예식 4인 2조 잔여 일정 및 얼리버드 문의드립니다." class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                    </div>
+                    <div class="sm:col-span-4">
+                        <label class="block text-xs font-bold text-charcoal/70 mb-1">문의 내용 (연락처, 예식일시 등) *</label>
+                        <textarea id="brd-content" rows="3" required placeholder="예식 일자, 시간, 연락처와 궁금하신 사항을 남겨주시면 대표부부가 빠르고 친절하게 답변을 남겨드립니다." class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose"></textarea>
+                    </div>
+                    <div class="sm:col-span-4 flex justify-end gap-2">
+                        <button type="button" onclick="toggleBoardWriteBox()" class="px-5 py-2.5 rounded-xl bg-beige text-charcoal text-xs font-bold">취소</button>
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-rose-dark text-white text-xs font-bold shadow">비밀글 등록하기</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 문의게시판 테이블 -->
+            <div class="bg-white rounded-3xl border border-rose-light shadow-lg overflow-hidden">
+                <!-- 테이블 헤더 -->
+                <div class="hidden md:grid md:grid-cols-12 bg-cream border-b border-rose-light/80 px-6 py-4 text-xs font-extrabold text-charcoal text-center">
+                    <div class="col-span-1">번호</div>
+                    <div class="col-span-2">예식홀/패키지</div>
+                    <div class="col-span-5 text-left pl-4">제목 (클릭 시 비밀번호 확인 후 열람)</div>
+                    <div class="col-span-1">작성자</div>
+                    <div class="col-span-2">작성일</div>
+                    <div class="col-span-1">답변상태</div>
+                </div>
+
+                <!-- 게시글 리스트 컨테이너 -->
+                <div id="qna-board-list" class="divide-y divide-beige">
+                    <!-- JavaScript로 74개 리스트 및 페이지네이션 렌더링 -->
+                </div>
+
+                <!-- 페이지네이션 -->
+                <div id="qna-pagination" class="bg-cream/60 px-6 py-4 border-t border-beige flex items-center justify-center gap-1.5 flex-wrap">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단 SNS(블로그 & 인스타그램 & 카카오채널) 배너 및 푸터 -->
+    <footer class="bg-[#2C2523] text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- 블로그 & 인스타그램 & 카카오채널 공식 바로가기 카드 -->
+            <div class="grid md:grid-cols-3 gap-5 pb-14 border-b border-white/20">
+                <a href="https://blog.naver.com/merrydam2026" target="_blank" rel="noopener noreferrer" class="group bg-white/10 hover:bg-[#03C75A]/20 border border-white/20 hover:border-[#03C75A] p-6 rounded-3xl flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-[#03C75A] text-white flex items-center justify-center text-2xl font-black shadow-lg shrink-0">
+                            N
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#03C75A] uppercase tracking-wider">NAVER OFFICIAL BLOG</span>
+                            <h4 class="font-display text-lg font-bold text-white mt-0.5">메리담 공식 블로그</h4>
+                            <p class="text-xs text-white/90 mt-0.5">blog.naver.com/merrydam2026</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-white/70 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <a href="https://www.instagram.com/merrydam2026/" target="_blank" rel="noopener noreferrer" class="group bg-white/10 hover:bg-rose/20 border border-white/20 hover:border-rose p-6 rounded-3xl flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center text-2xl shadow-lg shrink-0">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-rose-light uppercase tracking-wider">OFFICIAL INSTAGRAM</span>
+                            <h4 class="font-display text-lg font-bold text-white mt-0.5">@merrydam2026</h4>
+                            <p class="text-xs text-white/90 mt-0.5">실시간 디지털 장부 & 본식 후기</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-white/70 group-hover:text-white transition-colors"></i>
+                </a>
+
+                <a href="https://pf.kakao.com/_FKvFX" target="_blank" rel="noopener noreferrer" class="group bg-white/10 hover:bg-[#FEE500]/20 border border-white/20 hover:border-[#FEE500] p-6 rounded-3xl flex items-center justify-between transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-[#FEE500] text-[#3C1E1E] flex items-center justify-center text-2xl shadow-lg shrink-0">
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#FEE500] uppercase tracking-wider">KAKAOTALK CHANNEL</span>
+                            <h4 class="font-display text-lg font-bold text-white mt-0.5">메리담 카카오톡 채널</h4>
+                            <p class="text-xs text-white/90 mt-0.5">대표부부 1:1 빠른 실시간 상담</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-white/70 group-hover:text-white transition-colors"></i>
+                </a>
+            </div>
+
+            <!-- 하단 사업자 정보 (선명도 대폭 강화) -->
+            <div class="pt-10 flex flex-col md:flex-row justify-between gap-8 text-xs sm:text-sm text-white/95 font-medium">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3 text-white font-display text-xl font-bold mb-3">
+                        <img src="https://i.postimg.cc/2SgJGswF/melidam-weding-logo-dijain.png" alt="메리담 로고" class="h-9 w-auto rounded-lg bg-white p-0.5">
+                        <span>메리담 MARRYDAM</span>
+                    </div>
+                    <p class="text-white">상호명: <b>메리담(MARRYDAM) 프리미엄 웨딩 축의대</b> | 운영: <b>메리담 대표부부 직접 운영</b> | 사업자등록번호: <b>764-29-02122</b></p>
+                    <p class="text-white/95">사업장주소: <b>인천시 미추홀구 수봉로 48, 1</b> | 고객센터 번호: <a href="tel:010-9300-5770" class="font-bold text-rose-light hover:underline">010-9300-5770</a> (09:00 ~ 22:00 연중무휴)</p>
+                    <p class="text-white/90">서비스 항목: 실시간 디지털 장부 · 전자계약 · 실시간 스트리밍 · 영상제공 · 정찰제 웨딩 축의대 대행</p>
+                    <!-- 숨겨진 관리자 진입 트리거: 저작권 문구 클릭 시 비밀번호 모달 호출 -->
+                    <p class="text-white/75 pt-2">
+                        <span onclick="openAdminLoginModal()" class="cursor-pointer select-none hover:text-rose-light transition-colors font-semibold" title="클릭 시 관리자 인증창 열기">© 2026 MARRYDAM WEDDING.</span> All rights reserved.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-6 md:self-end font-bold text-white/90">
+                    <a href="#about" class="hover:text-rose-light transition-colors">메리담소개</a>
+                    <a href="#digital-ledger" class="hover:text-rose-light transition-colors">실시간디지털장부</a>
+                    <a href="#process" class="hover:text-rose-light transition-colors">서비스절차</a>
+                    <a href="#pricing" class="hover:text-rose-light transition-colors">요금및이벤트</a>
+                    <a href="#reviews" class="hover:text-rose-light transition-colors">고객후기</a>
+                    <a href="#qna-board" class="hover:text-rose-light transition-colors">문의게시판</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 우측 하단 플로팅 빠른 메뉴 (블로그 / 인스타 / 카톡채널) -->
+    <div class="fixed bottom-6 right-5 z-40 flex flex-col gap-2.5">
+        <a href="https://blog.naver.com/merrydam2026" target="_blank" rel="noopener noreferrer" title="메리담 네이버 블로그" class="w-12 h-12 rounded-full bg-[#03C75A] text-white shadow-lg flex items-center justify-center font-black text-base hover:scale-110 transition-transform">
+            N
+        </a>
+        <a href="https://www.instagram.com/merrydam2026/" target="_blank" rel="noopener noreferrer" title="메리담 인스타그램" class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white shadow-lg flex items-center justify-center text-xl hover:scale-110 transition-transform">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://pf.kakao.com/_FKvFX" target="_blank" rel="noopener noreferrer" title="메리담 카카오톡 채널 상담" class="w-14 h-14 rounded-full bg-[#FEE500] text-[#3C1E1E] shadow-xl flex flex-col items-center justify-center hover:scale-110 transition-transform border-2 border-white">
+            <i class="fa-solid fa-comment text-lg"></i>
+            <span class="text-[9px] font-extrabold leading-none mt-0.5">카톡상담</span>
+        </a>
+    </div>
+
+    <!-- 모달 1: 비밀글 열람 비밀번호 확인 모달 -->
+    <div id="pw-check-modal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 sm:p-8 shadow-2xl border border-rose-light">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold text-rose-dark bg-blush px-3 py-1 rounded-full"><i class="fa-solid fa-lock mr-1"></i>비밀글 보호</span>
+                <button onclick="closePwModal()" class="text-charcoal/40 hover:text-charcoal"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <h4 class="font-display text-lg font-bold text-charcoal mb-1">비밀번호를 입력해주세요</h4>
+            <p class="text-xs text-charcoal/60 mb-4">작성자 본인만 열람할 수 있는 게시글입니다.</p>
+            <form onsubmit="verifyPostPassword(event)" class="space-y-3">
+                <input type="password" id="modal-pw-input" required placeholder="비밀번호 입력" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                <div class="flex gap-2">
+                    <button type="button" onclick="closePwModal()" class="flex-1 py-3 rounded-xl bg-beige text-charcoal text-xs font-bold">취소</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-rose-dark text-white text-xs font-bold shadow">확인</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 모달 2: 숨겨진 관리자 로그인 모달 -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 sm:p-8 shadow-2xl border border-rose">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold text-white bg-charcoal px-3 py-1 rounded-full"><i class="fa-solid fa-key mr-1"></i>ADMIN ACCESS</span>
+                <button onclick="closeAdminLoginModal()" class="text-charcoal/40 hover:text-charcoal"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <h4 class="font-display text-lg font-bold text-charcoal mb-1">메리담 관리자 인증</h4>
+            <p class="text-xs text-charcoal/60 mb-4">관리자 전용 암호를 입력하시면 후기 및 게시판 관리 모드가 활성화됩니다.</p>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-3">
+                <input type="password" id="admin-code-input" required placeholder="관리자 암호 입력" class="w-full px-4 py-3 rounded-xl bg-cream border border-rose-light text-sm focus:outline-none focus:border-rose">
+                <div class="flex gap-2">
+                    <button type="button" onclick="closeAdminLoginModal()" class="flex-1 py-3 rounded-xl bg-beige text-charcoal text-xs font-bold">닫기</button>
+                    <button type="submit" class="flex-1 py-3 rounded-xl bg-charcoal text-white text-xs font-bold shadow">인증하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 커스텀 토스트 알림 모달 (alert 대체용) -->
+    <div id="toast-modal" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden bg-charcoal text-white px-6 py-4 rounded-2xl shadow-2xl border border-rose/40 flex items-center gap-3 max-w-md w-[90%]">
+        <i class="fa-solid fa-circle-check text-rose text-xl shrink-0"></i>
+        <div class="text-xs sm:text-sm font-medium" id="toast-message">처리되었습니다.</div>
+    </div>
+
+    <!-- JavaScript 로직 -->
+    <script>
+        /* ==========================================
+           0-1. 보안 가드: F12, 개발자 도구 단축키, 소스보기, 우클릭 차단
+        ========================================== */
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // F12 차단
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                e.stopPropagation();
+                showToast("🔒 보안 정책에 의해 개발자 도구 및 소스보기가 제한되어 있습니다.");
+                return false;
+            }
+            // Ctrl+Shift+I / J / C (개발자도구) 및 Ctrl+U / Ctrl+S (소스보기/저장) 차단
+            if (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) {
+                e.preventDefault();
+                e.stopPropagation();
+                showToast("🔒 보안 정책에 의해 개발자 도구가 제한되어 있습니다.");
+                return false;
+            }
+            if (e.ctrlKey && ['U', 'u', 'S', 's'].includes(e.key)) {
+                e.preventDefault();
+                e.stopPropagation();
+                showToast("🔒 보안 정책에 의해 페이지 소스보기가 제한되어 있습니다.");
+                return false;
+            }
+            // Mac Cmd+Option+I / J / C / U 차단
+            if (e.metaKey && e.altKey && ['I', 'i', 'J', 'j', 'C', 'c', 'U', 'u'].includes(e.key)) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        /* ==========================================
+           0-2. 숨겨진 관리자 모드 (코드 내 평문 노출 방지 난독화 적용)
+           - 키보드에서 암호 입력 시 또는 하단 푸터 '© 2026 MARRYDAM WEDDING.' 클릭 시 진입
+        ========================================== */
+        let isAdmin = false;
+        let keyBuffer = "";
+        // 코드에 숫자가 그대로 노출되지 않도록 캐릭터 코드 연산으로 검증
+        const _vK = [55, 55, 57, 56, 53, 53, 57, 48];
+        function checkSecretMatch(str) {
+            if (!str || str.length !== _vK.length) return false;
+            for (let i = 0; i < _vK.length; i++) {
+                if (str.charCodeAt(i) !== _vK[i]) return false;
+            }
+            return true;
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+            if (!/^[0-9]$/.test(e.key)) return;
+            keyBuffer += e.key;
+            if (keyBuffer.length > 8) keyBuffer = keyBuffer.slice(-8);
+            if (checkSecretMatch(keyBuffer)) {
+                keyBuffer = "";
+                activateAdminMode();
+            }
+        });
+
+        function openAdminLoginModal() {
+            document.getElementById('admin-login-modal').classList.remove('hidden');
+            document.getElementById('admin-code-input').focus();
+        }
+
+        function closeAdminLoginModal() {
+            document.getElementById('admin-login-modal').classList.add('hidden');
+            document.getElementById('admin-code-input').value = '';
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const val = document.getElementById('admin-code-input').value.trim();
+            if (checkSecretMatch(val)) {
+                closeAdminLoginModal();
+                activateAdminMode();
+            } else {
+                showToast("❌ 관리자 암호가 일치하지 않습니다.");
+            }
+        }
+
+        function activateAdminMode() {
+            isAdmin = true;
+            document.getElementById('admin-control-bar').classList.remove('hidden');
+            renderReviews();
+            renderQnaBoard();
+            showToast("👑 관리자 모드가 활성화되었습니다! (후기 수정/삭제, 전 게시글 열람 및 답글 관리 가능)");
+        }
+
+        function exitAdminMode() {
+            isAdmin = false;
+            isCustomMode = false;
+            document.getElementById('admin-control-bar').classList.add('hidden');
+            document.getElementById('custom-mode-banner').classList.add('hidden');
+            renderServiceCards();
+            renderReviews();
+            renderQnaBoard();
+            showToast("관리자 모드가 종료되었습니다.");
+        }
+
+        /* ==========================================
+           0-3. 실시간 예약현황 4일 주기 자동 변경 시스템
+        ========================================== */
+        function renderDynamicLiveTicker() {
+            const tickerEl = document.getElementById('live-status-marquee');
+            if (!tickerEl) return;
+
+            const fourDayCycle = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 4));
+            const tickerPool = [
+                [
+                    { name: "김*연 신부님", hall: "서울 더채플앳청담", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
+                    { name: "박*준 신랑님", hall: "송파 루이비스컨벤션", pkg: "2인 1조", status: "[전자계약 완료]", color: "text-emerald-600" },
+                    { name: "이*서 신부님", hall: "강남 아펠가모", pkg: "4인 2조", status: "[얼리버드 할인적용]", color: "text-rose-dark" },
+                    { name: "최*우 신랑님", hall: "수원 메리빌리아", pkg: "4인 2조", status: "[상담진행중]", color: "text-amber-600" },
+                    { name: "정*아 신부님", hall: "여의도 더파티움", pkg: "2인 1조", status: "[예약확정]", color: "text-rose-dark" }
+                ],
+                [
+                    { name: "한*민 신부님", hall: "잠실 롯데호텔월드", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" },
+                    { name: "조*현 신랑님", hall: "인천 아시아드웨딩컨벤션", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
+                    { name: "윤*지 신부님", hall: "마포 아만티호텔", pkg: "2인 1조", status: "[짝꿍할인 적용]", color: "text-rose-dark" },
+                    { name: "강*혁 신랑님", hall: "서초 더화이트베일", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
+                    { name: "송*은 신부님", hall: "강서 보타닉파크웨딩", pkg: "2인 1조", status: "[상담진행중]", color: "text-amber-600" }
+                ],
+                [
+                    { name: "임*빈 신부님", hall: "강남 더라움", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
+                    { name: "오*원 신랑님", hall: "분당 가천컨벤션센터", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" },
+                    { name: "신*하 신부님", hall: "종로 HW컨벤션센터", pkg: "2인 1조", status: "[얼리버드 할인적용]", color: "text-rose-dark" },
+                    { name: "권*솔 신랑님", hall: "부천 MJ컨벤션", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
+                    { name: "황*수 신부님", hall: "성동 보테가마지오", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" }
+                ]
+            ];
+
+            const activeSet = tickerPool[fourDayCycle % tickerPool.length];
+            const itemsHtml = activeSet.map(item => `
+                <span class="flex items-center gap-2"><b class="text-charcoal">${item.name}</b> (${item.hall}) ${item.pkg} <span class="${item.color} font-bold">${item.status}</span></span>
+                <span class="text-rose-light">|</span>
+            `).join('');
+
+            tickerEl.innerHTML = itemsHtml + itemsHtml;
+        }
+
+        /* ==========================================
+           1. 메인 웨딩홀 히어로 슬라이더
+        ========================================== */
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.getElementById('hero-dots').children;
+        const heroCaptions = [
+            "✨ 호텔 및 프리미엄 웨딩홀 현장 세팅",
+            "🌸 밝고 화사한 로비 하객 맞이 & 접수대",
+            "💎 대표부부가 직접 케어하는 2인 1조 / 4인 2조 크로스 체크",
+            "🤍 양가 부모님과 신랑·신부님이 가장 신뢰하는 메리담"
+        ];
+
+        function setHeroSlide(index) {
+            heroSlides[currentHeroSlide].classList.remove('active');
+            heroSlides[currentHeroSlide].classList.add('inactive');
+            heroDots[currentHeroSlide].className = "w-2 h-2 rounded-full bg-rose-light transition-all";
+
+            currentHeroSlide = index;
+
+            heroSlides[currentHeroSlide].classList.remove('inactive');
+            heroSlides[currentHeroSlide].classList.add('active');
+            heroDots[currentHeroSlide].className = "w-6 h-2 rounded-full bg-rose transition-all";
+            document.getElementById('hero-slide-caption').textContent = heroCaptions[currentHeroSlide];
+        }
+
+        setInterval(() => {
+            let next = (currentHeroSlide + 1) % heroSlides.length;
+            setHeroSlide(next);
+        }, 4500);
+
+        /* ==========================================
+           2. 5대 핵심 서비스 카드 렌더링 & 관리자 커스텀 모드
+        ========================================== */
+        const defaultServices = [
+            {
+                badge: "CORE 01 · 실시간 확인",
+                title: "실시간 디지털 장부",
+                desc: "방문 하객 성함, 봉투 번호, 금액, 식권 수량을 실시간 전산에 입력하여 신랑·신부님과 혼주님 스마트폰으로 즉시 공유합니다.",
+                img: "https://i.postimg.cc/cLPjhpmz/silsiganjangbu.png"
+            },
+            {
+                badge: "CORE 02 · 법적 보호",
+                title: "안심 모바일 전자계약",
+                desc: "구두 계약이 아닌 투명한 약관과 정찰제 보증이 명시된 전자계약서를 발행하여 예식 당일까지 완벽한 신뢰를 보장합니다.",
+                img: "https://i.postimg.cc/dVgX6bBS/jeonjagyeyagseo.png"
+            },
+            {
+                badge: "CORE 03 · LIVE 중계",
+                title: "축의대 실시간 스트리밍",
+                desc: "신부대기실이나 본식 홀 안에서도 접수대 현장을 스마트폰 라이브 영상으로 언제든 실시간 확인하실 수 있습니다.",
+                img: "https://i.postimg.cc/Zqw13wR7/Kakao-Talk-20261116-153055669.png"
+            },
+            {
+                badge: "CORE 04 · 100% 투명성",
+                title: "전 과정 촬영 영상 제공",
+                desc: "접수 시작부터 마지막 봉투 정산 및 인수인계 순간까지 FHD 고화질로 녹화하여 예식 종료 후 원본 영상을 무료로 제공합니다.",
+                img: "https://i.postimg.cc/Zqw13wR7/Kakao-Talk-20261116-153055669.png"
+            },
+            {
+                badge: "CORE 05 · 정찰제 약속",
+                title: "추가금 없음 (보증인원 무관)",
+                desc: "하객 인원 초과 비용, 엑셀 파일 비용, 영상 촬영 비용 등 타 업체의 복잡한 옵션 추가금 없이 처음 약정한 정찰제 그대로 진행합니다.",
+                img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                badge: "BONUS · 대표부부 케어",
+                title: "화환 촬영 & 맞춤 안내문 제작",
+                desc: "예식 90분 전 도착해 축하 화환들을 빠짐없이 사진으로 남겨드리며, 주차·연회장 안내가 담긴 고급 안내문을 무료로 세팅합니다.",
+                img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        let serviceData = JSON.parse(JSON.stringify(defaultServices));
+        let isCustomMode = false;
+
+        function renderServiceCards() {
+            const container = document.getElementById('service-cards-container');
+            container.innerHTML = serviceData.map((item, idx) => `
+                <div class="bg-white rounded-3xl overflow-hidden border ${isCustomMode ? 'border-2 border-dashed border-rose shadow-xl' : 'border-rose-light/60 shadow-sm hover:shadow-xl'} transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-56 sm:h-52 overflow-hidden bg-cream flex items-center justify-center">
+                            <img id="srv-img-${idx}" src="${item.img}" alt="${item.title}" class="w-full h-full ${idx < 2 ? 'object-contain p-2' : 'object-cover'} group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/F6EFEA/B86B6D?text=MARRYDAM'">
+                            <span class="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur text-rose-dark text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
+                                ${item.badge}
+                            </span>
+                            ${isCustomMode ? `
+                                <label class="absolute inset-0 bg-charcoal/60 text-white flex flex-col items-center justify-center cursor-pointer hover:bg-charcoal/75 transition-colors">
+                                    <i class="fa-solid fa-camera text-2xl mb-1.5 text-rose-light"></i>
+                                    <span class="text-xs font-bold bg-rose px-3 py-1 rounded-full">클릭하여 내 사진 업로드</span>
+                                    <input type="file" accept="image/*" class="hidden" onchange="handleServiceImageUpload(event, ${idx})">
+                                </label>
+                            ` : ''}
+                        </div>
+                        <div class="p-6">
+                            <h3 contenteditable="${isCustomMode}" onblur="updateServiceText(${idx}, 'title', this.innerText)" class="font-display text-xl font-bold text-charcoal mb-2 ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${item.title}</h3>
+                            <p contenteditable="${isCustomMode}" onblur="updateServiceText(${idx}, 'desc', this.innerText)" class="text-sm text-charcoal/80 leading-relaxed ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${item.desc}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCustomMode() {
+            if (!isAdmin) return;
+            isCustomMode = !isCustomMode;
+            const banner = document.getElementById('custom-mode-banner');
+            const btnText = document.getElementById('custom-btn-text');
+
+            if (isCustomMode) {
+                banner.classList.remove('hidden');
+                btnText.textContent = "서비스 카드 편집 완료";
+                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                banner.classList.add('hidden');
+                btnText.textContent = "서비스 카드 편집 켜기";
+            }
+            renderServiceCards();
+        }
+
+        function handleServiceImageUpload(event, idx) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                serviceData[idx].img = e.target.result;
+                renderServiceCards();
+                showToast("📸 새로운 이미지가 서비스 카드에 적용되었습니다!");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateServiceText(idx, field, value) {
+            serviceData[idx][field] = value.trim();
+        }
+
+        function resetCustomCards() {
+            serviceData = JSON.parse(JSON.stringify(defaultServices));
+            renderServiceCards();
+            showToast("✨ 서비스 카드가 초기 상태로 복구되었습니다.");
+        }
+
+        /* ==========================================
+           3. 스마트폰 실시간 디지털 장부 슬라이더
+        ========================================== */
+        let currentPhoneSlide = 0;
+        const phoneScreens = document.querySelectorAll('.phone-screen');
+        const phoneTabBtns = document.querySelectorAll('.phone-tab-btn');
+        const phoneDots = document.getElementById('phone-dots').children;
+
+        function setPhoneSlide(index) {
+            currentPhoneSlide = index;
+            phoneScreens.forEach((screen, i) => {
+                if (i === index) {
+                    screen.classList.remove('opacity-0', 'translate-x-full', '-translate-x-full');
+                    screen.classList.add('opacity-100', 'translate-x-0');
+                } else if (i < index) {
+                    screen.classList.remove('opacity-100', 'translate-x-0', 'translate-x-full');
+                    screen.classList.add('opacity-0', '-translate-x-full');
+                } else {
+                    screen.classList.remove('opacity-100', 'translate-x-0', '-translate-x-full');
+                    screen.classList.add('opacity-0', 'translate-x-full');
+                }
+            });
+
+            phoneTabBtns.forEach((btn, i) => {
+                const badge = btn.querySelector('span');
+                const arrow = btn.querySelector('i');
+                if (i === index) {
+                    btn.className = "phone-tab-btn w-full text-left p-4 rounded-2xl border-2 border-rose bg-white shadow-md transition-all flex items-center justify-between";
+                    badge.className = "w-9 h-9 rounded-xl bg-rose text-white font-bold flex items-center justify-center text-sm shrink-0";
+                    arrow.className = "fa-solid fa-chevron-right text-rose";
+                } else {
+                    btn.className = "phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between";
+                    badge.className = "w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm shrink-0";
+                    arrow.className = "fa-solid fa-chevron-right text-charcoal/30";
+                }
+            });
+
+            Array.from(phoneDots).forEach((dot, i) => {
+                dot.className = i === index
+                    ? "w-5 h-1.5 rounded-full bg-rose transition-all"
+                    : "w-1.5 h-1.5 rounded-full bg-rose-light transition-all";
+            });
+        }
+
+        function nextPhoneSlide() {
+            setPhoneSlide((currentPhoneSlide + 1) % phoneScreens.length);
+        }
+
+        function prevPhoneSlide() {
+            setPhoneSlide((currentPhoneSlide - 1 + phoneScreens.length) % phoneScreens.length);
+        }
+
+        setInterval(() => {
+            nextPhoneSlide();
+        }, 5000);
+
+        /* ==========================================
+           4. 실제 고객 후기 데이터 & 관리자 수정/삭제 기능
+        ========================================== */
+        const reviewsList = [
+            {
+                id: 1,
+                name: "김*연 신부님",
+                hall: "서울 더채플앳청담 · 4인 2조",
+                channel: "본식후기 · 네이버 블로그",
+                content: "양가 친척분들께 축의대 부탁드리기 정말 죄송했는데 메리담 덕분에 사촌들도 전부 예식장에서 박수쳐주고 사진 찍을 수 있었어요! 특히 대표부부님이 직접 오셔서 신부대기실에서 스마트폰으로 실시간 축의금 들어오는 거 보니까 어머님이 너무 신기해하시고 든든해하셨습니다."
+            },
+            {
+                id: 2,
+                name: "박*훈 혼주님 (신랑 아버님)",
+                hall: "잠실 롯데호텔월드 · 4인 2조",
+                channel: "혼주 직접 후기",
+                content: "처음엔 가족이 해야지 왜 업체를 쓰냐고 아이들에게 말했었는데, 당일 대표부부 두 분과 팀원분들이 예식 90분 전부터 오셔서 화환 사진까지 찍어주시고 깍듯하게 인사하시는 모습에 감동했습니다. 실시간 스트리밍과 오차 없는 엑셀 정리본까지, 주변 혼주 친구들에게 무조건 추천하고 있습니다."
+            },
+            {
+                id: 3,
+                name: "이*서 신부님",
+                hall: "여의도 더파티움 · 2인 1조",
+                channel: "본식후기 · 인스타그램",
+                content: "하객이 예상보다 80명이나 더 와서 로비가 엄청 붐볐는데, 추가금 요구 일절 없이 끝까지 웃으시면서 식권이랑 봉투 번호 완벽하게 맞춰주셨어요. 예식 끝나자마자 받은 촬영 원본 영상이랑 엑셀 장부 덕분에 답례 연락도 하루 만에 끝냈습니다!"
+            },
+            {
+                id: 4,
+                name: "최*영 신랑님",
+                hall: "강남 아펠가모 · 4인 2조",
+                channel: "계약후기 · 웨딩카페",
+                content: "여러 업체 비교해봤는데 인원수 할증이나 영상 추가금 없는 정찰제는 메리담이 가장 깔끔했습니다. 문의하자마자 전자계약서 보내주시고, 얼리버드 1만원에 짝꿍 할인, 후기 할인까지 챙겨주셔서 가성비와 프리미엄 둘 다 잡았어요!"
+            },
+            {
+                id: 5,
+                name: "정*아 신부님",
+                hall: "수원 메리빌리아 · 4인 2조",
+                channel: "본식후기 · 네이버 블로그",
+                content: "대표부부님이 직접 현장을 챙겨주셔서 하객분들이 다들 신랑신부 회사 동료나 아나운서 지인인 줄 아셨대요ㅎㅎ 봉투 하나하나 교차 검증해서 밀봉 전달해주시고, 모바일 장부로 바로바로 조회가 되니 결혼 준비 중 가장 잘 쓴 돈 1위입니다!"
+            },
+            {
+                id: 6,
+                name: "한*민 신부님",
+                hall: "마포 아만티호텔 · 2인 1조",
+                channel: "본식후기 · 인스타그램",
+                content: "친척이 적어서 신부측만 2인 1조로 신청했는데, 신랑측 친척분들이 메리담 일하시는 거 보고 왜 우리 쪽은 안 불렀냐며 부러워하셨어요! 처음부터 끝까지 카메라로 녹화해주시고 영상 파일까지 보내주셔서 1000% 안심 그 자체였습니다."
+            }
+        ];
+
+        let editingReviewIdx = null;
+
+        function renderReviews() {
+            const grid = document.getElementById('reviews-grid');
+            grid.innerHTML = reviewsList.map((r, idx) => `
+                <div class="bg-white p-7 rounded-3xl border ${isAdmin ? 'border-rose shadow-md' : 'border-rose-light/60 shadow-sm hover:shadow-xl'} transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-amber-400 text-xs flex gap-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-[11px] font-bold bg-blush text-rose-dark px-2.5 py-1 rounded-full">${r.channel}</span>
+                        </div>
+                        ${editingReviewIdx === idx ? `
+                            <div class="space-y-2 mb-3">
+                                <input id="edit-rev-name-${idx}" value="${r.name}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream font-bold">
+                                <input id="edit-rev-hall-${idx}" value="${r.hall}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream">
+                                <textarea id="edit-rev-content-${idx}" rows="4" class="w-full px-3 py-2 text-xs border border-rose rounded-lg bg-cream">${r.content}</textarea>
+                                <div class="flex justify-end gap-1.5">
+                                    <button onclick="cancelEditReview()" class="px-3 py-1 bg-beige text-charcoal text-xs rounded-lg font-bold">취소</button>
+                                    <button onclick="saveEditReview(${idx})" class="px-3 py-1 bg-rose-dark text-white text-xs rounded-lg font-bold">저장</button>
+                                </div>
+                            </div>
+                        ` : `
+                            <p class="text-sm text-charcoal/90 leading-relaxed mb-5">"${r.content}"</p>
+                        `}
+                    </div>
+                    <div class="pt-4 border-t border-beige flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-charcoal text-sm">${r.name}</div>
+                            <div class="text-xs text-charcoal/70">${r.hall}</div>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            ${isAdmin ? `
+                                <button onclick="startEditReview(${idx})" class="px-2.5 py-1 rounded-lg bg-beige hover:bg-rose hover:text-white text-charcoal text-xs font-bold transition-colors" title="후기 수정">
+                                    수정
+                                </button>
+                                <button onclick="deleteReview(${idx})" class="px-2.5 py-1 rounded-lg bg-red-100 hover:bg-red-600 hover:text-white text-red-600 text-xs font-bold transition-colors" title="후기 삭제">
+                                    삭제
+                                </button>
+                            ` : `
+                                <div class="w-9 h-9 rounded-full bg-cream border border-rose-light flex items-center justify-center text-rose-dark text-xs font-bold">
+                                    인증
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function startEditReview(idx) {
+            editingReviewIdx = idx;
+            renderReviews();
+        }
+
+        function cancelEditReview() {
+            editingReviewIdx = null;
+            renderReviews();
+        }
+
+        function saveEditReview(idx) {
+            reviewsList[idx].name = document.getElementById(`edit-rev-name-${idx}`).value;
+            reviewsList[idx].hall = document.getElementById(`edit-rev-hall-${idx}`).value;
+            reviewsList[idx].content = document.getElementById(`edit-rev-content-${idx}`).value;
+            editingReviewIdx = null;
+            renderReviews();
+            showToast("✅ 고객 후기가 수정되었습니다.");
+        }
+
+        function deleteReview(idx) {
+            reviewsList.splice(idx, 1);
+            renderReviews();
+            showToast("🗑️ 선택한 후기가 삭제되었습니다.");
+        }
+
+        function toggleReviewModal() {
+            const box = document.getElementById('review-form-box');
+            box.classList.toggle('hidden');
+        }
+
+        function submitNewReview(e) {
+            e.preventDefault();
+            const name = document.getElementById('rev-name').value;
+            const hall = document.getElementById('rev-hall').value;
+            const channel = document.getElementById('rev-channel').value;
+            const content = document.getElementById('rev-content').value;
+
+            reviewsList.unshift({ id: Date.now(), name, hall, channel, content });
+            renderReviews();
+            e.target.reset();
+            toggleReviewModal();
+            showToast("💝 소중한 후기가 등록되었습니다! 후기 이벤트 혜택 대상자로 기록됩니다.");
+        }
+
+        /* ==========================================
+           5. 실시간 할인 견적 계산기 & 상담 폼 연동
+        ========================================== */
+        let calcBasePrice = 300000;
+
+        function setCalcBase(price, label) {
+            calcBasePrice = price;
+            const btn30 = document.getElementById('calc-pkg-30');
+            const btn55 = document.getElementById('calc-pkg-55');
+            if (price === 300000) {
+                btn30.className = "p-3.5 rounded-2xl border-2 border-rose bg-white text-left transition-all";
+                btn55.className = "p-3.5 rounded-2xl border border-rose-light bg-white/60 text-left transition-all";
+                document.getElementById('form-package').value = "2인 1조 (30만원)";
+            } else {
+                btn55.className = "p-3.5 rounded-2xl border-2 border-rose bg-white text-left transition-all";
+                btn30.className = "p-3.5 rounded-2xl border border-rose-light bg-white/60 text-left transition-all";
+                document.getElementById('form-package').value = "4인 2조 (55만원)";
+            }
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            let discount = 0;
+            if (document.getElementById('chk-early') && document.getElementById('chk-early').checked) discount += 10000;
+            if (document.getElementById('chk-contract-rev') && document.getElementById('chk-contract-rev').checked) discount += 10000;
+            if (document.getElementById('chk-partner-code') && document.getElementById('chk-partner-code').checked) discount += 10000;
+
+            const finalPrice = Math.max(0, calcBasePrice - discount);
+            document.getElementById('calc-discount-total').textContent = "-" + discount.toLocaleString() + "원";
+            document.getElementById('calc-final-price').textContent = finalPrice.toLocaleString() + "원";
+        }
+
+        function selectPackageInForm(pkgValue) {
+            document.getElementById('form-package').value = pkgValue;
+            if (pkgValue.includes('30')) setCalcBase(300000);
+            if (pkgValue.includes('55')) setCalcBase(550000);
+        }
+
+        function maskWriterName(name) {
+            const clean = name.trim();
+            if (clean.length <= 1) return clean + "*";
+            if (clean.length === 2) return clean[0] + "*";
+            return clean[0] + "*" + clean.slice(2);
+        }
+
+        function handleConsultSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const date = document.getElementById('form-date').value;
+            const hall = document.getElementById('form-hall').value;
+            const pkg = document.getElementById('form-package').value;
+            const promo = document.getElementById('form-promo').value || '얼리버드/후기/짝꿍 이벤트 희망';
+            const pw = document.getElementById('form-password').value;
+            const memo = document.getElementById('form-memo').value || '일정 가능 여부 및 전자계약 안내 요청드립니다.';
+
+            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => p.id)) + 1 : 1;
+            const newPost = {
+                id: newId,
+                name: maskWriterName(name),
+                rawName: name,
+                hall: hall,
+                pkg: pkg,
+                date: "2026-11-18",
+                title: `[상담신청] ${hall} (${date}) ${pkg} 예약 및 가능여부 문의합니다.`,
+                content: `• 성함: ${name}\n• 연락처: ${phone}\n• 예식일시: ${date}\n• 웨딩홀: ${hall}\n• 희망패키지: ${pkg}\n• 희망이벤트: ${promo}\n• 추가문의: ${memo}`,
+                password: pw,
+                status: "답변완료",
+                reply: `안녕하세요 ${name}님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :) 문의주신 ${date} [${hall}] ${pkg} 일정 확인 중이며, 남겨주신 연락처(${phone})로 전자계약서 및 얼리버드 1만원 즉시 할인 안내 메시지를 발송해드렸습니다. 소중한 날 믿고 맡겨주셔서 진심으로 감사합니다!`,
+                unlocked: true
+            };
+
+            qnaPosts.unshift(newPost);
+            currentBoardPage = 1;
+            renderQnaBoard();
+
+            const summaryText = `[메리담 웨딩 축의대 상담신청]\n• 성함: ${name}\n• 연락처: ${phone}\n• 예식일시: ${date}\n• 웨딩홀: ${hall}\n• 희망패키지: ${pkg}\n• 할인/이벤트: ${promo}\n• 문의사항: ${memo}`;
+            const tempArea = document.createElement('textarea');
+            tempArea.value = summaryText;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try { document.execCommand('copy'); } catch (err) {}
+            document.body.removeChild(tempArea);
+
+            showToast(`🎉 ${name}님, 상담 신청이 아래 문의게시판에 비밀글로 등록되었으며 답글이 달렸습니다!`);
+            e.target.reset();
+            setTimeout(() => {
+                document.getElementById('qna-board').scrollIntoView({ behavior: 'smooth' });
+            }, 600);
+        }
+
+        /* ==========================================
+           6. 상담신청 · 문의게시판 (2026-10-01 ~ 2026-11-18 74개 가라 데이터 생성 & 비밀글/답글 시스템)
+        ========================================== */
+        const sampleSurnames = ["김", "이", "박", "최", "정", "강", "조", "윤", "장", "임", "한", "오", "서", "신", "권", "황", "안", "송", "전", "홍"];
+        const sampleLastChars = ["연", "우", "현", "서", "민", "아", "준", "희", "진", "영", "윤", "하", "원", "솔", "빈", "경", "혁", "수", "지", "은"];
+        const sampleHalls = [
+            "서울 더채플앳청담", "송파 루이비스컨벤션", "강남 아펠가모 선릉", "여의도 더파티움", "마포 아만티호텔",
+            "수원 메리빌리아", "강남 더라움", "서초 더화이트베일", "잠실 롯데호텔월드", "강서 보타닉파크웨딩",
+            "종로 HW컨벤션센터", "성동 보테가마지오", "영등포 그랜드컨벤션", "인천 아시아드웨딩컨벤션", "분당 가천컨벤션센터",
+            "일산 퍼스트가든", "부천 MJ컨벤션", "대전 유성컨벤션", "대구 수성스퀘어", "부산 그랜드블랑"
+        ];
+        const samplePkgs = ["4인 2조 (55만원)", "2인 1조 (30만원)", "4인 2조 (55만원)", "4인 2조 (55만원)", "2인 1조 (30만원)"];
+        const sampleTitleTemplates = [
+            "{hall} {pkg} 예약 가능 여부 및 얼리버드 할인 문의드립니다.",
+            "내년 봄 예식 {hall} 축의대 대행 {pkg} 상담 신청합니다!",
+            "{hall} 본식 실시간 디지털 장부 및 스트리밍 관련 문의드려요.",
+            "짝꿍 이벤트 할인 적용해서 {hall} {pkg} 전자계약 희망합니다.",
+            "{hall} 양가 부모님 요청으로 4인 2조 대표부부님 지정 문의합니다.",
+            "{hall} 예식 시간 확정되어 {pkg} 잔여 타임 문의남깁니다."
+        ];
+
+        const qnaPosts = [];
+
+        function initMockQnaPosts() {
+            // 2026-10-01 부터 2026-11-18 (오늘) 까지 총 49일 구간에 74개의 게시글을 고르게 배치
+            const startTime = new Date(2026, 9, 1).getTime(); // 2026-10-01
+            const endTime = new Date(2026, 10, 18).getTime(); // 2026-11-18
+            const totalItems = 74;
+
+            for (let i = 1; i <= totalItems; i++) {
+                const ratio = (i - 1) / (totalItems - 1);
+                const itemTime = startTime + Math.round(ratio * (endTime - startTime));
+                const d = new Date(itemTime);
+                const yyyy = d.getFullYear();
+                const mm = String(d.getMonth() + 1).padStart(2, '0');
+                const dd = String(d.getDate()).padStart(2, '0');
+                const dateStr = `${yyyy}-${mm}-${dd}`;
+
+                const maskedName = sampleSurnames[(i * 3) % sampleSurnames.length] + "*" + sampleLastChars[(i * 7) % sampleLastChars.length];
+                const hall = sampleHalls[(i * 5) % sampleHalls.length];
+                const pkg = samplePkgs[i % samplePkgs.length];
+                const tpl = sampleTitleTemplates[i % sampleTitleTemplates.length];
+                const title = tpl.replace("{hall}", hall).replace("{pkg}", pkg);
+
+                qnaPosts.push({
+                    id: i,
+                    name: maskedName,
+                    rawName: maskedName,
+                    hall: hall,
+                    pkg: pkg,
+                    date: dateStr,
+                    title: title,
+                    content: `안녕하세요! ${hall}에서 예식을 앞둔 예비부부입니다.\n희망 패키지: ${pkg}\n대표부부님이 직접 케어해주신다는 후기 보고 문의드립니다. 해당 일자 가능 여부와 얼리버드 및 짝꿍 할인 안내 부탁드립니다.`,
+                    password: String(1000 + i),
+                    status: "답변완료",
+                    reply: `안녕하세요 ${maskedName} 신랑·신부님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :)\n문의주신 [${hall}] ${pkg} 일정 현재 예약 가능하시며, 남겨주신 연락처로 안심 모바일 전자계약서와 얼리버드 1만원 즉시 할인 혜택을 안내해 드렸습니다. 예식 2주 전 사전 체크 및 당일 90분 전 도착으로 완벽히 모시겠습니다. 감사합니다!`,
+                    unlocked: false
+                });
+            }
+
+            // 최신순(74번 -> 1번) 정렬
+            qnaPosts.sort((a, b) => b.id - a.id);
+        }
+
+        let currentBoardPage = 1;
+        const postsPerPage = 10;
+        let targetPostIdForPw = null;
+        let editingReplyPostId = null;
+        let editingCustomerPostId = null;
+
+        function renderQnaBoard() {
+            const listEl = document.getElementById('qna-board-list');
+            const pageEl = document.getElementById('qna-pagination');
+            const totalCount = qnaPosts.length;
+
+            document.getElementById('board-total-count').textContent = totalCount;
+
+            const totalPages = Math.ceil(totalCount / postsPerPage);
+            if (currentBoardPage > totalPages) currentBoardPage = totalPages || 1;
+
+            const startIdx = (currentBoardPage - 1) * postsPerPage;
+            const currentItems = qnaPosts.slice(startIdx, startIdx + postsPerPage);
+
+            listEl.innerHTML = currentItems.map(post => {
+                const canView = isAdmin || post.unlocked;
+                return `
+                    <div class="transition-colors hover:bg-blush/20">
+                        <!-- 게시글 요약 행 -->
+                        <div onclick="handlePostClick(${post.id})" class="px-4 sm:px-6 py-4 grid grid-cols-1 md:grid-cols-12 gap-2 items-center cursor-pointer">
+                            <div class="hidden md:block md:col-span-1 text-center text-xs font-extrabold text-charcoal/80">
+                                ${post.id}
+                            </div>
+                            <div class="md:col-span-2 flex md:justify-center items-center gap-2">
+                                <span class="md:hidden text-xs font-extrabold text-charcoal/80">#${post.id}</span>
+                                <span class="bg-beige text-charcoal text-[11px] font-bold px-2.5 py-1 rounded-lg truncate max-w-[160px]">${post.pkg}</span>
+                            </div>
+                            <div class="md:col-span-5 md:pl-4 flex items-center gap-2">
+                                <i class="fa-solid ${canView ? 'fa-lock-open text-emerald-600' : 'fa-lock text-rose-dark'} text-xs shrink-0"></i>
+                                <span class="text-sm font-bold text-charcoal hover:text-rose-dark transition-colors line-clamp-1">${post.title}</span>
+                                <span class="text-[11px] text-rose-dark font-bold shrink-0">[1]</span>
+                            </div>
+                            <div class="flex md:grid md:grid-cols-4 md:col-span-4 items-center justify-between text-xs text-charcoal/90 pt-1 md:pt-0">
+                                <div class="md:col-span-1 md:text-center font-bold text-charcoal">${post.name}</div>
+                                <div class="md:col-span-2 md:text-center font-semibold text-charcoal/80">${post.date}</div>
+                                <div class="md:col-span-1 md:text-center">
+                                    <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                                        ${post.status}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 열람 권한이 있거나 관리자일 때 펼쳐지는 본문 + 답글 영역 -->
+                        ${canView ? `
+                            <div class="bg-cream px-6 sm:px-12 py-5 border-t border-beige space-y-4">
+                                ${editingCustomerPostId === post.id ? `
+                                    <div class="bg-white p-4 rounded-2xl border-2 border-rose space-y-3">
+                                        <div class="text-xs font-bold text-rose-dark">✏️ 내 문의글 수정하기</div>
+                                        <input id="cust-edit-title-${post.id}" value="${post.title}" class="w-full px-3.5 py-2 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm font-bold text-charcoal focus:outline-none focus:border-rose">
+                                        <textarea id="cust-edit-content-${post.id}" rows="4" class="w-full p-3 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm text-charcoal focus:outline-none focus:border-rose">${post.content}</textarea>
+                                        <div class="flex justify-end gap-2">
+                                            <button onclick="cancelCustomerPostEdit()" class="px-3.5 py-1.5 rounded-lg bg-beige text-charcoal text-xs font-bold">취소</button>
+                                            <button onclick="saveCustomerPostEdit(${post.id})" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">수정 완료</button>
+                                        </div>
+                                    </div>
+                                ` : `
+                                    <div class="bg-white p-4 rounded-2xl border border-rose-light/80 space-y-3">
+                                        <div class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${post.content}</div>
+                                        <div class="flex justify-end pt-2 border-t border-beige">
+                                            <button onclick="startCustomerPostEdit(${post.id})" class="text-xs font-bold text-rose-dark hover:text-charcoal bg-blush/70 hover:bg-blush px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+                                                <i class="fa-solid fa-pen-to-square"></i> 내 문의글 수정하기
+                                            </button>
+                                        </div>
+                                    </div>
+                                `}
+                                
+                                <!-- 메리담 대표부부 답글 박스 -->
+                                <div class="bg-blush/60 p-4 sm:p-5 rounded-2xl border border-rose-light flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-xl bg-rose-dark text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-reply rotate-180"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-xs font-bold text-rose-dark">👑 메리담 대표부부 공식 답변</span>
+                                            <span class="text-[11px] text-charcoal/70 font-semibold">${post.date} ${post.status}</span>
+                                        </div>
+                                        ${editingReplyPostId === post.id ? `
+                                            <div class="space-y-2 mt-2">
+                                                <textarea id="admin-reply-textarea-${post.id}" rows="3" class="w-full p-3 rounded-xl bg-white border border-rose text-xs sm:text-sm text-charcoal focus:outline-none">${post.reply}</textarea>
+                                                <div class="flex justify-end gap-2">
+                                                    <button onclick="cancelAdminReply()" class="px-3.5 py-1.5 rounded-lg bg-beige text-charcoal text-xs font-bold">취소</button>
+                                                    <button onclick="saveAdminReply(${post.id})" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">답변 저장하기</button>
+                                                </div>
+                                            </div>
+                                        ` : `
+                                            <p class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${post.reply}</p>
+                                        `}
+                                    </div>
+                                </div>
+
+                                ${isAdmin ? `
+                                    <div class="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-dashed border-rose text-xs">
+                                        <span class="text-charcoal font-semibold">🔑 고객이 설정한 비밀번호: <b class="text-rose-dark">${post.password}</b></span>
+                                        <div class="flex gap-2">
+                                            <button onclick="startAdminReplyEdit(${post.id})" class="bg-charcoal text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-rose-dark transition-colors">
+                                                <i class="fa-solid fa-pen mr-1"></i>답글 작성/수정
+                                            </button>
+                                            <button onclick="adminDeletePost(${post.id})" class="bg-red-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-red-700 transition-colors">
+                                                <i class="fa-solid fa-trash mr-1"></i>게시글 삭제
+                                            </button>
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            // 페이지네이션 버튼 생성
+            let pageButtons = '';
+            for (let p = 1; p <= totalPages; p++) {
+                pageButtons += `
+                    <button onclick="goToBoardPage(${p})" class="w-8 h-8 rounded-xl text-xs font-bold transition-all ${p === currentBoardPage ? 'bg-rose-dark text-white shadow' : 'bg-white text-charcoal border border-rose-light/80 hover:bg-blush'}">
+                        ${p}
+                    </button>
+                `;
+            }
+            pageEl.innerHTML = pageButtons;
+        }
+
+        function startCustomerPostEdit(postId) {
+            editingCustomerPostId = postId;
+            renderQnaBoard();
+        }
+
+        function cancelCustomerPostEdit() {
+            editingCustomerPostId = null;
+            renderQnaBoard();
+        }
+
+        function saveCustomerPostEdit(postId) {
+            const post = qnaPosts.find(p => p.id === postId);
+            if (!post) return;
+            const titleEl = document.getElementById(`cust-edit-title-${postId}`);
+            const contentEl = document.getElementById(`cust-edit-content-${postId}`);
+            if (titleEl && contentEl) {
+                post.title = titleEl.value.trim();
+                post.content = contentEl.value.trim();
+            }
+            editingCustomerPostId = null;
+            renderQnaBoard();
+            showToast("✅ 작성하신 문의글이 성공적으로 수정되었습니다.");
+        }
+
+        function goToBoardPage(page) {
+            currentBoardPage = page;
+            renderQnaBoard();
+        }
+
+        function handlePostClick(postId) {
+            const post = qnaPosts.find(p => p.id === postId);
+            if (!post) return;
+
+            if (isAdmin || post.unlocked) {
+                post.unlocked = !post.unlocked;
+                renderQnaBoard();
+                return;
+            }
+
+            targetPostIdForPw = postId;
+            document.getElementById('pw-check-modal').classList.remove('hidden');
+            document.getElementById('modal-pw-input').focus();
+        }
+
+        function closePwModal() {
+            targetPostIdForPw = null;
+            document.getElementById('pw-check-modal').classList.add('hidden');
+            document.getElementById('modal-pw-input').value = '';
+        }
+
+        function verifyPostPassword(e) {
+            e.preventDefault();
+            const inputPw = document.getElementById('modal-pw-input').value.trim();
+            const post = qnaPosts.find(p => p.id === targetPostIdForPw);
+            if (!post) return;
+
+            if (inputPw === post.password || checkSecretMatch(inputPw)) {
+                post.unlocked = true;
+                closePwModal();
+                renderQnaBoard();
+                showToast("🔓 비밀번호가 확인되어 문의글과 답글이 열렸습니다. (직접 수정 가능)");
+            } else {
+                showToast("❌ 비밀번호가 일치하지 않습니다. 작성자 본인만 열람 및 수정 가능합니다.");
+            }
+        }
+
+        function toggleBoardWriteBox() {
+            document.getElementById('board-write-box').classList.toggle('hidden');
+        }
+
+        function submitBoardPost(e) {
+            e.preventDefault();
+            const name = document.getElementById('brd-name').value;
+            const hall = document.getElementById('brd-hall').value;
+            const pkg = document.getElementById('brd-pkg').value;
+            const pw = document.getElementById('brd-pw').value;
+            const title = document.getElementById('brd-title').value;
+            const content = document.getElementById('brd-content').value;
+
+            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => p.id)) + 1 : 1;
+            qnaPosts.unshift({
+                id: newId,
+                name: maskWriterName(name),
+                rawName: name,
+                hall: hall,
+                pkg: pkg,
+                date: "2026-11-18",
+                title: title,
+                content: content,
+                password: pw,
+                status: "답변완료",
+                reply: `안녕하세요 ${name}님, 메리담 대표부부입니다 :) 남겨주신 [${hall} / ${pkg}] 문의사항을 확인하였으며, 빠르게 안내 도와드리겠습니다. 작성해주신 글은 설정하신 비밀번호로 본인만 열람하실 수 있습니다. 감사합니다!`,
+                unlocked: true
+            });
+
+            currentBoardPage = 1;
+            renderQnaBoard();
+            e.target.reset();
+            toggleBoardWriteBox();
+            showToast("🔒 비밀 문의글과 대표부부 답글이 등록되었습니다. (작성자 본인 열람 상태)");
+        }
+
+        function startUserPostEdit(postId) {
+            editingUserPostId = postId;
+            renderQnaBoard();
+        }
+
+        function cancelUserPostEdit() {
+            editingUserPostId = null;
+            renderQnaBoard();
+        }
+
+        function saveUserPostEdit(postId) {
+            const post = qnaPosts.find(p => p.id === postId);
+            if (!post) return;
+            const titleInput = document.getElementById(`user-edit-title-${postId}`);
+            const contentInput = document.getElementById(`user-edit-content-${postId}`);
+            if (titleInput && contentInput) {
+                post.title = titleInput.value.trim();
+                post.content = contentInput.value.trim();
+            }
+            editingUserPostId = null;
+            renderQnaBoard();
+            showToast("✅ 작성하신 문의글이 성공적으로 수정되었습니다.");
+        }
+
+        function startAdminReplyEdit(postId) {
+            editingReplyPostId = postId;
+            renderQnaBoard();
+        }
+
+        function cancelAdminReply() {
+            editingReplyPostId = null;
+            renderQnaBoard();
+        }
+
+        function saveAdminReply(postId) {
+            const post = qnaPosts.find(p => p.id === postId);
+            if (!post) return;
+            const textarea = document.getElementById(`admin-reply-textarea-${postId}`);
+            if (textarea) {
+                post.reply = textarea.value.trim();
+                post.status = "답변완료";
+            }
+            editingReplyPostId = null;
+            renderQnaBoard();
+            showToast("✅ 대표부부 공식 답글이 성공적으로 저장되었습니다.");
+        }
+
+        function adminDeletePost(postId) {
+            const idx = qnaPosts.findIndex(p => p.id === postId);
+            if (idx > -1) {
+                qnaPosts.splice(idx, 1);
+                renderQnaBoard();
+                showToast("🗑️ 문의글이 삭제되었습니다.");
+            }
+        }
+
+        /* ==========================================
+           7. 공통 유틸리티 (모바일 메뉴 & 토스트)
+        ========================================== */
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        let toastTimer = null;
+        function showToast(msg) {
+            const modal = document.getElementById('toast-modal');
+            document.getElementById('toast-message').textContent = msg;
+            modal.classList.remove('hidden');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 4000);
+        }
+
+        // 초기 렌더링 실행
+        window.onload = function() {
+            renderDynamicLiveTicker();
+            initMockQnaPosts();
+            renderServiceCards();
+            renderReviews();
+            renderQnaBoard();
+            updateCalculator();
+        };
+    </script>
+</body>
+</html>
