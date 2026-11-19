@@ -412,7 +412,7 @@
             </div>
 
             <!-- 6개 서비스 카드 그리드 -->
-            <div id="service-cards-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div id="service-cards-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                 <!-- JS renderServiceCards()에서 렌더링 -->
             </div>
         </div>
@@ -425,57 +425,58 @@
                 <!-- 좌측 설명 및 탭 컨트롤 -->
                 <div class="lg:col-span-6 space-y-6">
                     <span class="inline-block bg-white text-rose-dark text-xs font-bold px-4 py-1.5 rounded-full border border-rose-light shadow-xs">
-                        SMART DIGITAL LEDGER
+                        REAL-TIME DIGITAL SYSTEM
                     </span>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold text-charcoal leading-tight">
-                        신부대기실에서도 내 손안에서<br>
-                        <span class="text-rose-dark">실시간으로 확인하는 디지털 장부</span>
+                        신부대기실에서도 스마트폰으로<br>
+                        <span class="text-rose-dark">실시간 디지털 장부 · 라이브 확인</span>
                     </h2>
                     <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                        예식 중에도 하객 방문 현황과 축의금 누적 금액을 스마트폰 링크 하나로 실시간 열람할 수 있으며, 예식 종료 즉시 엑셀(Excel) 정산 파일과 촬영 영상을 전달해 드립니다.
+                        결혼식이 진행되는 동안 누가 얼마나 축하해주셨는지, 접수대는 잘 운영되고 있는지
+                        <b>신랑·신부님과 혼주님 스마트폰으로 실시간 확인</b>할 수 있습니다.
                     </p>
 
-                    <!-- 4단계 화면 전환 탭 버튼 -->
+                    <!-- 4단계 기능 전환 탭 버튼 -->
                     <div class="space-y-3 pt-2">
-                        <button onclick="setPhoneSlide(0)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border-2 border-rose bg-white shadow-md transition-all flex items-center justify-between">
+                        <button type="button" onclick="setPhoneSlide(0)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border-2 border-rose bg-white shadow-md transition-all flex items-center justify-between">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-9 h-9 rounded-xl bg-rose text-white font-bold flex items-center justify-center text-sm shrink-0">01</span>
                                 <div>
-                                    <div class="font-bold text-charcoal text-sm sm:text-base">실시간 축의금 · 하객 접수 대시보드</div>
-                                    <div class="text-xs text-charcoal/65">봉투 번호·성함·금액·식권 수량 실시간 업데이트</div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">실시간 축의금 · 하객 접수 대시보드</h4>
+                                    <p class="text-xs text-charcoal/70 mt-0.5">방문 하객 성함, 봉투 번호, 금액, 식권 수량 실시간 업데이트</p>
                                 </div>
                             </div>
                             <i class="fa-solid fa-chevron-right text-rose"></i>
                         </button>
 
-                        <button onclick="setPhoneSlide(1)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                        <button type="button" onclick="setPhoneSlide(1)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm shrink-0">02</span>
                                 <div>
-                                    <div class="font-bold text-charcoal text-sm sm:text-base">축의대 현장 LIVE 실시간 스트리밍</div>
-                                    <div class="text-xs text-charcoal/65">접수 시작부터 정산까지 고화질 실시간 중계 및 녹화본 제공</div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">축의대 현장 실시간 LIVE 스트리밍</h4>
+                                    <p class="text-xs text-charcoal/70 mt-0.5">전용 비공개 링크로 현장 생중계 & 종료 후 원본 영상 제공</p>
                                 </div>
                             </div>
                             <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
                         </button>
 
-                        <button onclick="setPhoneSlide(2)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                        <button type="button" onclick="setPhoneSlide(2)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm shrink-0">03</span>
                                 <div>
-                                    <div class="font-bold text-charcoal text-sm sm:text-base">권종별 크로스 정산 & 원클릭 엑셀 다운로드</div>
-                                    <div class="text-xs text-charcoal/65">5만원·1만원·수표 권종별 대조 및 영구보관용 파일 제공</div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">원클릭 엑셀 다운로드</h4>
+                                    <p class="text-xs text-charcoal/70 mt-0.5">정리된 하객 명부와 축의금 내역을 영구 보관용 엑셀 파일로 즉시 제공</p>
                                 </div>
                             </div>
                             <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
                         </button>
 
-                        <button onclick="setPhoneSlide(3)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
+                        <button type="button" onclick="setPhoneSlide(3)" class="phone-tab-btn w-full text-left p-4 rounded-2xl border border-rose-light/60 bg-white/70 hover:bg-white transition-all flex items-center justify-between">
                             <div class="flex items-center gap-3.5">
                                 <span class="w-9 h-9 rounded-xl bg-blush text-rose-dark font-bold flex items-center justify-center text-sm shrink-0">04</span>
                                 <div>
-                                    <div class="font-bold text-charcoal text-sm sm:text-base">모바일 안심 전자계약 & 인수인계 서명</div>
-                                    <div class="text-xs text-charcoal/65">투명한 정찰제 보장 전자계약서 및 현장 밀봉 인계 확인서</div>
+                                    <h4 class="font-bold text-charcoal text-sm sm:text-base">모바일 안심 전자계약 & 인수인계 서명</h4>
+                                    <p class="text-xs text-charcoal/70 mt-0.5">투명한 정찰제 약관 보증 및 최종 인계 확인서 모바일 발행</p>
                                 </div>
                             </div>
                             <i class="fa-solid fa-chevron-right text-charcoal/30"></i>
@@ -485,65 +486,123 @@
 
                 <!-- 우측 스마트폰 목업 슬라이더 -->
                 <div class="lg:col-span-6 flex flex-col items-center">
-                    <div class="relative w-[300px] sm:w-[340px] h-[610px] sm:h-[650px] bg-charcoal rounded-[48px] p-3 shadow-2xl border-4 border-charcoal/90">
-                        <!-- 상단 노치 -->
-                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-charcoal rounded-full z-20 flex items-center justify-center">
-                            <div class="w-10 h-1 bg-white/20 rounded-full"></div>
+                    <div class="relative w-[290px] sm:w-[320px] h-[590px] sm:h-[630px] bg-charcoal rounded-[48px] p-3 shadow-2xl border-4 border-charcoal/90">
+                        <!-- 상단 다이나믹 아일랜드 노치 -->
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-charcoal rounded-full z-30 flex items-center justify-center">
+                            <span class="w-10 h-1 rounded-full bg-white/20"></span>
                         </div>
 
-                        <!-- 스마트폰 내부 스크린 영역 -->
-                        <div class="relative w-full h-full bg-cream rounded-[38px] overflow-hidden">
-                            <!-- 화면 01: 실시간 장부 이미지 -->
+                        <!-- 스마트폰 디스플레이 내부 -->
+                        <div class="relative w-full h-full bg-white rounded-[38px] overflow-hidden">
+                            <!-- 화면 01: 실시간 디지털 장부 대시보드 이미지 -->
                             <div class="phone-screen absolute inset-0 transition-all duration-500 opacity-100 translate-x-0 flex flex-col bg-white">
                                 <div class="pt-9 pb-3 px-4 bg-gradient-to-r from-rose-dark to-rose text-white text-center">
-                                    <span class="text-[10px] font-bold tracking-widest uppercase block opacity-90">MARRYDAM LIVE LEDGER</span>
-                                    <h4 class="font-bold text-sm mt-0.5">01. 실시간 축의금 · 하객 접수 장부</h4>
+                                    <span class="text-[10px] font-bold tracking-widest uppercase block opacity-90">REAL-TIME DIGITAL LEDGER</span>
+                                    <h4 class="font-bold text-sm mt-0.5">01. 실시간 축의금 · 하객 장부</h4>
                                 </div>
                                 <div class="flex-1 bg-cream flex items-center justify-center p-2 overflow-hidden">
-                                    <img src="https://i.postimg.cc/cLPjhpmz/silsiganjangbu.png" alt="실시간 디지털 장부 화면" class="w-full h-full object-contain rounded-2xl">
+                                    <img src="https://i.postimg.cc/cLPjhpmz/silsiganjangbu.png" alt="실시간 디지털 장부 화면" class="w-full h-full object-contain rounded-2xl" onerror="this.src='https://placehold.co/320x520/F6EFEA/B86B6D?text=DIGITAL+LEDGER'">
                                 </div>
                             </div>
 
-                            <!-- 화면 02: 실시간 라이브 영상 이미지 -->
+                            <!-- 화면 02: 실시간 라이브 영상 이미지 (유튜브 모바일 라이브 UI 고도화) -->
+                            <div class="phone-screen absolute inset-0 transition-all duration-500 opacity-0 translate-x-full flex flex-col bg-[#0F0F0F]">
+                                <!-- 상단 헤더 -->
+                                <div class="pt-9 pb-2.5 px-4 bg-[#0F0F0F] text-white text-center border-b border-white/10 shrink-0">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                                        <span class="text-[10px] font-bold tracking-widest text-red-400 uppercase">YOUTUBE LIVE STREAMING</span>
+                                    </div>
+                                    <h4 class="font-bold text-xs sm:text-sm mt-0.5 text-white">02. 축의대 현장 실시간 LIVE 중계</h4>
+                                </div>
+
+                                <!-- 유튜브 라이브 상태 바 -->
+                                <div class="px-3 py-1.5 bg-[#1A1A1A] flex items-center justify-between text-[10px] text-white/85 shrink-0">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="bg-red-600 text-white font-extrabold px-1.5 py-0.5 rounded text-[9px] flex items-center gap-1">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> LIVE
+                                        </span>
+                                        <span class="text-white/75 font-medium"><i class="fa-solid fa-eye text-[9px] mr-0.5"></i>4명 시청 중</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-[9px] font-semibold">
+                                        <span class="bg-white/10 px-1.5 py-0.5 rounded text-white/90"><i class="fa-solid fa-lock text-[8px] mr-0.5"></i>일부공개</span>
+                                        <span class="bg-white/10 px-1.5 py-0.5 rounded text-emerald-400">1080p HD</span>
+                                    </div>
+                                </div>
+
+                                <!-- 실제 라이브 방송 캡처 화면 (여백 없이 꽉 맞게 표시) -->
+                                <div class="w-full bg-white shrink-0 border-y border-white/10">
+                                    <img src="https://i.postimg.cc/Zqw13wR7/Kakao-Talk-20261116-153055669.png" alt="실시간 스트리밍 화면" class="w-full h-auto block object-contain">
+                                </div>
+
+                                <!-- 하단 유튜브 채널 정보 & 액션 버튼 바 -->
+                                <div class="bg-[#0F0F0F] px-3 py-2.5 border-b border-white/10 shrink-0 space-y-2">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="flex items-center gap-2 min-w-0">
+                                            <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-rose-dark to-champagne p-0.5 shrink-0">
+                                                <img src="https://i.postimg.cc/2SgJGswF/melidam-weding-logo-dijain.png" alt="메리담 채널" class="w-full h-full object-cover rounded-full bg-white">
+                                            </div>
+                                            <div class="min-w-0">
+                                                <div class="text-[11px] font-bold text-white truncate flex items-center gap-1">
+                                                    메리담 공식 라이브 <i class="fa-solid fa-circle-check text-[9px] text-white/70"></i>
+                                                </div>
+                                                <div class="text-[9px] text-white/55 truncate">신랑·신부님 전용 프라이빗 중계</div>
+                                            </div>
+                                        </div>
+                                        <span class="bg-white text-[#0F0F0F] text-[10px] font-bold px-2.5 py-1 rounded-full shrink-0">녹화중</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 overflow-x-hidden text-[9.5px] font-semibold text-white/90">
+                                        <span class="bg-white/10 px-2.5 py-1 rounded-full flex items-center gap-1 shrink-0"><i class="fa-regular fa-thumbs-up"></i> 좋아요</span>
+                                        <span class="bg-white/10 px-2.5 py-1 rounded-full flex items-center gap-1 shrink-0"><i class="fa-solid fa-share"></i> 가족공유</span>
+                                        <span class="bg-white/10 px-2.5 py-1 rounded-full flex items-center gap-1 shrink-0"><i class="fa-solid fa-download"></i> 원본제공</span>
+                                    </div>
+                                </div>
+
+                                <!-- 하단 유튜브 실시간 채팅 영역 -->
+                                <div class="flex-1 bg-[#141414] px-3 py-2.5 flex flex-col justify-between overflow-hidden">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between border-b border-white/10 pb-1.5">
+                                            <span class="text-[10px] font-bold text-white flex items-center gap-1.5">
+                                                <i class="fa-regular fa-comments text-rose-light"></i> 실시간 채팅
+                                            </span>
+                                            <span class="text-[9px] text-white/50">혼주 · 신랑신부 전용</span>
+                                        </div>
+                                        <div class="space-y-1.5 text-[10px] leading-snug">
+                                            <div class="bg-rose-dark/25 border border-rose/30 rounded-lg px-2 py-1.5 text-white/95">
+                                                <span class="text-rose-light font-bold mr-1">메리담 대표부부</span>
+                                                <span>접수대 라이브 시작되었습니다. 종료 후 원본 영상 전달드릴게요 💐</span>
+                                            </div>
+                                            <div class="flex items-start gap-1.5 text-white/85 px-1">
+                                                <span class="text-amber-300 font-bold shrink-0">신부어머님</span>
+                                                <span>신부대기실에서 너무 잘 보여요! 친절하게 응대 감사해요 😊</span>
+                                            </div>
+                                            <div class="flex items-start gap-1.5 text-white/85 px-1">
+                                                <span class="text-sky-300 font-bold shrink-0">신랑님</span>
+                                                <span>화질 정말 선명하네요! 믿고 맡기길 잘했습니다 👍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 유튜브 하단 채팅 입력바 -->
+                                    <div class="mt-2 pt-1.5 border-t border-white/10 flex items-center gap-2">
+                                        <div class="flex-1 bg-white/10 text-white/50 text-[10px] px-3 py-1.5 rounded-full">
+                                            실시간 채팅 메시지 입력...
+                                        </div>
+                                        <div class="w-6 h-6 rounded-full bg-rose/25 text-rose-light flex items-center justify-center text-[10px] shrink-0">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 화면 03: 원클릭 엑셀 다운로드 이미지 -->
                             <div class="phone-screen absolute inset-0 transition-all duration-500 opacity-0 translate-x-full flex flex-col bg-white">
-                                <div class="pt-9 pb-3 px-4 bg-charcoal text-white text-center">
-                                    <span class="text-[10px] font-bold tracking-widest text-rose-light uppercase block">REAL-TIME STREAMING</span>
-                                    <h4 class="font-bold text-sm mt-0.5">02. 축의대 현장 실시간 LIVE 중계</h4>
+                                <div class="pt-9 pb-3 px-4 bg-emerald-600 text-white text-center">
+                                    <span class="text-[10px] font-bold tracking-widest uppercase block opacity-90">ONE-CLICK EXCEL DOWNLOAD</span>
+                                    <h4 class="font-bold text-sm mt-0.5">03. 원클릭 엑셀 다운로드</h4>
                                 </div>
                                 <div class="flex-1 bg-cream flex items-center justify-center p-2 overflow-hidden">
-                                    <img src="https://i.postimg.cc/Zqw13wR7/Kakao-Talk-20261116-153055669.png" alt="실시간 스트리밍 화면" class="w-full h-full object-contain rounded-2xl">
-                                </div>
-                            </div>
-
-                            <!-- 화면 03: 권종별 정산 및 엑셀 리포트 UI -->
-                            <div class="phone-screen absolute inset-0 transition-all duration-500 opacity-0 translate-x-full flex flex-col bg-cream p-5 pt-11 justify-between">
-                                <div class="space-y-4">
-                                    <div class="bg-white p-4 rounded-2xl border border-rose-light shadow-xs">
-                                        <span class="text-[10px] font-bold text-rose-dark">CROSS-CHECK REPORT</span>
-                                        <h4 class="font-display text-base font-bold text-charcoal mt-0.5">권종별 정산 · 엑셀 리포트</h4>
-                                        <p class="text-[11px] text-charcoal/70 mt-1">대표부부 2차 교차 검수 완료 (오차 0원)</p>
-                                    </div>
-                                    <div class="bg-white p-4 rounded-2xl border border-beige space-y-2.5 text-xs">
-                                        <div class="flex justify-between py-1.5 border-b border-beige">
-                                            <span class="text-charcoal/70">5만원권 (412매)</span>
-                                            <b class="text-charcoal">20,600,000원</b>
-                                        </div>
-                                        <div class="flex justify-between py-1.5 border-b border-beige">
-                                            <span class="text-charcoal/70">1만원권 (85매)</span>
-                                            <b class="text-charcoal">850,000원</b>
-                                        </div>
-                                        <div class="flex justify-between py-1.5 border-b border-beige">
-                                            <span class="text-charcoal/70">수표 (10만원권 15매 외)</span>
-                                            <b class="text-charcoal">2,500,000원</b>
-                                        </div>
-                                        <div class="flex justify-between pt-2 text-sm">
-                                            <span class="font-bold text-rose-dark">최종 정산 총액</span>
-                                            <b class="font-display text-rose-dark">23,950,000원</b>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-emerald-600 text-white text-center py-3.5 rounded-2xl text-xs font-bold shadow">
-                                    <i class="fa-solid fa-file-excel mr-1.5"></i> 카카오톡 엑셀(Excel) 정산본 즉시 전송
+                                    <img src="https://i.postimg.cc/tJgRkHxJ/seukeulinsyas-2026-11-19-092222.png" alt="원클릭 엑셀 다운로드 화면" class="w-full h-full object-contain rounded-2xl" onerror="this.src='https://placehold.co/320x520/F6EFEA/B86B6D?text=EXCEL+DOWNLOAD'">
                                 </div>
                             </div>
 
@@ -620,9 +679,9 @@
 
                 <div class="bg-white p-7 rounded-3xl border border-rose-light/60 shadow-xs relative">
                     <span class="font-display text-3xl font-bold text-rose/30 block mb-3">STEP 04</span>
-                    <h3 class="font-display text-lg font-bold text-charcoal mb-2">권종별 정산 & 영상 전달</h3>
+                    <h3 class="font-display text-lg font-bold text-charcoal mb-2">최종 정산 & 엑셀·영상 전달</h3>
                     <p class="text-xs sm:text-sm text-charcoal/75 leading-relaxed">
-                        5만원·1만원·수표 권종별 크로스 정산 후 밀봉하여 혼주님께 직접 인계하며, 엑셀 장부와 녹화 원본 영상을 전송합니다.
+                        예식 종료 후 축의금을 밀봉하여 혼주님께 직접 인계하며, 원클릭 엑셀 장부와 녹화 원본 영상을 전송합니다.
                     </p>
                 </div>
             </div>
@@ -685,7 +744,7 @@
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-rose-dark"></i> <b>대표부부 포함 베테랑 4인 2조</b> 양가 동시 투입</li>
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-rose-dark"></i> 양가 개별 실시간 디지털 장부 링크 각각 제공</li>
                             <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-rose-dark"></i> 양측 축의대 각각 실시간 스트리밍 & 원본 영상 제공</li>
-                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-rose-dark"></i> 권종별 분리 정산 및 양가 혼주님 개별 밀봉 인계</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-rose-dark"></i> 양가 개별 최종 정산 및 혼주님 직접 밀봉 인계</li>
                         </ul>
                     </div>
                     <a href="#consult" onclick="selectPackageInForm('4인 2조 (55만원)')" class="w-full py-4 px-6 rounded-full bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold text-sm sm:text-base shadow-lg shadow-rose/25 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
@@ -1137,40 +1196,41 @@
 
     <!-- 모달 5: 홈페이지 방문자 메인 공지/이벤트 팝업창 (하루동안 보지않기 & 닫기 지원) -->
     <div id="site-notice-popup" class="fixed inset-0 z-[55] hidden bg-black/55 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white rounded-[32px] max-w-md w-full overflow-hidden shadow-2xl border-2 border-rose-light animate-float" style="animation-duration: 6s;">
-            <!-- 상단 이미지 영역 (이미지 설정 시 노출) -->
-            <div id="popup-img-wrap" class="relative h-56 bg-cream overflow-hidden">
-                <img id="popup-display-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="메리담 공지 팝업" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x360/F6EFEA/B86B6D?text=MARRYDAM+EVENT'">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                <span id="popup-display-badge" class="absolute top-4 left-4 bg-gradient-to-r from-rose-dark to-champagne text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-md">
-                    SPECIAL NOTICE
-                </span>
-                <!-- 관리자 상태일 때 바로 수정 버튼 표시 -->
-                <button id="popup-admin-quick-btn" onclick="openPopupAdminModal()" class="hidden absolute top-4 right-4 bg-charcoal/85 hover:bg-rose-dark text-white text-[11px] font-bold px-3 py-1 rounded-full shadow flex items-center gap-1">
-                    <i class="fa-solid fa-pen"></i> 팝업 수정
-                </button>
-            </div>
+        <div class="bg-white rounded-[32px] max-w-md w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border-2 border-rose-light animate-float" style="animation-duration: 6s;">
+            <div class="overflow-y-auto flex-1">
+                <!-- 상단 이미지 영역 (원본 사진 비율 그대로 잘림 없이 자동 맞춤) -->
+                <div id="popup-img-wrap" class="relative w-full bg-cream overflow-hidden flex items-center justify-center">
+                    <img id="popup-display-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="메리담 공지 팝업" class="w-full h-auto max-h-[420px] object-contain block" onerror="this.src='https://placehold.co/600x360/F6EFEA/B86B6D?text=MARRYDAM+EVENT'">
+                    <span id="popup-display-badge" class="absolute top-3.5 left-3.5 bg-gradient-to-r from-rose-dark to-champagne text-white text-[11px] font-bold px-3.5 py-1 rounded-full shadow-md">
+                        SPECIAL NOTICE
+                    </span>
+                    <!-- 관리자 상태일 때 바로 수정 버튼 표시 -->
+                    <button id="popup-admin-quick-btn" onclick="openPopupAdminModal()" class="hidden absolute top-3.5 right-3.5 bg-charcoal/85 hover:bg-rose-dark text-white text-[11px] font-bold px-3 py-1 rounded-full shadow flex items-center gap-1">
+                        <i class="fa-solid fa-pen"></i> 팝업 수정
+                    </button>
+                </div>
 
-            <!-- 본문 텍스트 영역 -->
-            <div class="p-6 sm:p-7 text-center space-y-3 bg-white">
-                <h3 id="popup-display-title" class="font-display text-xl sm:text-2xl font-bold text-charcoal leading-snug">
-                    메리담 웨딩 축의대<br><span class="text-rose-dark">얼리버드 & 후기·짝꿍 최대 할인!</span>
-                </h3>
-                <p id="popup-display-content" class="text-xs sm:text-sm text-charcoal/80 leading-relaxed whitespace-pre-line">
-                    문의 후 24시간 내 계약 시 1만원 즉시 할인!
-                    계약/본식 후기 및 짝꿍 이벤트 중복 적용으로
-                    대표부부가 직접 케어하는 프리미엄 축의대를 만나보세요.
-                </p>
-                <div class="pt-2">
-                    <a id="popup-display-btn" href="#consult" onclick="closeSitePopup(false)" class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold text-sm shadow-lg shadow-rose/25 transition-all">
-                        <span id="popup-display-btn-text">실시간 잔여 일정 · 혜택 상담받기</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                <!-- 본문 텍스트 영역 -->
+                <div class="p-6 sm:p-7 text-center space-y-3 bg-white">
+                    <h3 id="popup-display-title" class="font-display text-xl sm:text-2xl font-bold text-charcoal leading-snug">
+                        메리담 웨딩 축의대<br><span class="text-rose-dark">얼리버드 & 후기·짝꿍 최대 할인!</span>
+                    </h3>
+                    <p id="popup-display-content" class="text-xs sm:text-sm text-charcoal/80 leading-relaxed whitespace-pre-line">
+                        문의 후 24시간 내 계약 시 1만원 즉시 할인!
+                        계약/본식 후기 및 짝꿍 이벤트 중복 적용으로
+                        대표부부가 직접 케어하는 프리미엄 축의대를 만나보세요.
+                    </p>
+                    <div class="pt-2">
+                        <a id="popup-display-btn" href="#consult" onclick="closeSitePopup(false)" class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rose-dark to-rose hover:from-charcoal hover:to-charcoal text-white font-bold text-sm shadow-lg shadow-rose/25 transition-all">
+                            <span id="popup-display-btn-text">실시간 잔여 일정 · 혜택 상담받기</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- 하단: 오늘 하루 보지 않기 | 닫기 바 -->
-            <div class="bg-cream px-5 py-3.5 border-t border-beige flex items-center justify-between text-xs font-bold text-charcoal/80">
+            <div class="bg-cream px-5 py-3.5 border-t border-beige flex items-center justify-between text-xs font-bold text-charcoal/80 shrink-0">
                 <button type="button" onclick="closeSitePopup(true)" class="hover:text-rose-dark transition-colors flex items-center gap-2 py-1">
                     <i class="fa-regular fa-square-check text-rose-dark text-sm"></i>
                     <span>오늘 하루 보지 않기</span>
@@ -1216,27 +1276,40 @@
 
                 <div>
                     <label class="block text-xs font-bold text-charcoal/80 mb-1">팝업 이미지 URL (비워두면 이미지 없이 텍스트만 표시)</label>
-                    <input type="text" id="pop-cfg-img" placeholder="https://..." class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose">
+                    <div class="flex gap-2">
+                        <input type="text" id="pop-cfg-img" oninput="handlePopupUrlInput(this.value)" placeholder="https://..." class="flex-1 px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose">
+                        <select id="pop-cfg-fit" onchange="updatePopupPreviewFit()" class="px-2.5 py-2 rounded-xl bg-cream border border-rose-light text-xs font-bold text-charcoal focus:outline-none focus:border-rose">
+                            <option value="original">원본 그대로 맞춤 (잘림없음)</option>
+                            <option value="cover">영역 꽉 채우기</option>
+                        </select>
+                    </div>
+                    <!-- 팝업 이미지 실시간 미리보기 (원본 비율 그대로 확인) -->
+                    <div id="pop-cfg-preview-wrap" class="mt-2 hidden relative rounded-xl overflow-hidden border border-rose-light bg-cream flex items-center justify-center">
+                        <img id="pop-cfg-preview-img" src="" alt="팝업 이미지 미리보기" class="w-full h-auto max-h-64 object-contain block">
+                        <button type="button" onclick="clearPopupImage()" class="absolute top-2 right-2 bg-charcoal/80 hover:bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg transition-colors shadow">
+                            이미지 제거
+                        </button>
+                    </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-charcoal/80 mb-1">팝업 메인 제목 *</label>
-                    <input type="text" id="pop-cfg-title" required placeholder="예: 2027 봄 시즌 얼리버드 마감 임박 안내" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs font-bold focus:outline-none focus:border-rose">
+                    <label class="block text-xs font-bold text-charcoal/80 mb-1">팝업 제목 (줄바꿈 가능) *</label>
+                    <textarea id="pop-cfg-title" rows="2" required placeholder="예: 메리담 웨딩 축의대&#10;얼리버드 & 후기·짝꿍 최대 할인!" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs font-bold focus:outline-none focus:border-rose"></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-charcoal/80 mb-1">팝업 상세 소식/공지 내용 *</label>
-                    <textarea id="pop-cfg-content" rows="4" required placeholder="고객님들께 알리고 싶은 소식이나 이벤트 내용을 적어주세요." class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose"></textarea>
+                    <label class="block text-xs font-bold text-charcoal/80 mb-1">팝업 본문 내용 *</label>
+                    <textarea id="pop-cfg-content" rows="4" required placeholder="방문자에게 알릴 공지사항이나 이벤트 내용을 입력하세요." class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose"></textarea>
                 </div>
 
                 <div class="grid sm:grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-charcoal/80 mb-1">하단 버튼 문구</label>
-                        <input type="text" id="pop-cfg-btn-text" placeholder="예: 실시간 잔여 일정 · 혜택 상담받기" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose">
+                        <input type="text" id="pop-cfg-btn-text" placeholder="예: 실시간 잔여 일정 · 혜택 상담받기" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs font-bold focus:outline-none focus:border-rose">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-charcoal/80 mb-1">버튼 클릭 시 이동 링크</label>
-                        <input type="text" id="pop-cfg-btn-link" placeholder="예: #consult 또는 블로그/카톡 주소" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose">
+                        <label class="block text-xs font-bold text-charcoal/80 mb-1">버튼 이동 링크 (#consult 또는 URL)</label>
+                        <input type="text" id="pop-cfg-btn-link" placeholder="#consult" class="w-full px-3.5 py-2.5 rounded-xl bg-cream border border-rose-light text-xs focus:outline-none focus:border-rose">
                     </div>
                 </div>
 
@@ -1315,14 +1388,19 @@
                 console.warn("Firebase Auth notice:", err);
             }
 
-            // 1. 실시간 문의게시판 클라우드 동기화
+            // 1. 실시간 문의게시판 클라우드 동기화 (비밀글 잠금 상태 절대 공유 안 됨, 최신 수정 기준 병합)
             const qnaColRef = collection(db, 'artifacts', appId, 'public', 'data', 'qnaPosts');
             onSnapshot(qnaColRef, (snapshot) => {
                 let changed = false;
+                const deletedSet = window.getDeletedQnaIds ? window.getDeletedQnaIds() : new Set();
+
                 snapshot.docChanges().forEach((change) => {
                     const data = change.doc.data();
-                    if (!data || typeof data.id === 'undefined') return;
-                    const idx = window.qnaPosts.findIndex(p => p.id === data.id);
+                    if (!data) return;
+                    const docKey = data.docId || change.doc.id || String(data.id);
+                    if (deletedSet.has(docKey)) return;
+
+                    const idx = window.qnaPosts.findIndex(p => p.docId === docKey || (data.id && p.id === data.id && !p.isUserCreated));
 
                     if (change.type === 'removed') {
                         if (idx > -1) {
@@ -1330,17 +1408,26 @@
                             changed = true;
                         }
                     } else {
+                        // 보안: 클라우드 데이터에서는 unlocked 필드를 절대 신뢰하지 않고 제거
+                        const safeData = { ...data, docId: docKey };
+                        delete safeData.unlocked;
+
                         if (idx > -1) {
-                            const keepUnlocked = window.qnaPosts[idx].unlocked;
-                            window.qnaPosts[idx] = { ...data, unlocked: keepUnlocked || data.unlocked || false };
+                            const existing = window.qnaPosts[idx];
+                            if (!existing.updatedAt || (safeData.updatedAt && safeData.updatedAt >= existing.updatedAt)) {
+                                window.qnaPosts[idx] = { ...existing, ...safeData };
+                                changed = true;
+                            }
                         } else {
-                            window.qnaPosts.push(data);
+                            window.qnaPosts.push(safeData);
+                            changed = true;
                         }
-                        changed = true;
                     }
                 });
+
                 if (changed) {
-                    window.qnaPosts.sort((a, b) => b.id - a.id);
+                    window.sortQnaPosts();
+                    if (window.saveQnaToLocal) window.saveQnaToLocal();
                     window.renderQnaBoard();
                 }
             }, (error) => {
@@ -1351,10 +1438,15 @@
             const revColRef = collection(db, 'artifacts', appId, 'public', 'data', 'reviewsList');
             onSnapshot(revColRef, (snapshot) => {
                 let changed = false;
+                const deletedRevSet = window.getDeletedReviewIds ? window.getDeletedReviewIds() : new Set();
+
                 snapshot.docChanges().forEach((change) => {
                     const data = change.doc.data();
                     if (!data || typeof data.id === 'undefined') return;
-                    const idx = window.reviewsList.findIndex(r => String(r.id) === String(data.id));
+                    const revKey = String(data.id);
+                    if (deletedRevSet.has(revKey)) return;
+
+                    const idx = window.reviewsList.findIndex(r => String(r.id) === revKey);
 
                     if (change.type === 'removed') {
                         if (idx > -1) {
@@ -1363,14 +1455,19 @@
                         }
                     } else {
                         if (idx > -1) {
-                            window.reviewsList[idx] = data;
+                            const existing = window.reviewsList[idx];
+                            if (!existing.updatedAt || (data.updatedAt && data.updatedAt >= existing.updatedAt)) {
+                                window.reviewsList[idx] = data;
+                                changed = true;
+                            }
                         } else {
                             window.reviewsList.unshift(data);
+                            changed = true;
                         }
-                        changed = true;
                     }
                 });
                 if (changed) {
+                    if (window.saveReviewsToLocal) window.saveReviewsToLocal();
                     window.renderReviews();
                 }
             }, (error) => {
@@ -1411,7 +1508,6 @@
                             if (raw) localSaved = JSON.parse(raw);
                         } catch (e) {}
 
-                        // 로컬에서 방금 수정한 최신 설정이 있다면 유지하고, 아니면 클라우드 데이터 반영
                         if (!localSaved || (data.updatedAt && (!localSaved.updatedAt || data.updatedAt >= localSaved.updatedAt))) {
                             window.popupConfig = { ...window.popupConfig, ...data };
                             try {
@@ -1424,9 +1520,39 @@
             }, (error) => {
                 console.warn("Firestore Popup Sync Notice:", error);
             });
+
+            // 5. 서비스 카드 커스텀 이미지/문구 실시간 클라우드 동기화
+            const serviceDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'siteConfig', 'serviceCards');
+            onSnapshot(serviceDocRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if (data && Array.isArray(data.items) && data.items.length > 0) {
+                        let localMeta = null;
+                        try {
+                            const raw = localStorage.getItem('merrydam_service_cards_v1');
+                            if (raw) localMeta = JSON.parse(raw);
+                        } catch (e) {}
+
+                        if (!localMeta || (data.updatedAt && (!localMeta.updatedAt || data.updatedAt >= localMeta.updatedAt))) {
+                            window.applyServiceCardsFromCloud(data.items, data.updatedAt || Date.now());
+                        }
+                    }
+                }
+            }, (error) => {
+                console.warn("Firestore Service Cards Sync Notice:", error);
+            });
         }
 
         // 글로벌 클라우드 저장/삭제 헬퍼 등록
+        window.syncServiceCardsToCloud = async function(items, updatedAt) {
+            try {
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'siteConfig', 'serviceCards');
+                await setDoc(docRef, { items, updatedAt }, { merge: true });
+            } catch (e) {
+                console.warn("Cloud service cards save skipped:", e);
+            }
+        };
+
         window.syncPopupConfigToCloud = async function(cfg) {
             try {
                 const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'siteConfig', 'mainPopup');
@@ -1447,17 +1573,19 @@
 
         window.syncPostToCloud = async function(post) {
             try {
-                const postToSave = { ...post, unlocked: false };
-                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'qnaPosts', String(post.id));
+                const postToSave = { ...post };
+                delete postToSave.unlocked; // 보안: 잠금 해제 상태는 절대 서버에 저장하지 않음
+                const docKey = postToSave.docId || String(postToSave.id);
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'qnaPosts', docKey);
                 await setDoc(docRef, postToSave);
             } catch (e) {
                 console.warn("Cloud post save skipped:", e);
             }
         };
 
-        window.deletePostFromCloud = async function(postId) {
+        window.deletePostFromCloud = async function(docKey) {
             try {
-                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'qnaPosts', String(postId));
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'qnaPosts', String(docKey));
                 await deleteDoc(docRef);
             } catch (e) {
                 console.warn("Cloud post delete skipped:", e);
@@ -1485,21 +1613,21 @@
         initFirebaseSync();
     </script>
 
-    <!-- JavaScript 로직 -->
     <script>
         /* ==========================================
-           0-1. 보안 가드: F12, 개발자 도구 단축키, 소스보기, 우클릭 차단
+           0-1. F12 / 개발자 도구 / 우클릭 / 소스보기 보안 차단
         ========================================== */
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
+            showToast("🔒 보안 정책에 의해 마우스 우클릭이 제한되어 있습니다.");
+            return false;
         });
 
         document.addEventListener('keydown', function(e) {
-            // F12 차단
             if (e.key === 'F12' || e.keyCode === 123) {
                 e.preventDefault();
                 e.stopPropagation();
-                showToast("🔒 보안 정책에 의해 개발자 도구 및 소스보기가 제한되어 있습니다.");
+                showToast("🔒 보안 정책에 의해 개발자 도구가 제한되어 있습니다.");
                 return false;
             }
             // Ctrl+Shift+I / J / C (개발자도구) 및 Ctrl+U / Ctrl+S (소스보기/저장) 차단
@@ -1530,19 +1658,67 @@
         window.securityLogs = [];
         let lastFormSubmitTime = 0;
 
-        // 해킹 방지: 입력값 내 악성 스크립트(<script>, onerror=, javascript: 등) 원천 제거
-        function sanitizeInput(str) {
-            if (!str) return "";
-            const strVal = String(str);
-            if (/<script|javascript:|onerror=|onload=|eval\(|document\.cookie/i.test(strVal)) {
-                recordSecurityEvent("해킹시도 차단(XSS)", "입력폼 악성 스크립트 삽입 시도 감지 및 무력화", true);
-            }
-            return strVal
+        // HTML 안전 이스케이프 유틸리티
+        function escapeHtml(str) {
+            if (str === null || typeof str === 'undefined') return "";
+            return String(str)
                 .replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
                 .replace(/"/g, "&quot;")
                 .replace(/'/g, "&#039;");
+        }
+
+        // 해킹 방지: 입력값 내 악성 스크립트(<script>, onerror=, javascript: 등) 감지 및 무력화
+        function sanitizeInput(str) {
+            if (!str) return "";
+            const strVal = String(str).trim();
+            if (/<script|javascript:|onerror=|onload=|eval\(|document\.cookie/i.test(strVal)) {
+                recordSecurityEvent("해킹시도 차단(XSS)", "입력폼 악성 스크립트 삽입 시도 감지 및 무력화", true);
+                return strVal.replace(/<[^>]*>?/gm, '').replace(/javascript:/gi, '');
+            }
+            return strVal;
+        }
+
+        function getTodayDateStr() {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const dd = String(now.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        // 실시간 예약현황 4일 주기 자동 갱신 티커
+        function renderDynamicLiveTicker() {
+            const marqueeEl = document.getElementById('live-status-marquee');
+            if (!marqueeEl) return;
+
+            const fourDayCycle = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 4));
+            const tickerPool = [
+                { name: "김*연 신부님", hall: "서울 더채플앳청담", pkg: "4인 2조", badge: "[예약확정]", cls: "text-rose-dark" },
+                { name: "박*준 신랑님", hall: "송파 루이비스컨벤션", pkg: "2인 1조", badge: "[전자계약 완료]", cls: "text-emerald-600" },
+                { name: "이*서 신부님", hall: "강남 아펠가모", pkg: "4인 2조", badge: "[얼리버드 할인적용]", cls: "text-rose-dark" },
+                { name: "최*우 신랑님", hall: "수원 메리빌리아", pkg: "4인 2조", badge: "[상담진행중]", cls: "text-amber-600" },
+                { name: "정*아 신부님", hall: "여의도 더파티움", pkg: "2인 1조", badge: "[예약확정]", cls: "text-rose-dark" },
+                { name: "한*민 신부님", hall: "마포 아만티호텔", pkg: "4인 2조", badge: "[전자계약 완료]", cls: "text-emerald-600" },
+                { name: "윤*호 신랑님", hall: "잠실 롯데호텔월드", pkg: "4인 2조", badge: "[짝꿍 할인적용]", cls: "text-rose-dark" },
+                { name: "서*진 신부님", hall: "인천 아시아드웨딩컨벤션", pkg: "2인 1조", badge: "[예약확정]", cls: "text-rose-dark" },
+                { name: "장*영 신랑님", hall: "강서 보타닉파크웨딩", pkg: "4인 2조", badge: "[전자계약 완료]", cls: "text-emerald-600" },
+                { name: "오*현 신부님", hall: "분당 가천컨벤션센터", pkg: "4인 2조", badge: "[상담진행중]", cls: "text-amber-600" }
+            ];
+
+            const startOffset = (fourDayCycle * 3) % tickerPool.length;
+            const selected = [];
+            for (let i = 0; i < 6; i++) {
+                selected.push(tickerPool[(startOffset + i) % tickerPool.length]);
+            }
+
+            const renderItems = (list) => list.map(item => `
+                <span class="flex items-center gap-2"><b class="text-charcoal">${item.name}</b> (${item.hall}) ${item.pkg} <span class="${item.cls} font-bold">${item.badge}</span></span>
+                <span class="text-rose-light">|</span>
+            `).join('');
+
+            marqueeEl.innerHTML = renderItems(selected) + renderItems(selected);
         }
 
         // 브라우저/단말기 고유 지문(Fingerprint) 생성 (IP 우회 및 쿠키 삭제 대응용)
@@ -1762,17 +1938,26 @@
 
         function activateAdminMode() {
             isAdmin = true;
+            adminCollapsedIds.clear();
             document.getElementById('admin-control-bar').classList.remove('hidden');
             const quickBtn = document.getElementById('popup-admin-quick-btn');
             if (quickBtn) quickBtn.classList.remove('hidden');
             renderReviews();
             renderQnaBoard();
-            showToast("👑 관리자 모드가 활성화되었습니다! (팝업 등록/관리, 후기 수정/삭제, 전 게시글 열람 가능)");
+            showToast("👑 관리자 모드가 활성화되었습니다! (팝업 등록/관리, 서비스 카드·후기 수정/삭제, 전 게시글 열람 가능)");
         }
 
         function exitAdminMode() {
             isAdmin = false;
+            if (isCustomMode) {
+                saveServiceCardsState(false);
+            }
             isCustomMode = false;
+            editingReviewIdx = null;
+            editingReplyPostId = null;
+            editingCustomerPostId = null;
+            adminCollapsedIds.clear();
+            sessionUnlockedIds.clear(); // 보안: 관리자 종료 시 모든 비밀글 즉시 잠금
             document.getElementById('admin-control-bar').classList.add('hidden');
             document.getElementById('custom-mode-banner').classList.add('hidden');
             const quickBtn = document.getElementById('popup-admin-quick-btn');
@@ -1780,7 +1965,7 @@
             renderServiceCards();
             renderReviews();
             renderQnaBoard();
-            showToast("관리자 모드가 종료되었습니다.");
+            showToast("관리자 모드가 종료되었으며 모든 비밀글이 안전하게 잠겼습니다.");
         }
 
         /* ==========================================
@@ -1788,6 +1973,7 @@
         ========================================== */
         const POPUP_HIDE_STORAGE_KEY = 'merrydam_popup_hide_until';
         const POPUP_CONFIG_STORAGE_KEY = 'merrydam_popup_config_v1';
+        let pendingPopupImageData = null;
 
         const defaultPopupConfig = {
             enabled: true,
@@ -1795,10 +1981,59 @@
             title: "메리담 웨딩 축의대\n얼리버드 & 후기·짝꿍 최대 할인!",
             content: "문의 후 24시간 내 계약 시 1만원 즉시 할인!\n계약/본식 후기 및 짝꿍 이벤트 중복 적용으로\n대표부부가 직접 케어하는 프리미엄 축의대를 만나보세요.",
             imgUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
+            imgFit: "original",
             btnText: "실시간 잔여 일정 · 혜택 상담받기",
             btnLink: "#consult",
             updatedAt: 0
         };
+
+        // 공통 스마트 이미지 최적화 함수 (원본 사진 비율 100% 보존 + 잘림/왜곡 없이 고선명 자동 리사이징)
+        function optimizeUploadedImage(file, maxW, maxH, onDone) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const origW = img.naturalWidth || img.width;
+                    const origH = img.naturalHeight || img.height;
+                    let targetW = origW;
+                    let targetH = origH;
+
+                    // 원본 가로/세로 비율을 정확히 유지하며 최대 해상도 내로 비례 축소 (작은 사진은 확대하지 않고 원본 유지)
+                    const ratio = Math.min(maxW / origW, maxH / origH, 1);
+                    targetW = Math.max(1, Math.round(origW * ratio));
+                    targetH = Math.max(1, Math.round(origH * ratio));
+
+                    const canvas = document.createElement('canvas');
+                    canvas.width = targetW;
+                    canvas.height = targetH;
+                    const ctx = canvas.getContext('2d');
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
+
+                    const isPngOrTransparent = file.type === 'image/png' || file.type === 'image/webp';
+                    if (!isPngOrTransparent) {
+                        ctx.fillStyle = '#FDFBF9';
+                        ctx.fillRect(0, 0, targetW, targetH);
+                    }
+                    ctx.drawImage(img, 0, 0, targetW, targetH);
+
+                    // 용량 제한(파이어베이스 1MB 및 로컬 저장소 안전 기준) 내 최고 화질 자동 선택
+                    let dataUrl = canvas.toDataURL(isPngOrTransparent ? 'image/png' : 'image/jpeg', 0.88);
+                    if (dataUrl.length > 420000) {
+                        ctx.fillStyle = '#FDFBF9';
+                        ctx.fillRect(0, 0, targetW, targetH);
+                        ctx.drawImage(img, 0, 0, targetW, targetH);
+                        dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+                    }
+                    if (dataUrl.length > 420000) {
+                        dataUrl = canvas.toDataURL('image/jpeg', 0.72);
+                    }
+                    onDone(dataUrl, targetW, targetH);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
 
         // 저장된 로컬 팝업 설정이 있으면 최우선 로드
         function loadSavedPopupConfig() {
@@ -1829,12 +2064,21 @@
             if (cfg.imgUrl && cfg.imgUrl.trim() !== '') {
                 imgWrap.classList.remove('hidden');
                 imgEl.src = cfg.imgUrl;
+                const fitMode = cfg.imgFit || 'original';
+                if (fitMode === 'cover') {
+                    imgWrap.className = "relative w-full h-56 bg-cream overflow-hidden flex items-center justify-center";
+                    imgEl.className = "w-full h-full object-cover block";
+                } else {
+                    // 원본 사진 그대로 잘림 없이 컨테이너 너비에 자동 맞춤
+                    imgWrap.className = "relative w-full bg-cream overflow-hidden flex items-center justify-center";
+                    imgEl.className = "w-full h-auto max-h-[420px] object-contain block";
+                }
             } else {
                 imgWrap.classList.add('hidden');
             }
 
             if (badgeEl) badgeEl.textContent = cfg.badge || 'NOTICE';
-            if (titleEl) titleEl.innerHTML = sanitizeInput(cfg.title).replace(/\n/g, '<br>');
+            if (titleEl) titleEl.innerHTML = escapeHtml(cfg.title || '').replace(/\n/g, '<br>');
             if (contentEl) contentEl.textContent = cfg.content || '';
             if (btnTextEl) btnTextEl.textContent = cfg.btnText || '자세히 보기';
             if (btnEl) {
@@ -1874,12 +2118,63 @@
             document.getElementById('site-notice-popup').classList.add('hidden');
         }
 
+        function updatePopupPreviewBox(src) {
+            const wrap = document.getElementById('pop-cfg-preview-wrap');
+            const img = document.getElementById('pop-cfg-preview-img');
+            if (!wrap || !img) return;
+            if (src && src.trim() !== '') {
+                img.src = src;
+                wrap.classList.remove('hidden');
+                updatePopupPreviewFit();
+            } else {
+                img.src = '';
+                wrap.classList.add('hidden');
+            }
+        }
+
+        function updatePopupPreviewFit() {
+            const wrap = document.getElementById('pop-cfg-preview-wrap');
+            const img = document.getElementById('pop-cfg-preview-img');
+            const fitEl = document.getElementById('pop-cfg-fit');
+            if (!wrap || !img || !fitEl) return;
+            if (fitEl.value === 'cover') {
+                wrap.className = "mt-2 relative rounded-xl overflow-hidden border border-rose-light bg-cream h-44 flex items-center justify-center";
+                img.className = "w-full h-full object-cover block";
+            } else {
+                wrap.className = "mt-2 relative rounded-xl overflow-hidden border border-rose-light bg-cream flex items-center justify-center";
+                img.className = "w-full h-auto max-h-64 object-contain block";
+            }
+        }
+
+        function handlePopupUrlInput(val) {
+            pendingPopupImageData = null;
+            updatePopupPreviewBox(val.trim());
+        }
+
+        function clearPopupImage() {
+            pendingPopupImageData = '';
+            const urlInput = document.getElementById('pop-cfg-img');
+            if (urlInput) urlInput.value = '';
+            updatePopupPreviewBox('');
+            showToast("팝업 이미지가 제거되었습니다. [팝업 설정 저장하기]를 눌러 반영하세요.");
+        }
+
         function openPopupAdminModal() {
             if (!isAdmin) return;
             const cfg = window.popupConfig;
+            pendingPopupImageData = null;
             document.getElementById('pop-cfg-enabled').checked = Boolean(cfg.enabled);
             document.getElementById('pop-cfg-badge').value = cfg.badge || '';
-            document.getElementById('pop-cfg-img').value = cfg.imgUrl || '';
+            const isDataUrl = cfg.imgUrl && cfg.imgUrl.startsWith('data:image');
+            if (isDataUrl) {
+                pendingPopupImageData = cfg.imgUrl;
+                document.getElementById('pop-cfg-img').value = '[업로드된 이미지 적용 중]';
+            } else {
+                document.getElementById('pop-cfg-img').value = cfg.imgUrl || '';
+            }
+            const fitSelect = document.getElementById('pop-cfg-fit');
+            if (fitSelect) fitSelect.value = cfg.imgFit || 'original';
+            updatePopupPreviewBox(cfg.imgUrl || '');
             document.getElementById('pop-cfg-title').value = cfg.title || '';
             document.getElementById('pop-cfg-content').value = cfg.content || '';
             document.getElementById('pop-cfg-btn-text').value = cfg.btnText || '';
@@ -1891,40 +2186,35 @@
             document.getElementById('popup-admin-modal').classList.add('hidden');
         }
 
-        // 이미지 업로드 시 파이어베이스(1MB 제한) 및 로컬스토리지 저장이 실패하지 않도록 자동 리사이즈 압축
+        // 이미지 업로드 시 원본 비율 100% 보존 & 자동 사이즈 최적화
         function handlePopupImageUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const maxW = 800;
-                    let w = img.width;
-                    let h = img.height;
-                    if (w > maxW) {
-                        h = Math.round((h * maxW) / w);
-                        w = maxW;
-                    }
-                    canvas.width = w;
-                    canvas.height = h;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, w, h);
-                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
-                    document.getElementById('pop-cfg-img').value = compressedDataUrl;
-                    showToast("📸 팝업 이미지가 최적화되어 적용되었습니다! [팝업 설정 저장하기]를 눌러주세요.");
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
+            optimizeUploadedImage(file, 1080, 1440, function(compressedDataUrl, w, h) {
+                pendingPopupImageData = compressedDataUrl;
+                document.getElementById('pop-cfg-img').value = `[업로드 완료: 원본비율 ${w}×${h}]`;
+                const fitSelect = document.getElementById('pop-cfg-fit');
+                if (fitSelect) fitSelect.value = 'original';
+                updatePopupPreviewBox(compressedDataUrl);
+                showToast(`📸 원본 비율(${w}×${h}) 그대로 잘림 없이 맞춤 업로드되었습니다! [팝업 설정 저장하기]를 눌러주세요.`);
+            });
+            event.target.value = '';
         }
 
         function readPopupFormValues() {
+            const rawUrlInput = document.getElementById('pop-cfg-img').value.trim();
+            let finalImgUrl = rawUrlInput;
+            if (pendingPopupImageData !== null) {
+                finalImgUrl = pendingPopupImageData;
+            } else if (rawUrlInput.startsWith('[업로드')) {
+                finalImgUrl = window.popupConfig.imgUrl || '';
+            }
+            const fitEl = document.getElementById('pop-cfg-fit');
             return {
                 enabled: document.getElementById('pop-cfg-enabled').checked,
                 badge: document.getElementById('pop-cfg-badge').value.trim() || 'SPECIAL NOTICE',
-                imgUrl: document.getElementById('pop-cfg-img').value.trim(),
+                imgUrl: finalImgUrl,
+                imgFit: fitEl ? fitEl.value : 'original',
                 title: document.getElementById('pop-cfg-title').value.trim(),
                 content: document.getElementById('pop-cfg-content').value.trim(),
                 btnText: document.getElementById('pop-cfg-btn-text').value.trim() || '실시간 상담 신청하기',
@@ -1974,80 +2264,10 @@
         }
 
         /* ==========================================
-           0-3. 실시간 예약현황 4일 주기 자동 변경 시스템
+           2. 5대 핵심 서비스 카드 렌더링 & 관리자 커스텀 모드 (로컬+클라우드 영구 저장)
         ========================================== */
-        function renderDynamicLiveTicker() {
-            const tickerEl = document.getElementById('live-status-marquee');
-            if (!tickerEl) return;
+        const SERVICE_CARDS_STORAGE_KEY = 'merrydam_service_cards_v1';
 
-            const fourDayCycle = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 4));
-            const tickerPool = [
-                [
-                    { name: "김*연 신부님", hall: "서울 더채플앳청담", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
-                    { name: "박*준 신랑님", hall: "송파 루이비스컨벤션", pkg: "2인 1조", status: "[전자계약 완료]", color: "text-emerald-600" },
-                    { name: "이*서 신부님", hall: "강남 아펠가모", pkg: "4인 2조", status: "[얼리버드 할인적용]", color: "text-rose-dark" },
-                    { name: "최*우 신랑님", hall: "수원 메리빌리아", pkg: "4인 2조", status: "[상담진행중]", color: "text-amber-600" },
-                    { name: "정*아 신부님", hall: "여의도 더파티움", pkg: "2인 1조", status: "[예약확정]", color: "text-rose-dark" }
-                ],
-                [
-                    { name: "한*민 신부님", hall: "잠실 롯데호텔월드", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" },
-                    { name: "조*현 신랑님", hall: "인천 아시아드웨딩컨벤션", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
-                    { name: "윤*지 신부님", hall: "마포 아만티호텔", pkg: "2인 1조", status: "[짝꿍할인 적용]", color: "text-rose-dark" },
-                    { name: "강*혁 신랑님", hall: "서초 더화이트베일", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
-                    { name: "송*은 신부님", hall: "강서 보타닉파크웨딩", pkg: "2인 1조", status: "[상담진행중]", color: "text-amber-600" }
-                ],
-                [
-                    { name: "임*빈 신부님", hall: "강남 더라움", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
-                    { name: "오*원 신랑님", hall: "분당 가천컨벤션센터", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" },
-                    { name: "신*하 신부님", hall: "종로 HW컨벤션센터", pkg: "2인 1조", status: "[얼리버드 할인적용]", color: "text-rose-dark" },
-                    { name: "권*솔 신랑님", hall: "부천 MJ컨벤션", pkg: "4인 2조", status: "[예약확정]", color: "text-rose-dark" },
-                    { name: "황*수 신부님", hall: "성동 보테가마지오", pkg: "4인 2조", status: "[전자계약 완료]", color: "text-emerald-600" }
-                ]
-            ];
-
-            const activeSet = tickerPool[fourDayCycle % tickerPool.length];
-            const itemsHtml = activeSet.map(item => `
-                <span class="flex items-center gap-2"><b class="text-charcoal">${item.name}</b> (${item.hall}) ${item.pkg} <span class="${item.color} font-bold">${item.status}</span></span>
-                <span class="text-rose-light">|</span>
-            `).join('');
-
-            tickerEl.innerHTML = itemsHtml + itemsHtml;
-        }
-
-        /* ==========================================
-           1. 메인 웨딩홀 히어로 슬라이더
-        ========================================== */
-        let currentHeroSlide = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroDots = document.getElementById('hero-dots').children;
-        const heroCaptions = [
-            "✨ 호텔 및 프리미엄 웨딩홀 현장 세팅",
-            "🌸 밝고 화사한 로비 하객 맞이 & 접수대",
-            "💎 대표부부가 직접 케어하는 2인 1조 / 4인 2조 크로스 체크",
-            "🤍 양가 부모님과 신랑·신부님이 가장 신뢰하는 메리담"
-        ];
-
-        function setHeroSlide(index) {
-            heroSlides[currentHeroSlide].classList.remove('active');
-            heroSlides[currentHeroSlide].classList.add('inactive');
-            heroDots[currentHeroSlide].className = "w-2 h-2 rounded-full bg-rose-light transition-all";
-
-            currentHeroSlide = index;
-
-            heroSlides[currentHeroSlide].classList.remove('inactive');
-            heroSlides[currentHeroSlide].classList.add('active');
-            heroDots[currentHeroSlide].className = "w-6 h-2 rounded-full bg-rose transition-all";
-            document.getElementById('hero-slide-caption').textContent = heroCaptions[currentHeroSlide];
-        }
-
-        setInterval(() => {
-            let next = (currentHeroSlide + 1) % heroSlides.length;
-            setHeroSlide(next);
-        }, 4500);
-
-        /* ==========================================
-           2. 5대 핵심 서비스 카드 렌더링 & 관리자 커스텀 모드
-        ========================================== */
         const defaultServices = [
             {
                 badge: "CORE 01 · 실시간 확인",
@@ -2087,34 +2307,100 @@
             }
         ];
 
-        let serviceData = JSON.parse(JSON.stringify(defaultServices));
+        function loadSavedServiceCards() {
+            try {
+                const raw = localStorage.getItem(SERVICE_CARDS_STORAGE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed && Array.isArray(parsed.items) && parsed.items.length > 0) {
+                        return parsed.items;
+                    }
+                }
+            } catch (e) {}
+            return JSON.parse(JSON.stringify(defaultServices));
+        }
+
+        let serviceData = loadSavedServiceCards();
         let isCustomMode = false;
+        let serviceSaveDebounce = null;
+
+        function saveServiceCardsState(showFeedback = false) {
+            const updatedAt = Date.now();
+            try {
+                localStorage.setItem(SERVICE_CARDS_STORAGE_KEY, JSON.stringify({ items: serviceData, updatedAt }));
+            } catch (e) {
+                console.warn("Local service cards save warning:", e);
+            }
+            if (window.syncServiceCardsToCloud) {
+                window.syncServiceCardsToCloud(serviceData, updatedAt);
+            }
+            if (showFeedback) {
+                showToast("✅ 서비스 카드 변경사항(이미지/내용)이 저장되었습니다!");
+            }
+        }
+
+        window.applyServiceCardsFromCloud = function(items, updatedAt) {
+            serviceData = items;
+            try {
+                localStorage.setItem(SERVICE_CARDS_STORAGE_KEY, JSON.stringify({ items: serviceData, updatedAt }));
+            } catch (e) {}
+            renderServiceCards();
+        };
 
         function renderServiceCards() {
             const container = document.getElementById('service-cards-container');
-            container.innerHTML = serviceData.map((item, idx) => `
-                <div class="bg-white rounded-3xl overflow-hidden border ${isCustomMode ? 'border-2 border-dashed border-rose shadow-xl' : 'border-rose-light/60 shadow-sm hover:shadow-xl'} transition-all flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-56 sm:h-52 overflow-hidden bg-cream flex items-center justify-center">
-                            <img id="srv-img-${idx}" src="${item.img}" alt="${item.title}" class="w-full h-full ${idx < 2 ? 'object-contain p-2' : 'object-cover'} group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/F6EFEA/B86B6D?text=MARRYDAM'">
-                            <span class="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur text-rose-dark text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
-                                ${item.badge}
-                            </span>
-                            ${isCustomMode ? `
-                                <label class="absolute inset-0 bg-charcoal/60 text-white flex flex-col items-center justify-center cursor-pointer hover:bg-charcoal/75 transition-colors">
-                                    <i class="fa-solid fa-camera text-2xl mb-1.5 text-rose-light"></i>
-                                    <span class="text-xs font-bold bg-rose px-3 py-1 rounded-full">클릭하여 내 사진 업로드</span>
-                                    <input type="file" accept="image/*" class="hidden" onchange="handleServiceImageUpload(event, ${idx})">
-                                </label>
-                            ` : ''}
+            if (!container) return;
+            container.innerHTML = serviceData.map((item, idx) => {
+                const fitMode = item.fit || 'original';
+                const isOriginalFit = fitMode === 'original';
+                // 모든 카드의 이미지 프레임 높이를 통일해 제목·본문 가로 정렬을 일직선으로 고정
+                const frameClasses = 'relative w-full h-60 sm:h-64 overflow-hidden bg-[#F8F3EF] border-b border-rose-light/40 flex items-center justify-center shrink-0';
+                const imgClasses = isOriginalFit
+                    ? 'relative z-[1] max-w-full max-h-full w-auto h-auto object-contain block group-hover:scale-[1.03] transition-transform duration-500'
+                    : 'relative z-[1] w-full h-full object-cover block group-hover:scale-105 transition-transform duration-500';
+
+                return `
+                <div class="h-full bg-white rounded-3xl overflow-hidden border ${isCustomMode ? 'border-2 border-dashed border-rose shadow-xl' : 'border-rose-light/60 shadow-sm hover:shadow-xl'} transition-all flex flex-col group">
+                    <div class="${frameClasses}">
+                        ${isOriginalFit ? `
+                            <!-- 원본 비율 유지 시 여백이 어색하지 않도록 동일 이미지의 은은한 블러 배경 적용 -->
+                            <img src="${escapeHtml(item.img)}" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-30 scale-110 pointer-events-none">
+                        ` : ''}
+                        <img id="srv-img-${idx}" src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" class="${imgClasses}" onerror="this.src='https://placehold.co/600x400/F6EFEA/B86B6D?text=MARRYDAM'">
+                        <span contenteditable="${isCustomMode}" oninput="updateServiceTextDebounced(${idx}, 'badge', this.innerText)" onblur="updateServiceText(${idx}, 'badge', this.innerText)" class="absolute top-3.5 left-3.5 z-30 bg-white/95 backdrop-blur text-rose-dark text-[11px] font-bold px-3 py-1 rounded-full shadow-sm ${isCustomMode ? 'ring-1 ring-rose outline-none' : ''}">
+                            ${escapeHtml(item.badge)}
+                        </span>
+                        ${isCustomMode ? `
+                            <label class="absolute inset-0 z-20 bg-charcoal/55 text-white flex flex-col items-center justify-center cursor-pointer hover:bg-charcoal/70 transition-colors">
+                                <i class="fa-solid fa-camera text-2xl mb-1.5 text-rose-light"></i>
+                                <span class="text-xs font-bold bg-rose px-3 py-1 rounded-full shadow">클릭하여 내 사진 업로드</span>
+                                <span class="text-[10px] text-white/85 mt-1">원본 비율 그대로 잘림 없이 자동 맞춤</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="handleServiceImageUpload(event, ${idx})">
+                            </label>
+                        ` : ''}
+                    </div>
+                    ${isCustomMode ? `
+                        <div class="px-4 pt-3 space-y-1.5 shrink-0">
+                            <div class="flex items-center gap-1.5">
+                                <input type="text" id="srv-url-input-${idx}" value="${item.img.startsWith('data:image') ? '' : escapeHtml(item.img)}" placeholder="또는 이미지 URL 주소 붙여넣기" class="flex-1 px-2.5 py-1.5 rounded-lg bg-cream border border-rose-light text-[11px] focus:outline-none focus:border-rose">
+                                <button type="button" onclick="applyServiceImageUrl(${idx})" class="px-2.5 py-1.5 rounded-lg bg-charcoal hover:bg-rose-dark text-white text-[11px] font-bold shrink-0">적용</button>
+                            </div>
+                            <div class="flex items-center justify-between text-[11px] bg-cream px-2.5 py-1 rounded-lg border border-rose-light/60">
+                                <span class="font-bold text-charcoal/75">이미지 표시 방식</span>
+                                <div class="flex gap-1">
+                                    <button type="button" onclick="setServiceImageFit(${idx}, 'original')" class="px-2 py-0.5 rounded font-bold ${isOriginalFit ? 'bg-rose text-white' : 'bg-white text-charcoal/70'}">원본 그대로</button>
+                                    <button type="button" onclick="setServiceImageFit(${idx}, 'cover')" class="px-2 py-0.5 rounded font-bold ${!isOriginalFit ? 'bg-rose text-white' : 'bg-white text-charcoal/70'}">꽉 채우기</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 contenteditable="${isCustomMode}" onblur="updateServiceText(${idx}, 'title', this.innerText)" class="font-display text-xl font-bold text-charcoal mb-2 ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${item.title}</h3>
-                            <p contenteditable="${isCustomMode}" onblur="updateServiceText(${idx}, 'desc', this.innerText)" class="text-sm text-charcoal/80 leading-relaxed ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${item.desc}</p>
-                        </div>
+                    ` : ''}
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 contenteditable="${isCustomMode}" oninput="updateServiceTextDebounced(${idx}, 'title', this.innerText)" onblur="updateServiceText(${idx}, 'title', this.innerText)" class="font-display text-xl font-bold text-charcoal mb-2 ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${escapeHtml(item.title)}</h3>
+                        <p contenteditable="${isCustomMode}" oninput="updateServiceTextDebounced(${idx}, 'desc', this.innerText)" onblur="updateServiceText(${idx}, 'desc', this.innerText)" class="text-sm text-charcoal/80 leading-relaxed ${isCustomMode ? 'bg-blush/50 px-2 py-1 rounded-lg outline-none ring-1 ring-rose' : ''}">${escapeHtml(item.desc)}</p>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function toggleCustomMode() {
@@ -2125,36 +2411,100 @@
 
             if (isCustomMode) {
                 banner.classList.remove('hidden');
-                btnText.textContent = "서비스 카드 편집 완료";
+                btnText.textContent = "서비스 카드 편집 저장 · 완료";
                 document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
             } else {
+                saveServiceCardsState(true);
                 banner.classList.add('hidden');
                 btnText.textContent = "서비스 카드 편집 켜기";
             }
             renderServiceCards();
         }
 
+        // 서비스 카드 이미지 업로드 시 원본 비율 100% 보존 + 영역 너비에 잘림 없이 자동 맞춤 저장
         function handleServiceImageUpload(event, idx) {
             const file = event.target.files[0];
             if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                serviceData[idx].img = e.target.result;
+            optimizeUploadedImage(file, 1080, 1080, function(compressedDataUrl, w, h) {
+                serviceData[idx].img = compressedDataUrl;
+                serviceData[idx].fit = 'original';
+                saveServiceCardsState(false);
                 renderServiceCards();
-                showToast("📸 새로운 이미지가 서비스 카드에 적용되었습니다!");
-            };
-            reader.readAsDataURL(file);
+                showToast(`📸 원본 사진(${w}×${h}) 그대로 잘림 없이 카드 사이즈에 맞춰 저장되었습니다!`);
+            });
+            event.target.value = '';
+        }
+
+        function setServiceImageFit(idx, fitMode) {
+            serviceData[idx].fit = fitMode;
+            saveServiceCardsState(false);
+            renderServiceCards();
+            showToast(fitMode === 'original' ? "🖼️ 원본 사진 비율 그대로(잘림 없음) 모드로 변경되었습니다." : "🖼️ 영역 꽉 채우기 모드로 변경되었습니다.");
+        }
+
+        function applyServiceImageUrl(idx) {
+            const inputEl = document.getElementById(`srv-url-input-${idx}`);
+            if (!inputEl) return;
+            const url = inputEl.value.trim();
+            if (!url) {
+                showToast("이미지 URL 주소를 입력해주세요.");
+                return;
+            }
+            serviceData[idx].img = url;
+            saveServiceCardsState(true);
+            renderServiceCards();
+        }
+
+        function updateServiceTextDebounced(idx, field, value) {
+            serviceData[idx][field] = value.trim();
+            if (serviceSaveDebounce) clearTimeout(serviceSaveDebounce);
+            serviceSaveDebounce = setTimeout(() => {
+                saveServiceCardsState(false);
+            }, 600);
         }
 
         function updateServiceText(idx, field, value) {
             serviceData[idx][field] = value.trim();
+            saveServiceCardsState(false);
         }
 
         function resetCustomCards() {
             serviceData = JSON.parse(JSON.stringify(defaultServices));
+            saveServiceCardsState(false);
             renderServiceCards();
-            showToast("✨ 서비스 카드가 초기 상태로 복구되었습니다.");
+            showToast("✨ 서비스 카드가 초기 상태로 복구 및 저장되었습니다.");
         }
+
+        /* ==========================================
+           1. 메인 웨딩홀 히어로 슬라이더
+        ========================================== */
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.getElementById('hero-dots').children;
+        const heroCaptions = [
+            "✨ 호텔 및 프리미엄 웨딩홀 현장 세팅",
+            "🌸 밝고 화사한 로비 하객 맞이 & 접수대",
+            "💎 대표부부가 직접 케어하는 2인 1조 / 4인 2조 크로스 체크",
+            "🤍 양가 부모님과 신랑·신부님이 가장 신뢰하는 메리담"
+        ];
+
+        function setHeroSlide(index) {
+            heroSlides[currentHeroSlide].classList.remove('active');
+            heroSlides[currentHeroSlide].classList.add('inactive');
+            heroDots[currentHeroSlide].className = "w-2 h-2 rounded-full bg-rose-light transition-all";
+
+            currentHeroSlide = index;
+
+            heroSlides[currentHeroSlide].classList.remove('inactive');
+            heroSlides[currentHeroSlide].classList.add('active');
+            heroDots[currentHeroSlide].className = "w-6 h-2 rounded-full bg-rose transition-all";
+            document.getElementById('hero-slide-caption').textContent = heroCaptions[currentHeroSlide];
+        }
+
+        setInterval(() => {
+            let next = (currentHeroSlide + 1) % heroSlides.length;
+            setHeroSlide(next);
+        }, 4500);
 
         /* ==========================================
            3. 스마트폰 실시간 디지털 장부 슬라이더
@@ -2213,9 +2563,12 @@
         }, 5000);
 
         /* ==========================================
-           4. 실제 고객 후기 데이터 & 관리자 수정/삭제 기능
+           4. 실제 고객 후기 데이터 & 관리자 수정/삭제 기능 (로컬+클라우드 영구 저장)
         ========================================== */
-        const reviewsList = [
+        const REVIEWS_STORAGE_KEY = 'merrydam_reviews_v1';
+        const REVIEWS_DELETED_KEY = 'merrydam_reviews_deleted_v1';
+
+        const defaultReviewsList = [
             {
                 id: 1,
                 name: "김*연 신부님",
@@ -2259,12 +2612,50 @@
                 content: "친척이 적어서 신부측만 2인 1조로 신청했는데, 신랑측 친척분들이 메리담 일하시는 거 보고 왜 우리 쪽은 안 불렀냐며 부러워하셨어요! 처음부터 끝까지 카메라로 녹화해주시고 영상 파일까지 보내주셔서 1000% 안심 그 자체였습니다."
             }
         ];
+
+        function getDeletedReviewIds() {
+            try {
+                const raw = localStorage.getItem(REVIEWS_DELETED_KEY);
+                if (raw) return new Set(JSON.parse(raw).map(String));
+            } catch (e) {}
+            return new Set();
+        }
+        window.getDeletedReviewIds = getDeletedReviewIds;
+
+        function markReviewDeleted(id) {
+            const set = getDeletedReviewIds();
+            set.add(String(id));
+            try {
+                localStorage.setItem(REVIEWS_DELETED_KEY, JSON.stringify(Array.from(set)));
+            } catch (e) {}
+        }
+
+        function loadReviewsFromLocal() {
+            try {
+                const raw = localStorage.getItem(REVIEWS_STORAGE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed)) return parsed;
+                }
+            } catch (e) {}
+            return JSON.parse(JSON.stringify(defaultReviewsList));
+        }
+
+        const reviewsList = loadReviewsFromLocal();
         window.reviewsList = reviewsList;
+
+        function saveReviewsToLocal() {
+            try {
+                localStorage.setItem(REVIEWS_STORAGE_KEY, JSON.stringify(reviewsList));
+            } catch (e) {}
+        }
+        window.saveReviewsToLocal = saveReviewsToLocal;
 
         let editingReviewIdx = null;
 
         function renderReviews() {
             const grid = document.getElementById('reviews-grid');
+            if (!grid) return;
             grid.innerHTML = reviewsList.map((r, idx) => `
                 <div class="bg-white p-7 rounded-3xl border ${isAdmin ? 'border-rose shadow-md' : 'border-rose-light/60 shadow-sm hover:shadow-xl'} transition-all flex flex-col justify-between">
                     <div>
@@ -2272,26 +2663,26 @@
                             <div class="text-amber-400 text-xs flex gap-0.5">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </div>
-                            <span class="text-[11px] font-bold bg-blush text-rose-dark px-2.5 py-1 rounded-full">${r.channel}</span>
+                            <span class="text-[11px] font-bold bg-blush text-rose-dark px-2.5 py-1 rounded-full">${escapeHtml(r.channel)}</span>
                         </div>
                         ${editingReviewIdx === idx ? `
                             <div class="space-y-2 mb-3">
-                                <input id="edit-rev-name-${idx}" value="${r.name}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream font-bold">
-                                <input id="edit-rev-hall-${idx}" value="${r.hall}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream">
-                                <textarea id="edit-rev-content-${idx}" rows="4" class="w-full px-3 py-2 text-xs border border-rose rounded-lg bg-cream">${r.content}</textarea>
+                                <input id="edit-rev-name-${idx}" value="${escapeHtml(r.name)}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream font-bold">
+                                <input id="edit-rev-hall-${idx}" value="${escapeHtml(r.hall)}" class="w-full px-3 py-1.5 text-xs border border-rose rounded-lg bg-cream">
+                                <textarea id="edit-rev-content-${idx}" rows="4" class="w-full px-3 py-2 text-xs border border-rose rounded-lg bg-cream">${escapeHtml(r.content)}</textarea>
                                 <div class="flex justify-end gap-1.5">
                                     <button onclick="cancelEditReview()" class="px-3 py-1 bg-beige text-charcoal text-xs rounded-lg font-bold">취소</button>
                                     <button onclick="saveEditReview(${idx})" class="px-3 py-1 bg-rose-dark text-white text-xs rounded-lg font-bold">저장</button>
                                 </div>
                             </div>
                         ` : `
-                            <p class="text-sm text-charcoal/90 leading-relaxed mb-5">"${r.content}"</p>
+                            <p class="text-sm text-charcoal/90 leading-relaxed mb-5 whitespace-pre-line">"${escapeHtml(r.content)}"</p>
                         `}
                     </div>
                     <div class="pt-4 border-t border-beige flex items-center justify-between">
                         <div>
-                            <div class="font-bold text-charcoal text-sm">${r.name}</div>
-                            <div class="text-xs text-charcoal/70">${r.hall}</div>
+                            <div class="font-bold text-charcoal text-sm">${escapeHtml(r.name)}</div>
+                            <div class="text-xs text-charcoal/70">${escapeHtml(r.hall)}</div>
                         </div>
                         <div class="flex items-center gap-1.5">
                             ${isAdmin ? `
@@ -2323,19 +2714,25 @@
         }
 
         function saveEditReview(idx) {
-            reviewsList[idx].name = document.getElementById(`edit-rev-name-${idx}`).value;
-            reviewsList[idx].hall = document.getElementById(`edit-rev-hall-${idx}`).value;
-            reviewsList[idx].content = document.getElementById(`edit-rev-content-${idx}`).value;
+            reviewsList[idx].name = sanitizeInput(document.getElementById(`edit-rev-name-${idx}`).value);
+            reviewsList[idx].hall = sanitizeInput(document.getElementById(`edit-rev-hall-${idx}`).value);
+            reviewsList[idx].content = sanitizeInput(document.getElementById(`edit-rev-content-${idx}`).value);
+            reviewsList[idx].updatedAt = Date.now();
+            saveReviewsToLocal();
             if (window.syncReviewToCloud) window.syncReviewToCloud(reviewsList[idx]);
             editingReviewIdx = null;
             renderReviews();
-            showToast("✅ 고객 후기가 수정되었습니다.");
+            showToast("✅ 고객 후기가 수정되어 저장되었습니다.");
         }
 
         function deleteReview(idx) {
             const target = reviewsList[idx];
-            if (target && window.deleteReviewFromCloud) window.deleteReviewFromCloud(target.id);
+            if (target) {
+                markReviewDeleted(target.id);
+                if (window.deleteReviewFromCloud) window.deleteReviewFromCloud(target.id);
+            }
             reviewsList.splice(idx, 1);
+            saveReviewsToLocal();
             renderReviews();
             showToast("🗑️ 선택한 후기가 삭제되었습니다.");
         }
@@ -2347,8 +2744,8 @@
 
         function submitNewReview(e) {
             e.preventDefault();
-            if (Date.now() - lastFormSubmitTime < 10000) {
-                showToast("⏳ 스팸 및 매크로 방지를 위해 10초 후 다시 등록하실 수 있습니다.");
+            if (Date.now() - lastFormSubmitTime < 3000) {
+                showToast("⏳ 잠시 후 다시 등록하실 수 있습니다.");
                 return;
             }
             lastFormSubmitTime = Date.now();
@@ -2358,8 +2755,9 @@
             const channel = sanitizeInput(document.getElementById('rev-channel').value);
             const content = sanitizeInput(document.getElementById('rev-content').value);
 
-            const newRev = { id: Date.now(), name, hall, channel, content };
+            const newRev = { id: Date.now(), name, hall, channel, content, updatedAt: Date.now() };
             reviewsList.unshift(newRev);
+            saveReviewsToLocal();
             if (window.syncReviewToCloud) window.syncReviewToCloud(newRev);
             renderReviews();
             e.target.reset();
@@ -2421,8 +2819,8 @@
                 recordSecurityEvent("🤖 스팸봇 차단", "자동화 매크로 상담폼 공격 차단", true);
                 return;
             }
-            // 2. 도배 방지 쿨타임 (10초)
-            if (Date.now() - lastFormSubmitTime < 10000) {
+            // 2. 도배 방지 쿨타임 (3초)
+            if (Date.now() - lastFormSubmitTime < 3000) {
                 showToast("⏳ 비정상 연속 전송 방지를 위해 잠시 후 다시 시도해주세요.");
                 return;
             }
@@ -2434,27 +2832,44 @@
             const hall = sanitizeInput(document.getElementById('form-hall').value);
             const pkg = sanitizeInput(document.getElementById('form-package').value);
             const promo = sanitizeInput(document.getElementById('form-promo').value) || '얼리버드/후기/짝꿍 이벤트 희망';
-            const pw = sanitizeInput(document.getElementById('form-password').value);
+            const pw = document.getElementById('form-password').value.trim();
             const memo = sanitizeInput(document.getElementById('form-memo').value) || '일정 가능 여부 및 전자계약 안내 요청드립니다.';
 
-            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => p.id)) + 1 : 1;
+            if (!pw) {
+                showToast("🔒 비밀글 열람 및 수정에 사용할 비밀번호를 입력해주세요.");
+                return;
+            }
+
+            const nowMs = Date.now();
+            const docId = `post_${nowMs}_${Math.floor(Math.random() * 10000)}`;
+            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => Number(p.id) || 0)) + 1 : 1;
+            const todayStr = getTodayDateStr();
+
             const newPost = {
                 id: newId,
+                docId: docId,
+                isUserCreated: true,
+                createdAt: nowMs,
+                updatedAt: nowMs,
                 name: maskWriterName(name),
                 rawName: name,
                 hall: hall,
                 pkg: pkg,
-                date: "2026-11-18",
+                date: todayStr,
                 title: `[상담신청] ${hall} (${date}) ${pkg} 예약 및 가능여부 문의합니다.`,
                 content: `• 성함: ${name}\n• 연락처: ${phone}\n• 예식일시: ${date}\n• 웨딩홀: ${hall}\n• 희망패키지: ${pkg}\n• 희망이벤트: ${promo}\n• 추가문의: ${memo}`,
                 password: pw,
                 status: "답변완료",
-                reply: `안녕하세요 ${name}님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :) 문의주신 ${date} [${hall}] ${pkg} 일정 확인 중이며, 남겨주신 연락처(${phone})로 전자계약서 및 얼리버드 1만원 즉시 할인 안내 메시지를 발송해드렸습니다. 소중한 날 믿고 맡겨주셔서 진심으로 감사합니다!`,
-                unlocked: true
+                reply: `안녕하세요 ${name}님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :) 문의주신 ${date} [${hall}] ${pkg} 일정 확인 중이며, 남겨주신 연락처(${phone})로 전자계약서 및 얼리버드 1만원 즉시 할인 안내 메시지를 발송해드렸습니다. 소중한 날 믿고 맡겨주셔서 진심으로 감사합니다!`
             };
 
             qnaPosts.unshift(newPost);
+            sortQnaPosts();
+            saveQnaToLocal();
             if (window.syncPostToCloud) window.syncPostToCloud(newPost);
+
+            // 작성자 본인의 현재 세션에서만 즉시 확인 가능 (새로고침 또는 타인은 비밀번호 필수)
+            sessionUnlockedIds.add(docId);
             currentBoardPage = 1;
             renderQnaBoard();
 
@@ -2466,16 +2881,19 @@
             try { document.execCommand('copy'); } catch (err) {}
             document.body.removeChild(tempArea);
 
-            showToast(`🎉 ${name}님, 상담 신청이 아래 문의게시판에 비밀글로 등록되었으며 답글이 달렸습니다!`);
+            showToast(`🎉 ${name}님, 상담 신청이 문의게시판 최상단에 비밀글로 등록되었습니다! (타인 열람 불가)`);
             e.target.reset();
             setTimeout(() => {
                 document.getElementById('qna-board').scrollIntoView({ behavior: 'smooth' });
-            }, 600);
+            }, 400);
         }
 
         /* ==========================================
-           6. 상담신청 · 문의게시판 (2026-10-01 ~ 2026-11-18 74개 가라 데이터 생성 & 비밀글/답글 시스템)
+           6. 상담신청 · 문의게시판 (2026-10-01 ~ 2026-11-18 74개 가라 데이터 + 로컬/클라우드 영구 저장 & 철저한 비밀글 보호)
         ========================================== */
+        const QNA_CUSTOM_STORAGE_KEY = 'merrydam_qna_custom_v1';
+        const QNA_DELETED_STORAGE_KEY = 'merrydam_qna_deleted_v1';
+
         const sampleSurnames = ["김", "이", "박", "최", "정", "강", "조", "윤", "장", "임", "한", "오", "서", "신", "권", "황", "안", "송", "전", "홍"];
         const sampleLastChars = ["연", "우", "현", "서", "민", "아", "준", "희", "진", "영", "윤", "하", "원", "솔", "빈", "경", "혁", "수", "지", "은"];
         const sampleHalls = [
@@ -2497,13 +2915,67 @@
         const qnaPosts = [];
         window.qnaPosts = qnaPosts;
 
+        // 비밀글 열람 권한은 메모리 Set으로만 관리 (DB/로컬 저장 절대 금지 -> 타인 노출 원천 차단)
+        const sessionUnlockedIds = new Set();
+        const adminCollapsedIds = new Set();
+
+        function getDeletedQnaIds() {
+            try {
+                const raw = localStorage.getItem(QNA_DELETED_STORAGE_KEY);
+                if (raw) return new Set(JSON.parse(raw).map(String));
+            } catch (e) {}
+            return new Set();
+        }
+        window.getDeletedQnaIds = getDeletedQnaIds;
+
+        function markQnaDeleted(docKey) {
+            const set = getDeletedQnaIds();
+            set.add(String(docKey));
+            try {
+                localStorage.setItem(QNA_DELETED_STORAGE_KEY, JSON.stringify(Array.from(set)));
+            } catch (e) {}
+        }
+
+        function sortQnaPosts() {
+            qnaPosts.sort((a, b) => {
+                const timeA = a.createdAt || (Number(a.id) || 0);
+                const timeB = b.createdAt || (Number(b.id) || 0);
+                if (timeB !== timeA) return timeB - timeA;
+                return (Number(b.id) || 0) - (Number(a.id) || 0);
+            });
+        }
+        window.sortQnaPosts = sortQnaPosts;
+
+        function saveQnaToLocal() {
+            try {
+                // 사용자 작성글 또는 수정된 글을 로컬에 저장 (잠금해제 상태는 절대 저장 안 함)
+                const toStore = qnaPosts
+                    .filter(p => p.isUserCreated || p.isModified)
+                    .map(p => {
+                        const copy = { ...p };
+                        delete copy.unlocked;
+                        return copy;
+                    });
+                localStorage.setItem(QNA_CUSTOM_STORAGE_KEY, JSON.stringify(toStore));
+            } catch (e) {
+                console.warn("Local QnA save warning:", e);
+            }
+        }
+        window.saveQnaToLocal = saveQnaToLocal;
+
         function initMockQnaPosts() {
-            // 2026-10-01 부터 2026-11-18 (오늘) 까지 총 49일 구간에 74개의 게시글을 고르게 배치
+            qnaPosts.length = 0;
+            const deletedSet = getDeletedQnaIds();
+
+            // 1. 2026-10-01 부터 2026-11-18 까지 총 74개의 기본 게시글 생성
             const startTime = new Date(2026, 9, 1).getTime(); // 2026-10-01
             const endTime = new Date(2026, 10, 18).getTime(); // 2026-11-18
             const totalItems = 74;
 
             for (let i = 1; i <= totalItems; i++) {
+                const docId = String(i);
+                if (deletedSet.has(docId)) continue;
+
                 const ratio = (i - 1) / (totalItems - 1);
                 const itemTime = startTime + Math.round(ratio * (endTime - startTime));
                 const d = new Date(itemTime);
@@ -2520,6 +2992,8 @@
 
                 qnaPosts.push({
                     id: i,
+                    docId: docId,
+                    createdAt: itemTime + i,
                     name: maskedName,
                     rawName: maskedName,
                     hall: hall,
@@ -2529,27 +3003,51 @@
                     content: `안녕하세요! ${hall}에서 예식을 앞둔 예비부부입니다.\n희망 패키지: ${pkg}\n대표부부님이 직접 케어해주신다는 후기 보고 문의드립니다. 해당 일자 가능 여부와 얼리버드 및 짝꿍 할인 안내 부탁드립니다.`,
                     password: String(1000 + i),
                     status: "답변완료",
-                    reply: `안녕하세요 ${maskedName} 신랑·신부님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :)\n문의주신 [${hall}] ${pkg} 일정 현재 예약 가능하시며, 남겨주신 연락처로 안심 모바일 전자계약서와 얼리버드 1만원 즉시 할인 혜택을 안내해 드렸습니다. 예식 2주 전 사전 체크 및 당일 90분 전 도착으로 완벽히 모시겠습니다. 감사합니다!`,
-                    unlocked: false
+                    reply: `안녕하세요 ${maskedName} 신랑·신부님, 프리미엄 웨딩 축의대 메리담 대표부부입니다 :)\n문의주신 [${hall}] ${pkg} 일정 현재 예약 가능하시며, 남겨주신 연락처로 안심 모바일 전자계약서와 얼리버드 1만원 즉시 할인 혜택을 안내해 드렸습니다. 예식 2주 전 사전 체크 및 당일 90분 전 도착으로 완벽히 모시겠습니다. 감사합니다!`
                 });
             }
 
-            // 최신순(74번 -> 1번) 정렬
-            qnaPosts.sort((a, b) => b.id - a.id);
+            // 2. 로컬 저장소에 보관된 신규 작성글 및 수정글 병합
+            try {
+                const rawCustom = localStorage.getItem(QNA_CUSTOM_STORAGE_KEY);
+                if (rawCustom) {
+                    const customPosts = JSON.parse(rawCustom);
+                    if (Array.isArray(customPosts)) {
+                        customPosts.forEach(cp => {
+                            const key = cp.docId || String(cp.id);
+                            if (deletedSet.has(key)) return;
+                            delete cp.unlocked;
+                            const idx = qnaPosts.findIndex(p => p.docId === key);
+                            if (idx > -1) {
+                                qnaPosts[idx] = { ...qnaPosts[idx], ...cp, docId: key };
+                            } else {
+                                qnaPosts.push({ ...cp, docId: key });
+                            }
+                        });
+                    }
+                }
+            } catch (e) {}
+
+            sortQnaPosts();
         }
+
+        // 모듈 스크립트(Firebase)가 실행되기 전 즉시 초기화하여 동기화 충돌 원천 방지
+        initMockQnaPosts();
 
         let currentBoardPage = 1;
         const postsPerPage = 10;
-        let targetPostIdForPw = null;
+        let targetPostDocIdForPw = null;
         let editingReplyPostId = null;
         let editingCustomerPostId = null;
 
         function renderQnaBoard() {
             const listEl = document.getElementById('qna-board-list');
             const pageEl = document.getElementById('qna-pagination');
-            const totalCount = qnaPosts.length;
+            if (!listEl || !pageEl) return;
 
-            document.getElementById('board-total-count').textContent = totalCount;
+            const totalCount = qnaPosts.length;
+            const countEl = document.getElementById('board-total-count');
+            if (countEl) countEl.textContent = totalCount;
 
             const totalPages = Math.ceil(totalCount / postsPerPage);
             if (currentBoardPage > totalPages) currentBoardPage = totalPages || 1;
@@ -2557,55 +3055,68 @@
             const startIdx = (currentBoardPage - 1) * postsPerPage;
             const currentItems = qnaPosts.slice(startIdx, startIdx + postsPerPage);
 
-            listEl.innerHTML = currentItems.map(post => {
-                const canView = isAdmin || post.unlocked;
+            listEl.innerHTML = currentItems.map((post, idx) => {
+                const docKey = post.docId || String(post.id);
+                const displayNo = totalCount - (startIdx + idx);
+                // 철저한 비밀글 권한 검사: 관리자(접지 않은 상태) 또는 현재 세션에서 비밀번호 인증한 작성자만 열람
+                const isAuthorized = isAdmin || sessionUnlockedIds.has(docKey);
+                const canView = isAdmin ? !adminCollapsedIds.has(docKey) : sessionUnlockedIds.has(docKey);
+
                 return `
                     <div class="transition-colors hover:bg-blush/20">
-                        <!-- 게시글 요약 행 -->
-                        <div onclick="handlePostClick(${post.id})" class="px-4 sm:px-6 py-4 grid grid-cols-1 md:grid-cols-12 gap-2 items-center cursor-pointer">
+                        <!-- 게시글 요약 행 (비인가 사용자에게는 제목/마스킹성함/날짜/상태만 노출) -->
+                        <div onclick="handlePostClick('${escapeHtml(docKey)}')" class="px-4 sm:px-6 py-4 grid grid-cols-1 md:grid-cols-12 gap-2 items-center cursor-pointer">
                             <div class="hidden md:block md:col-span-1 text-center text-xs font-extrabold text-charcoal/80">
-                                ${post.id}
+                                ${displayNo}
                             </div>
                             <div class="md:col-span-2 flex md:justify-center items-center gap-2">
-                                <span class="md:hidden text-xs font-extrabold text-charcoal/80">#${post.id}</span>
-                                <span class="bg-beige text-charcoal text-[11px] font-bold px-2.5 py-1 rounded-lg truncate max-w-[160px]">${post.pkg}</span>
+                                <span class="md:hidden text-xs font-extrabold text-charcoal/80">#${displayNo}</span>
+                                <span class="bg-beige text-charcoal text-[11px] font-bold px-2.5 py-1 rounded-lg truncate max-w-[160px]">${escapeHtml(post.pkg)}</span>
                             </div>
                             <div class="md:col-span-5 md:pl-4 flex items-center gap-2">
-                                <i class="fa-solid ${canView ? 'fa-lock-open text-emerald-600' : 'fa-lock text-rose-dark'} text-xs shrink-0"></i>
-                                <span class="text-sm font-bold text-charcoal hover:text-rose-dark transition-colors line-clamp-1">${post.title}</span>
+                                <i class="fa-solid ${isAuthorized ? 'fa-lock-open text-emerald-600' : 'fa-lock text-rose-dark'} text-xs shrink-0"></i>
+                                <span class="text-sm font-bold text-charcoal hover:text-rose-dark transition-colors line-clamp-1">${escapeHtml(post.title)}</span>
                                 <span class="text-[11px] text-rose-dark font-bold shrink-0">[1]</span>
                             </div>
                             <div class="flex md:grid md:grid-cols-4 md:col-span-4 items-center justify-between text-xs text-charcoal/90 pt-1 md:pt-0">
-                                <div class="md:col-span-1 md:text-center font-bold text-charcoal">${post.name}</div>
-                                <div class="md:col-span-2 md:text-center font-semibold text-charcoal/80">${post.date}</div>
+                                <div class="md:col-span-1 md:text-center font-bold text-charcoal">${escapeHtml(post.name)}</div>
+                                <div class="md:col-span-2 md:text-center font-semibold text-charcoal/80">${escapeHtml(post.date)}</div>
                                 <div class="md:col-span-1 md:text-center">
                                     <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
-                                        ${post.status}
+                                        ${escapeHtml(post.status)}
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 열람 권한이 있거나 관리자일 때 펼쳐지는 본문 + 답글 영역 -->
+                        <!-- 열람 권한(비밀번호 인증 완료 또는 관리자)이 있을 때만 본문 + 답글 DOM 렌더링 -->
                         ${canView ? `
                             <div class="bg-cream px-6 sm:px-12 py-5 border-t border-beige space-y-4">
-                                ${editingCustomerPostId === post.id ? `
+                                ${editingCustomerPostId === docKey ? `
                                     <div class="bg-white p-4 rounded-2xl border-2 border-rose space-y-3">
                                         <div class="text-xs font-bold text-rose-dark">✏️ 내 문의글 수정하기</div>
-                                        <input id="cust-edit-title-${post.id}" value="${post.title}" class="w-full px-3.5 py-2 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm font-bold text-charcoal focus:outline-none focus:border-rose">
-                                        <textarea id="cust-edit-content-${post.id}" rows="4" class="w-full p-3 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm text-charcoal focus:outline-none focus:border-rose">${post.content}</textarea>
+                                        <input id="cust-edit-title-${escapeHtml(docKey)}" value="${escapeHtml(post.title)}" class="w-full px-3.5 py-2 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm font-bold text-charcoal focus:outline-none focus:border-rose">
+                                        <textarea id="cust-edit-content-${escapeHtml(docKey)}" rows="4" class="w-full p-3 rounded-xl bg-cream border border-rose-light text-xs sm:text-sm text-charcoal focus:outline-none focus:border-rose">${escapeHtml(post.content)}</textarea>
                                         <div class="flex justify-end gap-2">
                                             <button onclick="cancelCustomerPostEdit()" class="px-3.5 py-1.5 rounded-lg bg-beige text-charcoal text-xs font-bold">취소</button>
-                                            <button onclick="saveCustomerPostEdit(${post.id})" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">수정 완료</button>
+                                            <button onclick="saveCustomerPostEdit('${escapeHtml(docKey)}')" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">수정 완료</button>
                                         </div>
                                     </div>
                                 ` : `
                                     <div class="bg-white p-4 rounded-2xl border border-rose-light/80 space-y-3">
-                                        <div class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${post.content}</div>
-                                        <div class="flex justify-end pt-2 border-t border-beige">
-                                            <button onclick="startCustomerPostEdit(${post.id})" class="text-xs font-bold text-rose-dark hover:text-charcoal bg-blush/70 hover:bg-blush px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
-                                                <i class="fa-solid fa-pen-to-square"></i> 내 문의글 수정하기
-                                            </button>
+                                        <div class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${escapeHtml(post.content)}</div>
+                                        <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-beige">
+                                            <span class="text-[11px] text-emerald-700 font-bold"><i class="fa-solid fa-shield-check mr-1"></i>비밀글 보호 중 (본인 확인됨)</span>
+                                            <div class="flex items-center gap-2">
+                                                ${!isAdmin ? `
+                                                    <button onclick="lockPostAgain('${escapeHtml(docKey)}')" class="text-xs font-bold text-charcoal/80 hover:text-charcoal bg-beige hover:bg-rose-light/40 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                                                        <i class="fa-solid fa-lock"></i> 비밀글 잠그기
+                                                    </button>
+                                                ` : ''}
+                                                <button onclick="startCustomerPostEdit('${escapeHtml(docKey)}')" class="text-xs font-bold text-rose-dark hover:text-charcoal bg-blush/70 hover:bg-blush px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+                                                    <i class="fa-solid fa-pen-to-square"></i> 내 문의글 수정하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 `}
@@ -2618,30 +3129,30 @@
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-1.5">
                                             <span class="text-xs font-bold text-rose-dark">👑 메리담 대표부부 공식 답변</span>
-                                            <span class="text-[11px] text-charcoal/70 font-semibold">${post.date} ${post.status}</span>
+                                            <span class="text-[11px] text-charcoal/70 font-semibold">${escapeHtml(post.date)} ${escapeHtml(post.status)}</span>
                                         </div>
-                                        ${editingReplyPostId === post.id ? `
+                                        ${editingReplyPostId === docKey ? `
                                             <div class="space-y-2 mt-2">
-                                                <textarea id="admin-reply-textarea-${post.id}" rows="3" class="w-full p-3 rounded-xl bg-white border border-rose text-xs sm:text-sm text-charcoal focus:outline-none">${post.reply}</textarea>
+                                                <textarea id="admin-reply-textarea-${escapeHtml(docKey)}" rows="3" class="w-full p-3 rounded-xl bg-white border border-rose text-xs sm:text-sm text-charcoal focus:outline-none">${escapeHtml(post.reply)}</textarea>
                                                 <div class="flex justify-end gap-2">
                                                     <button onclick="cancelAdminReply()" class="px-3.5 py-1.5 rounded-lg bg-beige text-charcoal text-xs font-bold">취소</button>
-                                                    <button onclick="saveAdminReply(${post.id})" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">답변 저장하기</button>
+                                                    <button onclick="saveAdminReply('${escapeHtml(docKey)}')" class="px-4 py-1.5 rounded-lg bg-rose-dark text-white text-xs font-bold shadow">답변 저장하기</button>
                                                 </div>
                                             </div>
                                         ` : `
-                                            <p class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${post.reply}</p>
+                                            <p class="text-xs sm:text-sm text-charcoal font-medium whitespace-pre-line leading-relaxed">${escapeHtml(post.reply)}</p>
                                         `}
                                     </div>
                                 </div>
 
                                 ${isAdmin ? `
                                     <div class="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-dashed border-rose text-xs">
-                                        <span class="text-charcoal font-semibold">🔑 고객이 설정한 비밀번호: <b class="text-rose-dark">${post.password}</b></span>
+                                        <span class="text-charcoal font-semibold">🔑 고객이 설정한 비밀번호: <b class="text-rose-dark">${escapeHtml(post.password)}</b></span>
                                         <div class="flex gap-2">
-                                            <button onclick="startAdminReplyEdit(${post.id})" class="bg-charcoal text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-rose-dark transition-colors">
+                                            <button onclick="startAdminReplyEdit('${escapeHtml(docKey)}')" class="bg-charcoal text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-rose-dark transition-colors">
                                                 <i class="fa-solid fa-pen mr-1"></i>답글 작성/수정
                                             </button>
-                                            <button onclick="adminDeletePost(${post.id})" class="bg-red-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-red-700 transition-colors">
+                                            <button onclick="adminDeletePost('${escapeHtml(docKey)}')" class="bg-red-600 text-white px-3.5 py-1.5 rounded-lg font-bold hover:bg-red-700 transition-colors">
                                                 <i class="fa-solid fa-trash mr-1"></i>게시글 삭제
                                             </button>
                                         </div>
@@ -2666,8 +3177,16 @@
         }
         window.renderQnaBoard = renderQnaBoard;
 
-        function startCustomerPostEdit(postId) {
-            editingCustomerPostId = postId;
+        function findPostByKey(docKey) {
+            return qnaPosts.find(p => (p.docId || String(p.id)) === String(docKey));
+        }
+
+        function startCustomerPostEdit(docKey) {
+            if (!isAdmin && !sessionUnlockedIds.has(String(docKey))) {
+                showToast("🔒 본인 비밀번호 확인 후 수정하실 수 있습니다.");
+                return;
+            }
+            editingCustomerPostId = String(docKey);
             renderQnaBoard();
         }
 
@@ -2676,19 +3195,26 @@
             renderQnaBoard();
         }
 
-        function saveCustomerPostEdit(postId) {
-            const post = qnaPosts.find(p => p.id === postId);
+        function saveCustomerPostEdit(docKey) {
+            if (!isAdmin && !sessionUnlockedIds.has(String(docKey))) {
+                showToast("🔒 수정 권한이 없습니다.");
+                return;
+            }
+            const post = findPostByKey(docKey);
             if (!post) return;
-            const titleEl = document.getElementById(`cust-edit-title-${postId}`);
-            const contentEl = document.getElementById(`cust-edit-content-${postId}`);
+            const titleEl = document.getElementById(`cust-edit-title-${docKey}`);
+            const contentEl = document.getElementById(`cust-edit-content-${docKey}`);
             if (titleEl && contentEl) {
-                post.title = titleEl.value.trim();
-                post.content = contentEl.value.trim();
+                post.title = sanitizeInput(titleEl.value);
+                post.content = sanitizeInput(contentEl.value);
+                post.isModified = true;
+                post.updatedAt = Date.now();
+                saveQnaToLocal();
                 if (window.syncPostToCloud) window.syncPostToCloud(post);
             }
             editingCustomerPostId = null;
             renderQnaBoard();
-            showToast("✅ 작성하신 문의글이 성공적으로 수정되었습니다.");
+            showToast("✅ 작성하신 문의글이 성공적으로 수정 및 저장되었습니다.");
         }
 
         function goToBoardPage(page) {
@@ -2696,23 +3222,40 @@
             renderQnaBoard();
         }
 
-        function handlePostClick(postId) {
-            const post = qnaPosts.find(p => p.id === postId);
+        function handlePostClick(docKey) {
+            const key = String(docKey);
+            const post = findPostByKey(key);
             if (!post) return;
 
-            if (isAdmin || post.unlocked) {
-                post.unlocked = !post.unlocked;
+            if (isAdmin) {
+                if (adminCollapsedIds.has(key)) adminCollapsedIds.delete(key);
+                else adminCollapsedIds.add(key);
                 renderQnaBoard();
                 return;
             }
 
-            targetPostIdForPw = postId;
+            if (sessionUnlockedIds.has(key)) {
+                sessionUnlockedIds.delete(key);
+                if (editingCustomerPostId === key) editingCustomerPostId = null;
+                renderQnaBoard();
+                return;
+            }
+
+            targetPostDocIdForPw = key;
             document.getElementById('pw-check-modal').classList.remove('hidden');
             document.getElementById('modal-pw-input').focus();
         }
 
+        function lockPostAgain(docKey) {
+            const key = String(docKey);
+            sessionUnlockedIds.delete(key);
+            if (editingCustomerPostId === key) editingCustomerPostId = null;
+            renderQnaBoard();
+            showToast("🔒 비밀글이 안전하게 잠겼습니다.");
+        }
+
         function closePwModal() {
-            targetPostIdForPw = null;
+            targetPostDocIdForPw = null;
             document.getElementById('pw-check-modal').classList.add('hidden');
             document.getElementById('modal-pw-input').value = '';
         }
@@ -2720,11 +3263,11 @@
         function verifyPostPassword(e) {
             e.preventDefault();
             const inputPw = document.getElementById('modal-pw-input').value.trim();
-            const post = qnaPosts.find(p => p.id === targetPostIdForPw);
+            const post = findPostByKey(targetPostDocIdForPw);
             if (!post) return;
 
-            if (inputPw === post.password || checkSecretMatch(inputPw)) {
-                post.unlocked = true;
+            if (inputPw === String(post.password) || checkSecretMatch(inputPw)) {
+                sessionUnlockedIds.add(post.docId || String(post.id));
                 closePwModal();
                 renderQnaBoard();
                 showToast("🔓 비밀번호가 확인되어 문의글과 답글이 열렸습니다. (직접 수정 가능)");
@@ -2739,8 +3282,8 @@
 
         function submitBoardPost(e) {
             e.preventDefault();
-            if (Date.now() - lastFormSubmitTime < 10000) {
-                showToast("⏳ 도배 및 매크로 방지를 위해 10초 후 등록 가능합니다.");
+            if (Date.now() - lastFormSubmitTime < 3000) {
+                showToast("⏳ 도배 및 매크로 방지를 위해 잠시 후 등록 가능합니다.");
                 return;
             }
             lastFormSubmitTime = Date.now();
@@ -2748,61 +3291,55 @@
             const name = sanitizeInput(document.getElementById('brd-name').value);
             const hall = sanitizeInput(document.getElementById('brd-hall').value);
             const pkg = sanitizeInput(document.getElementById('brd-pkg').value);
-            const pw = sanitizeInput(document.getElementById('brd-pw').value);
+            const pw = document.getElementById('brd-pw').value.trim();
             const title = sanitizeInput(document.getElementById('brd-title').value);
             const content = sanitizeInput(document.getElementById('brd-content').value);
 
-            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => p.id)) + 1 : 1;
+            if (!pw) {
+                showToast("🔒 비밀글 보호용 비밀번호를 입력해주세요.");
+                return;
+            }
+
+            const nowMs = Date.now();
+            const docId = `post_${nowMs}_${Math.floor(Math.random() * 10000)}`;
+            const newId = qnaPosts.length > 0 ? Math.max(...qnaPosts.map(p => Number(p.id) || 0)) + 1 : 1;
+            const todayStr = getTodayDateStr();
+
             const newPost = {
                 id: newId,
+                docId: docId,
+                isUserCreated: true,
+                createdAt: nowMs,
+                updatedAt: nowMs,
                 name: maskWriterName(name),
                 rawName: name,
                 hall: hall,
                 pkg: pkg,
-                date: "2026-11-18",
+                date: todayStr,
                 title: title,
                 content: content,
                 password: pw,
                 status: "답변완료",
-                reply: `안녕하세요 ${name}님, 메리담 대표부부입니다 :) 남겨주신 [${hall} / ${pkg}] 문의사항을 확인하였으며, 빠르게 안내 도와드리겠습니다. 작성해주신 글은 설정하신 비밀번호로 본인만 열람하실 수 있습니다. 감사합니다!`,
-                unlocked: true
+                reply: `안녕하세요 ${name}님, 메리담 대표부부입니다 :) 남겨주신 [${hall} / ${pkg}] 문의사항을 확인하였으며, 빠르게 안내 도와드리겠습니다. 작성해주신 글은 설정하신 비밀번호로 본인만 열람하실 수 있습니다. 감사합니다!`
             };
+
             qnaPosts.unshift(newPost);
+            sortQnaPosts();
+            saveQnaToLocal();
             if (window.syncPostToCloud) window.syncPostToCloud(newPost);
 
+            // 작성자 본인의 현재 세션에서만 즉시 확인 가능 (새로고침 또는 타인은 비밀번호 필수)
+            sessionUnlockedIds.add(docId);
             currentBoardPage = 1;
             renderQnaBoard();
             e.target.reset();
             toggleBoardWriteBox();
-            showToast("🔒 비밀 문의글과 대표부부 답글이 등록되었습니다. (작성자 본인 열람 상태)");
+            showToast("🔒 비밀 문의글이 최상단에 등록되었습니다! (타인은 비밀번호 없이는 열람 불가)");
         }
 
-        function startUserPostEdit(postId) {
-            editingUserPostId = postId;
-            renderQnaBoard();
-        }
-
-        function cancelUserPostEdit() {
-            editingUserPostId = null;
-            renderQnaBoard();
-        }
-
-        function saveUserPostEdit(postId) {
-            const post = qnaPosts.find(p => p.id === postId);
-            if (!post) return;
-            const titleInput = document.getElementById(`user-edit-title-${postId}`);
-            const contentInput = document.getElementById(`user-edit-content-${postId}`);
-            if (titleInput && contentInput) {
-                post.title = titleInput.value.trim();
-                post.content = contentInput.value.trim();
-            }
-            editingUserPostId = null;
-            renderQnaBoard();
-            showToast("✅ 작성하신 문의글이 성공적으로 수정되었습니다.");
-        }
-
-        function startAdminReplyEdit(postId) {
-            editingReplyPostId = postId;
+        function startAdminReplyEdit(docKey) {
+            if (!isAdmin) return;
+            editingReplyPostId = String(docKey);
             renderQnaBoard();
         }
 
@@ -2811,13 +3348,17 @@
             renderQnaBoard();
         }
 
-        function saveAdminReply(postId) {
-            const post = qnaPosts.find(p => p.id === postId);
+        function saveAdminReply(docKey) {
+            if (!isAdmin) return;
+            const post = findPostByKey(docKey);
             if (!post) return;
-            const textarea = document.getElementById(`admin-reply-textarea-${postId}`);
+            const textarea = document.getElementById(`admin-reply-textarea-${docKey}`);
             if (textarea) {
-                post.reply = textarea.value.trim();
+                post.reply = sanitizeInput(textarea.value);
                 post.status = "답변완료";
+                post.isModified = true;
+                post.updatedAt = Date.now();
+                saveQnaToLocal();
                 if (window.syncPostToCloud) window.syncPostToCloud(post);
             }
             editingReplyPostId = null;
@@ -2825,11 +3366,15 @@
             showToast("✅ 대표부부 공식 답글이 성공적으로 저장되었습니다.");
         }
 
-        function adminDeletePost(postId) {
-            const idx = qnaPosts.findIndex(p => p.id === postId);
+        function adminDeletePost(docKey) {
+            if (!isAdmin) return;
+            const key = String(docKey);
+            const idx = qnaPosts.findIndex(p => (p.docId || String(p.id)) === key);
             if (idx > -1) {
-                if (window.deletePostFromCloud) window.deletePostFromCloud(postId);
+                markQnaDeleted(key);
+                if (window.deletePostFromCloud) window.deletePostFromCloud(key);
                 qnaPosts.splice(idx, 1);
+                saveQnaToLocal();
                 renderQnaBoard();
                 showToast("🗑️ 문의글이 삭제되었습니다.");
             }
@@ -2861,7 +3406,6 @@
         // 초기 렌더링 실행
         window.onload = function() {
             renderDynamicLiveTicker();
-            initMockQnaPosts();
             renderServiceCards();
             renderReviews();
             renderQnaBoard();
